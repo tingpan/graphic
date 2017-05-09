@@ -10,7 +10,7 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(
 void Camera::Reset(){
 	// set the camera position to start at (0,0,0)
 	eyePosition[0] = 0.0f;
-	eyePosition[1] = 1.0f;
+	eyePosition[1] = 300.0f;
     eyePosition[2] = 0.0f;
 
 	// set the view direction vector of the camera to be (0,0,-1)
@@ -51,7 +51,7 @@ void Camera::SetupCamera()
 
 void Camera::Update(const double& deltaTime)
 {
-	float speed = 2.5f;
+	float speed = 5.f;
 
 	if (aKey)
 		sub(eyePosition, right, speed);

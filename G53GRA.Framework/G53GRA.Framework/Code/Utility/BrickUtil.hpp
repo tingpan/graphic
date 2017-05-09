@@ -80,4 +80,128 @@ inline void drawBrickR(float l, float w, float h){
     
 }
 
+inline void drawBrickT(float l, float w, float h, int textureID, float f){
+    
+    // LEFT SIDE
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(-1.f, 0.0f, 0.0f);
+        
+        glTexCoord2f(0, h/f);
+        glVertex3f(0, h, -l);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, -l);
+        
+        glTexCoord2f(l/f, 0);
+        glVertex3f(0, 0, 0);
+        
+        glTexCoord2f(l/f, h/f);
+        glVertex3f(0, h, 0);
+    }
+    glEnd();
+    
+    // FRONT SIDE
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(0.0f, 0.0f, 1.f);
+        
+        glTexCoord2f(0, h/f);
+        glVertex3f(0, h, 0);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, 0);
+        
+        glTexCoord2f(w/f, 0);
+        glVertex3f(w, 0, 0);
+        
+        glTexCoord2f(w/f, h/f);
+        glVertex3f(w, h, 0);
+    }
+    glEnd();
+    
+    // RIGHT SIDE
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(1.f, 0.0f, 0.0f);
+        
+        glTexCoord2f(0, h/f);
+        glVertex3f(w, h, 0);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(w, 0, 0);
+        
+        glTexCoord2f(l/f, 0);
+        glVertex3f(w, 0, -l);
+        
+        glTexCoord2f(l/f, h/f);
+        glVertex3f(w, h, -l);
+    }
+    glEnd();
+    
+    // BACK SIDE
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(0.f, 0.0f, -1.f);
+        
+        glTexCoord2f(0, h/f);
+        glVertex3f(w, h, -l);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(w, 0, -l);
+        
+        glTexCoord2f(w/f, 0);
+        glVertex3f(0, 0, -l);
+        
+        glTexCoord2f(w/f, h/f);
+        glVertex3f(0, h, -l);
+    }
+    glEnd();
+    
+    // TOP SIDE
+    
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(0.f, 1.0f, 0.f);
+        
+        glTexCoord2f(0, l/f);
+        glVertex3f(0, h, -l);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(0, h, 0);
+        
+        glTexCoord2f(w/f, 0);
+        glVertex3f(w, h, 0);
+        
+        glTexCoord2f(w/f, l/f);
+        glVertex3f(w, h, -l);
+    }
+    glEnd();
+    
+    // BOT SIDE
+    glBegin(GL_QUADS);
+    {
+        glNormal3f(0.f, -1.0f, 0.0f);
+        
+        glTexCoord2f(0, l/f);
+        glVertex3f(0, 0, 0);
+        
+        glTexCoord2f(0, 0);
+        glVertex3f(0, 0, -l);
+        
+        glTexCoord2f(w/f, 0);
+        glVertex3f(w, 0, -l);
+        
+        glTexCoord2f(w/f, l/f);
+        glVertex3f(w, 0, 0);
+    }
+    glEnd();
+    
+    glBindTexture(GL_TEXTURE_2D, NULL);
+    glDisable(GL_TEXTURE_2D);
+}
+
 #endif /* BrickUtil_hpp */

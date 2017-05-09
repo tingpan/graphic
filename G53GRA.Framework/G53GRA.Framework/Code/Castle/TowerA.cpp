@@ -7,10 +7,12 @@
 //
 
 #include "TowerA.hpp"
-#include "BrickUtil.hpp"
 
 TowerA::TowerA(){
-
+    _textB1 = Scene::GetTexture("./Textures/Castle/brick1.bmp");
+    _textB2 = Scene::GetTexture("./Textures/Castle/brick2.bmp");
+    _textB3 = Scene::GetTexture("./Textures/Castle/brick3.bmp");
+    _textB4 = Scene::GetTexture("./Textures/Castle/brick4.bmp");
 }
 
 TowerA::~TowerA()
@@ -55,56 +57,103 @@ void TowerA::Display() {
 }
 void TowerA::DrawSubTower3() {
     
-    float w = 8;
+//    float w = 8;
+//    
+//    glPushMatrix();
+//    {
+//        setWallColor1(246, 238, 204);
+//        glTranslatef(0, 0, 1);
+//        drawBrickR(20, 1, 32);
+//        
+//        
+//        glTranslatef(1, 0, -1);
+//        
+//        glPushMatrix();
+//        {
+//            setWallColor1(242, 219, 172);
+//            drawBrickT(19, w, 7, _textB4, 3);
+//            
+//            glTranslatef(0, 7, 1);
+//            setWallColor1(246, 238, 204);
+//            drawBrickR(20, w, 1);
+//            
+//            
+//            glTranslatef(0, 1, -1);
+//            setWallColor1(245, 179, 147);
+//            drawBrickR(19, w, 6);
+//            
+//            glTranslatef(0, 6, 1);
+//            setWallColor1(246, 238, 204);
+//            drawBrickR(20, w, 1);
+//            
+//            glTranslatef(0, 1, -1);
+//            setWallColor1(245, 179, 147);
+//            drawBrickR(19, w, 5);
+//            glTranslatef(0, 5, 1);
+//            setWallColor1(246, 238, 204);
+//            drawBrickR(20, w, 1);
+//            
+//            glTranslatef(0, 1, -1);
+//            setWallColor1(245, 179, 147);
+//            drawBrickR(19, w, 8);
+//            
+//            glTranslatef(0, 8, 1);
+//            setWallColor1(246, 238, 204);
+//            drawBrickR(20, w, 3);
+//        }
+//        glPopMatrix();
+//        
+//        glTranslatef(8, 0, 1);
+//        setWallColor1(246, 238, 204);
+//        drawBrickR(20, 1, 32);
+//    }
+//    glPopMatrix();
     
-    glPushMatrix();
-    {
-        setWallColor1(246, 238, 204);
-        glTranslatef(0, 0, 1);
-        drawBrickR(20, 1, 32);
-        
-        
-        glTranslatef(1, 0, -1);
-        
+        float w = 8;
+        float f = 2;
+    
         glPushMatrix();
         {
-            setWallColor1(242, 219, 172);
-            drawBrickR(19, w, 7);
             
-            glTranslatef(0, 7, 1);
-            setWallColor1(246, 238, 204);
-            drawBrickR(20, w, 1);
+            glTranslatef(0, 0, 1);
+            drawBrickT(20, 1, 32, _textB1, f);
             
-            glTranslatef(0, 1, -1);
-            setWallColor1(245, 179, 147);
-            drawBrickR(19, w, 6);
+            glTranslatef(1, 0, -1);
+    
+            glPushMatrix();
+            {
+                setWallColor1(242, 219, 172);
+                drawBrickT(19, w, 7, _textB4, f);
+    
+                glTranslatef(0, 7, 1);
+                drawBrickT(20, w, 1, _textB1, f);
+    
+    
+                glTranslatef(0, 1, -1);
+                drawBrickT(19, w, 6, _textB2, f);
+    
+                glTranslatef(0, 6, 1);
+                drawBrickT(20, w, 1, _textB1, f);
+    
+                glTranslatef(0, 1, -1);
+                drawBrickT(19, w, 5, _textB2, f);
+                
+                glTranslatef(0, 5, 1);
+                drawBrickT(20, w, 1, _textB1, f);
+    
+                glTranslatef(0, 1, -1);
+                drawBrickT(19, w, 8, _textB2, f);
+    
+                glTranslatef(0, 8, 1);
+                drawBrickT(20, w, 3, _textB1, f);
+            }
+            glPopMatrix();
             
-            glTranslatef(0, 6, 1);
-            setWallColor1(246, 238, 204);
-            drawBrickR(20, w, 1);
-            
-            glTranslatef(0, 1, -1);
-            setWallColor1(245, 179, 147);
-            drawBrickR(19, w, 5);
-            glTranslatef(0, 5, 1);
-            setWallColor1(246, 238, 204);
-            drawBrickR(20, w, 1);
-            
-            glTranslatef(0, 1, -1);
-            setWallColor1(245, 179, 147);
-            drawBrickR(19, w, 8);
-            
-            glTranslatef(0, 8, 1);
-            setWallColor1(246, 238, 204);
-            drawBrickR(20, w, 3);
+            glTranslatef(8, 0, 1);
+            drawBrickT(20, 1, 32, _textB1, f);
         }
         glPopMatrix();
-        
-        glTranslatef(8, 0, 1);
-        setWallColor1(246, 238, 204);
-        drawBrickR(20, 1, 32);
-    }
-    glPopMatrix();
+
     
 }
 
@@ -205,9 +254,9 @@ void TowerA::setWallColor1(int r, int g, int b) {
     
     GLfloat mat_shininess = 100.0f;
     
-    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, mat_ambient);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, mat_diffuse);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, mat_specular);
-    
-    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, mat_shininess);
+//    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, mat_ambient);
+//    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, mat_diffuse);
+//    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, mat_specular);
+//    
+//    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, mat_shininess);
 }

@@ -1,35 +1,35 @@
 //
-//  TowerA.hpp
+//  TowerB.hpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#ifndef TowerA_hpp
-#define TowerA_hpp
+#ifndef TowerB_hpp
+#define TowerB_hpp
 
-#include "DisplayableObject.h"
+#include <stdio.h>
 #include "VectorMath.h"
+#include "DisplayableObject.h"
 #include "BrickUtil.hpp"
 
-class TowerA :
-    public DisplayableObject
+class TowerB :
+public DisplayableObject
 
 {
 public:
-    TowerA();
-    ~TowerA();
+    TowerB();
+    ~TowerB();
     
     void Display();
     
 protected:
-    GLuint _textB1, _textB2, _textB3, _textB4;
     
-    void DrawSubTower1();
-    void DrawSubTower2();
-    void DrawSubTower3();
+    void DrawWall(float w);
     void DrawRoof();
+    void DrawTop();
+    
     void Decorate();
     
     void setWallColor1(int r, int g, int b);
@@ -37,4 +37,5 @@ protected:
 };
 
 
-#endif /* TowerA_hpp */
+
+#endif /* TowerB_hpp */

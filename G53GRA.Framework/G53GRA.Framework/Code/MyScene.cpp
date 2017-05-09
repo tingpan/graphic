@@ -3,6 +3,7 @@
 #include "MySunlight.hpp"
 #include "MySkybox.hpp"
 #include "TowerA.hpp"
+#include "TowerB.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -37,12 +38,21 @@ void MyScene::Initialise()
     skybox->size(10000.0f, 10000.0f,10000.0f);
     AddObjectToScene(skybox);
 
-    TowerA *tower = new TowerA();
-    tower->size(8);
-    tower->position(-125, -50, -1050);
+    TowerA *towerA = new TowerA();
+    towerA->size(8);
+    towerA->position(-128, -50, -1050);
+    AddObjectToScene(towerA);
     
-    AddObjectToScene(tower);
+    TowerB *towerB = new TowerB();
+    towerB->size(8);
+    towerB->position(-282, -50, -1050);
+    AddObjectToScene(towerB);
     
+    TowerB *towerB2 = new TowerB();
+    towerB2->size(8);
+    towerB2->position(128, -50, -1050);
+    AddObjectToScene(towerB2);
+
     
 }
 
