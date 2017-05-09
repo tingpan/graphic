@@ -12,6 +12,9 @@
 #define WORD unsigned short
 #define DWORD unsigned int
 #define LONG int
+#include <limits.h>
+#include <stdlib.h>
+
 typedef struct tagBITMAPFILEHEADER
 {
 	WORD  bfType;
@@ -67,14 +70,19 @@ int Texture::GetTexture(string fileName)
 	unsigned char *pixelBuffer;
 	GLuint texObject;
 	FILE *bitmapFile = fopen(fileName.c_str(), "r");
-
+    char *full_path = realpath(fileName.c_str(), NULL);
+    printf("%s", full_path);
+    
 	// Check file opened
 	if (bitmapFile == NULL)
 	{
 		printf("Error: Failed to open the file at path %s\n", fileName.c_str());
 		delete[] bitmapFile;
 		return -1;	// error
-	}
+    } else {
+        printf("Reading... %s\n", fileName.c_str());
+    }
+    
 	fread(&fileHeader, 14, 1, bitmapFile);
 
 	// Check for valid window bitmap

@@ -15,11 +15,12 @@ int main(int argc, char* argv[])
 {
 	// Create new instance of MyScene - the OpenGL context on which your coursework is built
 	MyScene *scene = NULL;
-	scene = new MyScene(argc, argv, "G53GRA", static_cast<const int>(600), static_cast<const int>(400));
+	scene = new MyScene(argc, argv, "G53GRA", static_cast<const int>(1080), static_cast<const int>(720));
 
+    cout << "Hello World" << endl;
 	// Begin the main GL loop
 	scene->Run();
-
+    
 	// On exit, clean up and return success (0x0)
 	delete scene;
 	return 0;

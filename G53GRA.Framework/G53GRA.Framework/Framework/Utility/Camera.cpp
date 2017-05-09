@@ -10,8 +10,8 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(
 void Camera::Reset(){
 	// set the camera position to start at (0,0,0)
 	eyePosition[0] = 0.0f;
-	eyePosition[1] = 0.0f;
-	eyePosition[2] = 0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
+	eyePosition[1] = 1.0f;
+    eyePosition[2] = 0.0f;
 
 	// set the view direction vector of the camera to be (0,0,-1)
 	vd[0] = 0.0f;
@@ -51,7 +51,7 @@ void Camera::SetupCamera()
 
 void Camera::Update(const double& deltaTime)
 {
-	float speed = 1.0f;
+	float speed = 2.5f;
 
 	if (aKey)
 		sub(eyePosition, right, speed);
@@ -139,7 +139,8 @@ void Camera::HandleMouse(int button, int state, int x, int y)
 
 void Camera::HandleMouseDrag(int x, int y)
 {
-	float rx, ry;
+	
+    float rx, ry;
 	float sensitivity = 0.01f; // speed of the camera moving
 
 	// work out the difference between where the mouse was last used (mouseX, mouseY) to
@@ -157,6 +158,7 @@ void Camera::HandleMouseDrag(int x, int y)
 				add(vd, right, rx*sensitivity);
 			else
 				sub(vd, right, rx*-sensitivity);
+        
 			// add on the amount of change in to the up and down view direction of the camera
 			if (ry > 0)
 				sub(vd, up, ry*sensitivity);

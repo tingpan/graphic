@@ -41,6 +41,12 @@ inline void scale(float* a, const float& scale)
 		*a = *a*scale;
 }
 
+inline void div(float* a, const float& div)
+{
+    for (int i = 0; i < 3; i++, a++)
+        *a = *a/div;
+}
+
 // Adds vector b * scale to vector a
 // a = a + (b*scale)
 // Result is stored in vector a

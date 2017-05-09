@@ -15,17 +15,33 @@
 		192BE3C61E4CBD8B0040131F /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C21E4CBD8B0040131F /* Texture.cpp */; };
 		192BE3CA1E4CBD960040131F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C71E4CBD960040131F /* main.cpp */; };
 		192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C81E4CBD960040131F /* MyScene.cpp */; };
+		854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* MySunlight.cpp */; };
+		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
+		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
+		85EEACE41EC18B16000B37B3 /* up.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACDE1EC18AFE000B37B3 /* up.bmp */; };
+		85EEACE51EC18B16000B37B3 /* right.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACDF1EC18AFE000B37B3 /* right.bmp */; };
+		85EEACE61EC18B16000B37B3 /* left.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACE01EC18AFE000B37B3 /* left.bmp */; };
+		85EEACE71EC18B16000B37B3 /* front.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACE11EC18AFE000B37B3 /* front.bmp */; };
+		85EEACE81EC18B16000B37B3 /* down.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACE21EC18AFE000B37B3 /* down.bmp */; };
+		85EEACE91EC18B16000B37B3 /* back.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACE31EC18AFE000B37B3 /* back.bmp */; };
+		85EEACEF1EC19CD7000B37B3 /* TowerA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85EEACED1EC19CD7000B37B3 /* TowerA.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1908B83A1E4CB814006C895B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = ./Textures/Skybox;
+			dstSubfolderSpec = 16;
 			files = (
+				85EEACE41EC18B16000B37B3 /* up.bmp in CopyFiles */,
+				85EEACE51EC18B16000B37B3 /* right.bmp in CopyFiles */,
+				85EEACE61EC18B16000B37B3 /* left.bmp in CopyFiles */,
+				85EEACE71EC18B16000B37B3 /* front.bmp in CopyFiles */,
+				85EEACE81EC18B16000B37B3 /* down.bmp in CopyFiles */,
+				85EEACE91EC18B16000B37B3 /* back.bmp in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -48,6 +64,21 @@
 		192BE3C71E4CBD960040131F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Code/main.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C81E4CBD960040131F /* MyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene.cpp; path = Code/MyScene.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C91E4CBD960040131F /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = Code/MyScene.h; sourceTree = SOURCE_ROOT; };
+		854689DD1EC16C4100F37BDF /* MySunlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySunlight.hpp; path = Code/Environment/MySunlight.hpp; sourceTree = SOURCE_ROOT; };
+		854689DE1EC16C4100F37BDF /* MySunlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySunlight.cpp; path = Code/Environment/MySunlight.cpp; sourceTree = SOURCE_ROOT; };
+		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
+		854689E01EC16C4100F37BDF /* MyFloor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyFloor.cpp; path = Code/Environment/MyFloor.cpp; sourceTree = SOURCE_ROOT; };
+		854689E81EC16E6300F37BDF /* MySkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySkybox.cpp; path = Code/Environment/MySkybox.cpp; sourceTree = SOURCE_ROOT; };
+		854689E91EC16E6300F37BDF /* MySkybox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySkybox.hpp; path = Code/Environment/MySkybox.hpp; sourceTree = SOURCE_ROOT; };
+		85EEACDE1EC18AFE000B37B3 /* up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = up.bmp; path = Texturess/Skybox/up.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACDF1EC18AFE000B37B3 /* right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = right.bmp; path = Texturess/Skybox/right.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACE01EC18AFE000B37B3 /* left.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = left.bmp; path = Texturess/Skybox/left.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACE11EC18AFE000B37B3 /* front.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = front.bmp; path = Texturess/Skybox/front.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACE21EC18AFE000B37B3 /* down.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = down.bmp; path = Texturess/Skybox/down.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACE31EC18AFE000B37B3 /* back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = back.bmp; path = Texturess/Skybox/back.bmp; sourceTree = SOURCE_ROOT; };
+		85EEACED1EC19CD7000B37B3 /* TowerA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TowerA.cpp; path = Code/Castle/TowerA.cpp; sourceTree = SOURCE_ROOT; };
+		85EEACEE1EC19CD7000B37B3 /* TowerA.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TowerA.hpp; path = Code/Castle/TowerA.hpp; sourceTree = SOURCE_ROOT; };
+		85EEACF21EC20088000B37B3 /* BrickUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BrickUtil.hpp; path = Code/Utility/BrickUtil.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +114,7 @@
 		1908B83E1E4CB814006C895B /* G53GRA.Framework */ = {
 			isa = PBXGroup;
 			children = (
-				19968D6C1E54B35000540281 /* Textures */,
+				85EEACC41EC18578000B37B3 /* Textures */,
 				192BE3B31E4CBD3B0040131F /* Framework */,
 				192BE3B21E4CBD290040131F /* Code */,
 			);
@@ -102,9 +133,11 @@
 		192BE3B21E4CBD290040131F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				8503A26C1EC01A5E0064954B /* Castle */,
 				192BE3C71E4CBD960040131F /* main.cpp */,
 				192BE3C81E4CBD960040131F /* MyScene.cpp */,
 				192BE3C91E4CBD960040131F /* MyScene.h */,
+				854689DC1EC16B9400F37BDF /* Environment */,
 			);
 			name = Code;
 			sourceTree = "<group>";
@@ -122,6 +155,7 @@
 		192BE3B41E4CBD440040131F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				85EEACF21EC20088000B37B3 /* BrickUtil.hpp */,
 				192BE3C01E4CBD8B0040131F /* Camera.cpp */,
 				192BE3C11E4CBD8B0040131F /* Camera.h */,
 				192BE3C21E4CBD8B0040131F /* Texture.cpp */,
@@ -152,11 +186,50 @@
 			name = Engine;
 			sourceTree = "<group>";
 		};
-		19968D6C1E54B35000540281 /* Textures */ = {
+		8503A26C1EC01A5E0064954B /* Castle */ = {
 			isa = PBXGroup;
 			children = (
+				85EEACED1EC19CD7000B37B3 /* TowerA.cpp */,
+				85EEACEE1EC19CD7000B37B3 /* TowerA.hpp */,
+			);
+			name = Castle;
+			path = Code/Castle;
+			sourceTree = "<group>";
+		};
+		854689DC1EC16B9400F37BDF /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				854689DD1EC16C4100F37BDF /* MySunlight.hpp */,
+				854689DE1EC16C4100F37BDF /* MySunlight.cpp */,
+				854689DF1EC16C4100F37BDF /* MyFloor.hpp */,
+				854689E01EC16C4100F37BDF /* MyFloor.cpp */,
+				854689E81EC16E6300F37BDF /* MySkybox.cpp */,
+				854689E91EC16E6300F37BDF /* MySkybox.hpp */,
+			);
+			name = Environment;
+			path = Code/Environment;
+			sourceTree = "<group>";
+		};
+		85EEACC41EC18578000B37B3 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				85EEACC51EC1858E000B37B3 /* Skybox */,
 			);
 			name = Textures;
+			path = Texturess;
+			sourceTree = "<group>";
+		};
+		85EEACC51EC1858E000B37B3 /* Skybox */ = {
+			isa = PBXGroup;
+			children = (
+				85EEACDE1EC18AFE000B37B3 /* up.bmp */,
+				85EEACDF1EC18AFE000B37B3 /* right.bmp */,
+				85EEACE01EC18AFE000B37B3 /* left.bmp */,
+				85EEACE11EC18AFE000B37B3 /* front.bmp */,
+				85EEACE21EC18AFE000B37B3 /* down.bmp */,
+				85EEACE31EC18AFE000B37B3 /* back.bmp */,
+			);
+			name = Skybox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +292,11 @@
 				192BE3BC1E4CBD650040131F /* Scene.cpp in Sources */,
 				192BE3C61E4CBD8B0040131F /* Texture.cpp in Sources */,
 				192BE3C51E4CBD8B0040131F /* Camera.cpp in Sources */,
+				85EEACEF1EC19CD7000B37B3 /* TowerA.cpp in Sources */,
+				854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */,
+				854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */,
 				192BE3CA1E4CBD960040131F /* main.cpp in Sources */,
+				854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */,
 				192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */,
 				192BE3BB1E4CBD650040131F /* Engine.cpp in Sources */,
 			);

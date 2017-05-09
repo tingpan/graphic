@@ -8,6 +8,10 @@
 #endif
 
 #include "../Interface/Input.h"
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
 /**
 * This class implements the base Camera functionality. It controls the position and view direction
 * of the camera in your {@link Scene}. You may add functionality by creating a new class that inherits
