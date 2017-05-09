@@ -3,6 +3,7 @@
 #include "MySunlight.hpp"
 #include "MySkybox.hpp"
 #include "TowerA.hpp"
+#include "Tree.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -40,6 +41,13 @@ void MyScene::Initialise()
     TowerA *tower = new TowerA();
     tower->size(8);
     tower->position(-125, -50, -1050);
+    
+    for (int i = 0; i < 10; i++) {
+        Tree *tree = new Tree();
+        tree->size(8);
+        tree->position(-500 - i * 500, -50, -1050);
+        AddObjectToScene(tree);
+    }
     
     AddObjectToScene(tower);
     
