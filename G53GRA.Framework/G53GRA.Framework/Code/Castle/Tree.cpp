@@ -14,7 +14,7 @@ Tree::Tree(){
     std::random_device r;
     std::seed_seq seed{r(), r(), r(), r(), r(), r(), r(), r()};
     std::mt19937 eng{seed};
-    std::uniform_int_distribution<> width(10,30);
+    std::uniform_int_distribution<> width(20,30);
     std::uniform_int_distribution<> height(20,32);
     w = width(eng);
     h = height(eng);
