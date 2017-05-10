@@ -31,8 +31,9 @@ protected:
     void DrawSubTower3();
     void DrawRoof();
     void Decorate();
+    void DrawWindow();
     
-    void setWallColor1(int r, int g, int b);
+    void setWallColor1(int r, int g, int b, int s);
     
 };
 

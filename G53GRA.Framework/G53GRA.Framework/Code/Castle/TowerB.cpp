@@ -9,7 +9,10 @@
 #include "TowerB.hpp"
 
 TowerB::TowerB(){
-    
+    _textB1 = Scene::GetTexture("./Textures/Castle/brick1.bmp");
+    _textB2 = Scene::GetTexture("./Textures/Castle/brick2.bmp");
+    _textB3 = Scene::GetTexture("./Textures/Castle/brick3.bmp");
+    _textB4 = Scene::GetTexture("./Textures/Castle/brick4.bmp");
 }
 
 TowerB::~TowerB()
@@ -59,10 +62,11 @@ void TowerB::DrawTop(){
     glPushMatrix();
     {
         float w = 3;
+        float f = 1;
+        
         glRotatef(-45, 0, 1, 0);
-        setWallColor1(242, 219, 172);
         for(int i = 0; i < 8; i++){
-            drawBrickR(1, w, 4);
+            drawBrickT(1, w, 4, _textB4, f);
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
@@ -85,7 +89,7 @@ void TowerB::DrawTop(){
             
             for (int j = 0; j < 4; j++) {
                 
-                drawBrickR(1, w - factor * j, 2);
+                drawBrickT(1, w - factor * j, 2, _textB3, 1);
                 glTranslatef(factor/2, 2, -1);
             };
             
@@ -102,41 +106,34 @@ void TowerB::DrawTop(){
 void TowerB::DrawWall(float w)
 {
     float l = 1;
+    float f = 1;
     
     glPushMatrix();
     {
-        setWallColor1(242, 219, 172);
-        drawBrickR(l, w, 7);
+        drawBrickT(l, w, 7, _textB4, f);
         
         glTranslatef(-0.43, 7, 1);
-        setWallColor1(246, 238, 204);
-        drawBrickR(l + 1, w + .86, 1);
+        drawBrickT(l + 1, w + .86, 1, _textB1, f);
         
         glTranslatef(0.43, 1, -1);
-        setWallColor1(242, 219, 172);
-        drawBrickR(l, w, 6);
+        drawBrickT(l, w, 6, _textB2, f);
         
         glTranslatef(-0.43, 6, 1);
-        setWallColor1(246, 238, 204);
-        drawBrickR(l + 1, w + .86, 1);
+        drawBrickT(l + 1, w + .86, 1, _textB1, f);
         
         glTranslatef(0.43, 1, -1);
-        setWallColor1(242, 219, 172);
-        drawBrickR(l, w , 5);
+        drawBrickT(l, w , 5, _textB2, f);
         
         glTranslatef(-0.43, 5, 1);
-        setWallColor1(246, 238, 204);
-        drawBrickR(l + 1, w + .86, 1);
+        drawBrickT(l + 1, w + .86, 1, _textB1, f);
         
         glTranslatef(0.43, 1, -1);
-        setWallColor1(242, 219, 172);
-        drawBrickR(l, w, 5);
-        
+
+        drawBrickT(l, w, 5, _textB2, f);
         glTranslatef(-0.43, 5, 1);
-        setWallColor1(242, 219, 172);
         
     
-        drawBrickR(l + 1, 0.5 + .43 , 4);
+        drawBrickT(l + 1, 0.5 + .43 , 4, _textB1, f);
         glTranslatef(0.5 + .43, -1, 0);
         
         for(int i = 0; i < w - 1; i++)
@@ -149,11 +146,11 @@ void TowerB::DrawWall(float w)
                 offset = -1;
             }
             
-            drawBrickR(1, 1, h);
+            drawBrickT(1, 1, h, _textB1, f);
             glTranslatef(1, offset, 0);
         }
         
-        drawBrickR(l + 1, 0.5 + .43 , 4);
+        drawBrickT(l + 1, 0.5 + .43 , 4, _textB1, f);
         
     }
     glPopMatrix();
@@ -163,8 +160,7 @@ void TowerB::DrawRoof()
 {
     float h = 2;
     float n = 6;
-    
-    setWallColor1(238, 89, 56);
+    float f = 1;
     
     glPushMatrix();
     {
@@ -189,9 +185,9 @@ void TowerB::DrawRoof()
                     
                     for (int i = 0; i < n; i++) {
                         if (i != n - 1) {
-                            drawBrickR(-m, w - factor * i, h);
+                            drawBrickT(-m, w - factor * i, h, _textB3, f);
                         } else {
-                            drawBrickR(8, w - factor * i, h);
+                            drawBrickT(8, w - factor * i, h, _textB3, f);
                         }
                         
                         
@@ -216,9 +212,8 @@ void TowerB::setWallColor1(int r, int g, int b)
     
     GLfloat mat_shininess = 100.0f;
     
-    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, mat_ambient);
-    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, mat_diffuse);
+//    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, mat_ambient);
+//    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, mat_diffuse);
     glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, mat_specular);
-    
     glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, mat_shininess);
 }

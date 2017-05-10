@@ -10,14 +10,14 @@
 
 MySunlight::MySunlight()
 {
-    ambient[0] = 0.45f;    // Set the ambient colour of the light
-    ambient[1] = 0.45f;
-    ambient[2] = 0.45f;
+    ambient[0] = 0.35f;    // Set the ambient colour of the light
+    ambient[1] = 0.35f;
+    ambient[2] = 0.35f;
     ambient[3] = 1.0f;
     
     diffuse[0] = 0.9f;    // Set the diffuse colour of the light
     diffuse[1] = 0.8f;
-    diffuse[2] = 0.6f;
+    diffuse[2] = 0.7f;
     diffuse[3] = 1.0f;;
     
     specular[0] = 1.0f;   // Set the specular colour of the light

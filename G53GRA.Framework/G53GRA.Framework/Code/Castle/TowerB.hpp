@@ -25,6 +25,7 @@ public:
     void Display();
     
 protected:
+    GLuint _textB1, _textB2, _textB3, _textB4;
     
     void DrawWall(float w);
     void DrawRoof();
