@@ -30,11 +30,15 @@ protected:
     void DrawMainBranches();
     void DrawSubBranches();
     void Decorate();
+    int** createRandomMap(int l, int h, int max);
     
     void setWallColor1(int r, int g, int b);
     float w, h, l, leaf_size, dist, min;
     float leaf_front, leaf_back, leaf_left, leaf_right, leaf_top;
-
+    int** side_map;
+    int** top_map;
+    
+    GLuint _tex_branch, _tex_leave;
 };
 
 #endif /* Tree_hpp */

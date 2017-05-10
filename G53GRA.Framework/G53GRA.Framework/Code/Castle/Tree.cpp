@@ -14,13 +14,21 @@ Tree::Tree(){
     std::random_device r;
     std::seed_seq seed{r(), r(), r(), r(), r(), r(), r(), r()};
     std::mt19937 eng{seed};
-    std::uniform_int_distribution<> width(20,30);
-    std::uniform_int_distribution<> height(20,32);
+    std::uniform_int_distribution<> width(5,10);
+    std::uniform_int_distribution<> height(5,10);
+    
     w = width(eng);
     h = height(eng);
     l = w;
+    
+    side_map = createRandomMap(l, h, 4);
+    top_map = createRandomMap(l, l, 4);
+    
+    _tex_branch = Scene::GetTexture("./Textures/Environment/tree_leave.bmp");
+    _tex_leave = Scene::GetTexture("./Textures/Environment/tree_branch.bmp");
+    
     leaf_size = 4;
-    std::uniform_int_distribution<> dist(leaf_size/2,leaf_size);
+    std::uniform_int_distribution<> dist(leaf_size/2, leaf_size);
     min = h/3 + leaf_size;
     leaf_front = dist(eng);
     leaf_back = dist(eng);
@@ -34,6 +42,30 @@ Tree::~Tree()
     
 }
 
+int** Tree::createRandomMap(int w, int h, int max) {
+    
+    std::random_device r;
+    std::seed_seq seed{r(), r(), r(), r(), r(), r(), r(), r()};
+    std::mt19937 eng{seed};
+    std::uniform_int_distribution<> tSize(0, max);
+
+    int** map = 0;
+    map = new int*[h];
+    
+    for (int i = 0; i < h; i++)
+    {
+        map[i] = new int[w];
+        
+        for (int j = 0; j < w; j++)
+        {
+            map[i][j] = tSize(eng);
+        }
+    }
+    
+    return map;
+}
+
+
 void Tree::Display() {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
@@ -46,119 +78,141 @@ void Tree::Display() {
     glTranslatef(0, 0, 0);
     glPushMatrix();
     {
-        glTranslatef(0, 0, 0);
         
-        float branch_x = -w / 2 + 2;
-        float branch_y = 32 - h/2;
-        float branch_z = l/2 - 2;
         // Draw Trunk and Branches
         glPushMatrix();
         {
             setWallColor1(92, 45, 10);
-            drawBrickR(4, 4, 32);
+            drawBrickT(1, 1, 10, _tex_branch, 1);
 
-            glTranslatef(branch_x, branch_y, branch_z);
+            glTranslatef(-w/2, 10, l/2);
 
             setWallColor1(56, 75, 1);
-            drawBrickR(l, w, h);
+            drawBrickT(l, w, h, _tex_leave, 1);
         }
-        glPopMatrix();
         
-        // Draw Leaves
         glPushMatrix();
-        glTranslatef(branch_x, branch_y, branch_z);
-        float leaf_w = w;
-        float leaf_h = h;
-        float leaf_l = 4;
-        while (leaf_w > min & leaf_h > min) {
-            leaf_w = leaf_w - 2 * leaf_front;
-            leaf_h = leaf_h - 2 * leaf_front;
-            setWallColor1(56, 75, 1);
-            glTranslatef(leaf_size,leaf_size,4);
-            drawBrickR(leaf_l, leaf_w, leaf_h);
-        }
-        glPopMatrix();
-
-        
-        leaf_w = w;
-        leaf_h = h;
-        leaf_l = 4;
-        glPushMatrix();
-        glTranslatef(branch_x, branch_y, branch_z - w + 4);
         {
-            while (leaf_w > min & leaf_h > min) {
-                leaf_w = leaf_w - 2 * leaf_back;
-                leaf_h = leaf_h - 2 * leaf_back;
-                setWallColor1(56, 75, 1);
-                glTranslatef(leaf_size,leaf_size,-4);
-                drawBrickR(leaf_l, leaf_w, leaf_h);
+            glTranslatef(-w/2, 10, l/2);
+            
+            for(int i = 0; i < h; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = side_map[i][j];
+                    glPushMatrix();
+                    glTranslatef(0, 0, t_size);
+                    drawBrickT(t_size, 1, 1, _tex_leave, 1);
+                    glPopMatrix();
+                    glTranslatef(1, 0, 0);
+                }
+                glPopMatrix();
+                glTranslatef(0, 1, 0);
             }
         }
+        
         glPopMatrix();
         
-        leaf_w = 4;
-        leaf_h = h;
-        leaf_l = l;
-        glPushMatrix();
-        glTranslatef(branch_x, branch_y, branch_z);
-        {
-            while (leaf_l > min & leaf_h > min) {
-                leaf_l = leaf_l - 2 * leaf_left;
-                leaf_h = leaf_h - 2 * leaf_left;
-                setWallColor1(56, 75, 1);
-                glTranslatef(-4,leaf_size,-leaf_size);
-                drawBrickR(leaf_l, leaf_w, leaf_h);
-            }
-        }
-        glPopMatrix();
         
-        leaf_w = 4;
-        leaf_h = h;
-        leaf_l = l;
         glPushMatrix();
-        glTranslatef(branch_x + w - 4, branch_y, branch_z);
         {
-            while (leaf_l > min & leaf_h > min) {
-                leaf_l = leaf_l - 2 * leaf_right;
-                leaf_h = leaf_h - 2 * leaf_right;
-                setWallColor1(56, 75, 1);
-                glTranslatef(4,leaf_size,-leaf_size);
-                drawBrickR(leaf_l, leaf_w, leaf_h);
+            glTranslatef(-w/2, 10, -l/2);
+            
+            for(int i = 0; i < h; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = side_map[i][j];
+                    glPushMatrix();
+                    glTranslatef(-t_size, 0, 0);
+                        drawBrickT(1, t_size, 1, _tex_leave, 1);
+                    glPopMatrix();
+                    glTranslatef(0, 0, 1);
+                }
+                glPopMatrix();
+                glTranslatef(0, 1, 0);
             }
         }
         glPopMatrix();
         
         glPushMatrix();
-        glTranslatef(branch_x, branch_y + h - 4, branch_z);
-        leaf_w = w;
-        leaf_h = 4;
-        leaf_l = l;
-        while (leaf_w > min & leaf_l > min) {
-            leaf_w = leaf_w - 2 * leaf_top;
-            leaf_l = leaf_l - 2 * leaf_top;
-            setWallColor1(56, 75, 1);
-            glTranslatef(leaf_size,4,-leaf_size);
-            drawBrickR(leaf_l, leaf_w, leaf_h);
+        {
+            glTranslatef(w/2, 10, -l/2);
+            
+            for(int i = 0; i < h; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = side_map[i][j];
+                    drawBrickT(1, t_size, 1, _tex_leave, 1);
+                    glTranslatef(0, 0, 1);
+                }
+                glPopMatrix();
+                glTranslatef(0, 1, 0);
+            }
         }
         glPopMatrix();
-
+        
+        glPushMatrix();
+        {
+            glTranslatef(-w/2, 10, -l/2);
+            
+            for(int i = 0; i < h; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = side_map[i][j];
+                    glPushMatrix();
+                    drawBrickT(t_size, 1, 1, _tex_leave, 1);
+                    glPopMatrix();
+                    glTranslatef(1, 0, 0);
+                }
+                glPopMatrix();
+                glTranslatef(0, 1, 0);
+            }
+        }
+        glPopMatrix();
+        
+        glPushMatrix();
+        {
+            glTranslatef(-w/2, 10, l/2);
+            
+            for(int i = 0; i < l; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = top_map[i][j];
+                    glPushMatrix();
+                    glTranslatef(0, -t_size, 0);
+                    drawBrickT(1, 1, t_size, _tex_leave, 1);
+                    glPopMatrix();
+                    glTranslatef(1, 0, 0);
+                }
+                glPopMatrix();
+                glTranslatef(0, 0, -1);
+            }
+        }
+        glPopMatrix();
+        
+        glPushMatrix();
+        {
+            glTranslatef(-w/2, 10 + h, l/2);
+            
+            for(int i = 0; i < l; i++){
+                glPushMatrix();
+                for (int j = 0; j < w; j++) {
+                    int t_size = top_map[i][j];
+                    drawBrickT(1, 1, t_size,_tex_leave, 1);
+                    glTranslatef(1, 0, 0);
+                }
+                glPopMatrix();
+                glTranslatef(0, 0, -1);
+            }
+        }
+        glPopMatrix();
     }
+    
     glPopMatrix();
-    
-    
     glPopAttrib();
     glPopMatrix();
     
 }
-void Tree::DrawTrunk() {
 
-    
-}
-
-void Tree::DrawMainBranches()
-{    
-    
-}
 
 void Tree::setWallColor1(int r, int g, int b) {
     
