@@ -1,23 +1,23 @@
 //
-//  TowerB.cpp
+//  TowerD.cpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "TowerB.hpp"
+#include "TowerD.hpp"
 
-TowerB::TowerB(){
+TowerD::TowerD(){
     SetWindowColor(179, 206, 236, 30);
 }
 
-TowerB::~TowerB()
+TowerD::~TowerD()
 {
     
 }
 
-void TowerB::Display()
+void TowerD::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
@@ -32,11 +32,12 @@ void TowerB::Display()
         glRotatef(-45, 0, 1, 0);
         
         for(int i = 0; i < 8; i++){
-            float w = 8;
+            float w = 10;
             
             if ((i + 1) % 4 == 0) {
                 w = 16;
             }
+            
             DrawWall(w);
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
@@ -44,59 +45,49 @@ void TowerB::Display()
     }
     glPopMatrix();
     
-    glTranslatef(0, 27, 0);
+    glTranslatef(0, 20, 0);
     DrawRoof();
-    glTranslatef(6, 12, -7);
+    glTranslatef(7.2, 12, -6);
     DrawTop();
     
     glPopAttrib();
     glPopMatrix();
 }
 
-void TowerB::DrawTop(){
+void TowerD::DrawTop(){
     
     
     glPushMatrix();
     {
-        float w = 3;
+        float w = 4;
         float f = 1;
         
         glRotatef(-45, 0, 1, 0);
         
         for(int i = 0; i < 8; i++){
-            drawBrickT(1, w, 4, _textB4, f);
-            
-          
-                glPushMatrix();
-                glTranslatef(1.0, 0.5, 0.05);
-                glScalef(0.8, 0.8, 1);
-                DrawWindow1();
-                glPopMatrix();
-           
-            
+            drawBrickT(1, w, 2, _textB4, f);
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
     }
     glPopMatrix();
     
-    glTranslatef(-0.6, 4, 0.6);
-    glScalef(1.2, 1.2, 1.2);
+    glTranslatef(-0.8, 2, 0.65);
+    glScalef(1.3, 1.3, 1.3);
     
     glPushMatrix();
     {
-        float w = 3;
+        float w = 4;
         glRotatef(-45, 0, 1, 0);
         
         for(int i = 0; i < 8; i++){
             
-            float factor = 0.7;
+            float factor = 0.9;
             glPushMatrix();
             
             for (int j = 0; j < 4; j++) {
-                
                 drawBrickT(1, w - factor * j, 2, _textB3, 1);
-                glTranslatef(factor/2, 2, -0.8);
+                glTranslatef(factor/2, 2, -1.1);
             };
             
             if (i == 7)
@@ -108,7 +99,7 @@ void TowerB::DrawTop(){
             }
             
             glPopMatrix();
-        
+            
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
@@ -117,7 +108,7 @@ void TowerB::DrawTop(){
     glPopMatrix();
 }
 
-void TowerB::DrawWall(float w)
+void TowerD::DrawWall(float w)
 {
     float l = 1;
     float f = 1;
@@ -126,12 +117,11 @@ void TowerB::DrawWall(float w)
         _Floor{_textB4, 7},
         _Floor{_textB2, 6},
         _Floor{_textB2, 5},
-        _Floor{_textB2, 5},
     };
     
     glPushMatrix();
     {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             drawBrickT(l, w, floor[i]._height, floor[i]._tex, f);
             
             if (i != 3) {
@@ -142,25 +132,6 @@ void TowerB::DrawWall(float w)
         }
         
         glTranslatef(-0.43, 5, 1);
-        
-        drawBrickT(l + 1, 0.5 + .43 , 4, _textB1, f);
-        glTranslatef(0.5 + .43, -1, 0);
-        
-        for(int i = 0; i < w - 1; i++)
-        {
-            float h = 6;
-            float offset = 1;
-            
-            if (i % 2 == 1) {
-                h = 4;
-                offset = -1;
-            }
-            
-            drawBrickT(1, 1, h, _textB1, f);
-            glTranslatef(1, offset, 0);
-        }
-        
-        drawBrickT(l + 1, 0.5 + .43 , 4, _textB1, f);
     }
     glPopMatrix();
     
@@ -170,22 +141,23 @@ void TowerB::DrawWall(float w)
         glPushMatrix();
         {
             for (int j = 0; j < int(w) / 8; j ++) {
-                glTranslatef(2, 0, 0);
+                glTranslatef( (w / (int(w) / 8) - 4) / 2, 0, 0);
                 DrawWindow2();
                 glTranslatef(6, 0, 0);
             }
         }
         glPopMatrix();
-       
+        
         glTranslatef(0, floor[0]._height + 1, 0);
         
-        for(int i = 1; i < 4; i++)
+        for(int i = 1; i < 3; i++)
         {
             glPushMatrix();
             {
-                glTranslatef(2 , (floor[i]._height - 3.25)/2, 0.01);
+                glTranslatef(0 , (floor[i]._height - 3.25)/2, 0.01);
                 
                 for (int j = 0; j < int(w) / 8; j ++) {
+                    glTranslatef((w / (int(w) / 8) - 4) / 2, 0, 0);
                     DrawWindow1();
                     glTranslatef(2.5, 0, 0);
                     DrawWindow1();
@@ -196,12 +168,10 @@ void TowerB::DrawWall(float w)
             glTranslatef(0, floor[i]._height + 1, 0);
         }
     }
-    
     glPopMatrix();
-    
 }
 
-void TowerB::DrawRoof()
+void TowerD::DrawRoof()
 {
     float h = 2;
     float n = 6;
@@ -212,20 +182,20 @@ void TowerB::DrawRoof()
         glRotatef(-45, 0, 1, 0);
         
         for (int j = 0; j < 8; j++) {
-
-            float w = 8;
-            float factor = 1;
-            float m = -1;
+            
+            float w = 10;
+            float factor = 1.25;
+            float m = -1.3;
             
             if (j % 2 == 0) {
-                factor = 0.71;
-                m = -1.06;
+                factor = 0.9;
+                m = -1.36;
             }
             
             if ((j + 1) % 4 == 0 ) {
                 w = 16;
             }
-
+            
             glPushMatrix();
             
             for (int i = 0; i < n; i++) {
@@ -234,16 +204,14 @@ void TowerB::DrawRoof()
                 } else {
                     drawBrickT(8, w - factor * i, h, _textB3, f);
                 }
-                
-                
                 glTranslatef(factor/2, h, m);
             };
             glPopMatrix();
-
+            
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
-    
+        
     }
     glPopMatrix();
 }

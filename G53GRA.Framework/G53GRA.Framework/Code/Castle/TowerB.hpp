@@ -9,13 +9,11 @@
 #ifndef TowerB_hpp
 #define TowerB_hpp
 
-#include <stdio.h>
-#include "VectorMath.h"
-#include "DisplayableObject.h"
+#include "Building.hpp"
 #include "BrickUtil.hpp"
 
 class TowerB :
-public DisplayableObject
+public Building
 
 {
 public:
@@ -25,16 +23,11 @@ public:
     void Display();
     
 protected:
-    GLuint _textB1, _textB2, _textB3, _textB4;
-    
     void DrawWall(float w);
     void DrawRoof();
     void DrawTop();
     
     void Decorate();
-    
-    void setWallColor1(int r, int g, int b);
-    
 };
 
 

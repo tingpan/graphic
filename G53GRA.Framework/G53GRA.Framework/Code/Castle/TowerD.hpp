@@ -1,35 +1,35 @@
 //
-//  TowerA.hpp
+//  TowerD.hpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#ifndef TowerA_hpp
-#define TowerA_hpp
+#ifndef TowerD_hpp
+#define TowerD_hpp
 
 #include "Building.hpp"
 #include "BrickUtil.hpp"
 
-class TowerA :
-    public Building
+class TowerD :
+public Building
 
 {
 public:
-    TowerA();
-    ~TowerA();
+    TowerD();
+    ~TowerD();
     
     void Display();
     
 protected:
-    
-    void DrawSubTower1();
-    void DrawSubTower2();
-    void DrawSubTower3();
+    void DrawWall(float w);
     void DrawRoof();
     void DrawTop();
+    
+    void Decorate();
 };
 
 
-#endif /* TowerA_hpp */
+
+#endif /* TowerD_hpp */

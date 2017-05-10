@@ -204,4 +204,20 @@ inline void drawBrickT(float l, float w, float h, int textureID, float f){
     glDisable(GL_TEXTURE_2D);
 }
 
+
+inline void setWallColor(int r, int g, int b, int s) {
+    
+    GLfloat mat_ambient[] = { (r-5)/255.f, (g-5)/255.f, (b-5)/255.f, 1.0f };
+    GLfloat mat_diffuse[] = { r/255.f, g/255.f, b/255.f, 1.0f };
+    GLfloat mat_specular[] = { (r+5)/255.f, (g+5)/255.f, (b+5)/255.f, 1.0f };
+    
+    GLfloat mat_shininess = s;
+    
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, mat_ambient);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, mat_diffuse);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, mat_specular);
+    
+    glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, mat_shininess);
+}
+
 #endif /* BrickUtil_hpp */

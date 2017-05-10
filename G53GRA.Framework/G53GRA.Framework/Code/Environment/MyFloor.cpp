@@ -16,8 +16,8 @@ MyFloor::MyFloor()
         div(diffuse[i], 255);
     }
     
-    for (int i = 0; i < 400; i++) {
-        for (int j = 0; j < 400; j++) {
+    for (int i = 0; i < 100; i++) {
+        for (int j = 0; j < 100; j++) {
             
             int d = rand() % 48;
             
@@ -62,9 +62,9 @@ void MyFloor::Display()
     glBegin(GL_QUADS);
     glMaterialf(GL_FRONT, GL_SHININESS, static_cast<GLfloat>(shininess));
     
-    for (int i = 0; i < 400; i++)
+    for (int i = 0; i < 100; i++)
     {
-        for (int j = 0; j < 400; j++)
+        for (int j = 0; j < 100; j++)
         {
 //            cout << rand() <<endl;
             
