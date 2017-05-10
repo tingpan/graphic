@@ -3,7 +3,11 @@
 #include "MySunlight.hpp"
 #include "MySkybox.hpp"
 #include "TowerA.hpp"
+<<<<<<< HEAD
 #include "TowerB.hpp"
+=======
+#include "Tree.hpp"
+>>>>>>> cw-tree
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -38,6 +42,7 @@ void MyScene::Initialise()
     skybox->size(10000.0f, 10000.0f,10000.0f);
     AddObjectToScene(skybox);
 
+
     TowerA *towerA = new TowerA();
     towerA->size(8);
     towerA->position(-128, -50, -1050);
@@ -52,7 +57,13 @@ void MyScene::Initialise()
     towerB2->size(8);
     towerB2->position(128, -50, -1050);
     AddObjectToScene(towerB2);
-
+    
+    for (int i = 0; i < 10; i++) {
+        Tree *tree = new Tree();
+        tree->size(8);
+        tree->position(-500 - i * 500, -50, -1050);
+        AddObjectToScene(tree);
+    }
     
 }
 
