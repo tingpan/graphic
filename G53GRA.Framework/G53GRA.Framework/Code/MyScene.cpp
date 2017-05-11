@@ -7,6 +7,7 @@
 #include "TowerC.hpp"
 #include "TowerD.hpp"
 #include "Tree.hpp"
+#include "Cat.hpp"
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
 #include "Water.hpp"
@@ -52,6 +53,12 @@ void MyScene::Initialise()
 
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
+    Cat *cat = new Cat();
+    cat->position(0, 0, 0);
+    cat->size(8);
+    AddObjectToScene(cat);
+    
+
     
     Water *water = new Water();
     water->position(0,-50,-1000);
