@@ -9,6 +9,7 @@
 #include "Tree.hpp"
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
+#include "Water.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -46,6 +47,11 @@ void MyScene::Initialise()
 
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
+    
+    Water *water = new Water();
+    water->position(0,0,-1000);
+    water->size(32);
+    AddObjectToScene(water);
 
 }
 

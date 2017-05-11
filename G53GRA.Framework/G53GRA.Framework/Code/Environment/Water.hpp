@@ -6,9 +6,39 @@
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#ifndef Water_hpp
-#define Water_hpp
+#include "DisplayableObject.h"
+#include "Animation.h"
+#include "BrickUtil.hpp"
 
-#include <stdio.h>
+#include <string>
 
-#endif /* Water_hpp */
+class Water :
+public DisplayableObject,
+public Animation
+{
+public:
+    Water();
+//    Water(const int& gridX, const int& gridZ, const std::string& filename);
+    ~Water();
+    
+    void Display();
+    void Update(const double& delteTime);
+    void HandleKey(unsigned char key, int state, int x, int y);
+    
+private:
+    GLuint _texWater, _texBrick;
+    
+    int xGridDims, zGridDims;
+    float* texCoords;
+    double time;
+    bool frozen;
+    
+    float matAmbient[4];      // matrial properties of the grid
+    float matDiffuse[4];
+    int   matShininess;
+    float matSpecular[4];
+    
+    void DrawContainer();
+    void DrawWater();
+    void DrawSmallCircle(float r);
+};
