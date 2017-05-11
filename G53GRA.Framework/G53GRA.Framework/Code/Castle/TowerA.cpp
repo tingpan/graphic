@@ -282,6 +282,8 @@ void TowerA::DrawTop(){
                 glPushAttrib(GL_ALL_ATTRIB_BITS);
                 setWallColor(234, 197, 127, 20);
                 drawBrickR(1, 1, 2);
+                glTranslatef(0.25, 0.25, -0.25);
+                DrawFlag();
                 glPopAttrib();
             }
             

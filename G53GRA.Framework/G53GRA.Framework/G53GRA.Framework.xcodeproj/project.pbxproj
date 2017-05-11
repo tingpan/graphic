@@ -15,6 +15,7 @@
 		192BE3C61E4CBD8B0040131F /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C21E4CBD8B0040131F /* Texture.cpp */; };
 		192BE3CA1E4CBD960040131F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C71E4CBD960040131F /* main.cpp */; };
 		192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 192BE3C81E4CBD960040131F /* MyScene.cpp */; };
+		306191EC1EC43CFA00C87817 /* flag.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 306191EB1EC43C9E00C87817 /* flag.bmp */; };
 		854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* MySunlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
 		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
@@ -71,6 +72,7 @@
 			dstPath = ./Textures/Castle;
 			dstSubfolderSpec = 16;
 			files = (
+				306191EC1EC43CFA00C87817 /* flag.bmp in CopyFiles */,
 				85EEAD1C1EC2F483000B37B3 /* brick6.bmp in CopyFiles */,
 				85EEAD191EC2E069000B37B3 /* window.bmp in CopyFiles */,
 				85EEAD1A1EC2E069000B37B3 /* brick5.bmp in CopyFiles */,
@@ -119,6 +121,7 @@
 		192BE3C71E4CBD960040131F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Code/main.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C81E4CBD960040131F /* MyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyScene.cpp; path = Code/MyScene.cpp; sourceTree = SOURCE_ROOT; };
 		192BE3C91E4CBD960040131F /* MyScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyScene.h; path = Code/MyScene.h; sourceTree = SOURCE_ROOT; };
+		306191EB1EC43C9E00C87817 /* flag.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = flag.bmp; path = Textures/Castle/flag.bmp; sourceTree = SOURCE_ROOT; };
 		854689DD1EC16C4100F37BDF /* MySunlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySunlight.hpp; path = Code/Environment/MySunlight.hpp; sourceTree = SOURCE_ROOT; };
 		854689DE1EC16C4100F37BDF /* MySunlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySunlight.cpp; path = Code/Environment/MySunlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
@@ -336,6 +339,7 @@
 		85EEACF71EC2544F000B37B3 /* Castle */ = {
 			isa = PBXGroup;
 			children = (
+				306191EB1EC43C9E00C87817 /* flag.bmp */,
 				85EEAD1B1EC2F477000B37B3 /* brick6.bmp */,
 				85EEAD171EC2E062000B37B3 /* window.bmp */,
 				85EEAD181EC2E062000B37B3 /* brick5.bmp */,
