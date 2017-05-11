@@ -15,6 +15,7 @@ Water::Water()
 //    texID = Scene::GetTexture(filename);
     _texWater = Scene::GetTexture("./Textures/Environment/water.bmp");
     _texBrick = Scene::GetTexture("./Textures/Environment/brick2.bmp");
+    _texCat = Scene::GetTexture("./Textures/Castle/flag.bmp");
     // initialise the grids texture coordinate memory we will need enough memory for both the s and t coordinate at each mesh vertex
     texCoords = new float[(xGridDims + 1) * (zGridDims + 1) * 2];
     
@@ -61,11 +62,12 @@ void Water::Display()
     glTranslatef(0, 5 , 0);
     DrawBrickCircle(3, 1);
     DrawBrickCircle(2, 1);
-    glTranslatef(0, 0.8, 0);
-    DrawWater(2);
-    glPopMatrix();
-   
+    glTranslatef(0, 1, 0);
+    glTranslatef(-4, 0, 2);
+    drawBrickT(4, 9, 7, _texCat, 7.3);
     
+    glPopMatrix();
+
     glBindTexture(GL_TEXTURE_2D, NULL); // Bind to the blank (null) buffer to stop accidentaly using the wrong texture in the next draw call
     
     glDisable(GL_TEXTURE_2D); // stop using texture coordinates

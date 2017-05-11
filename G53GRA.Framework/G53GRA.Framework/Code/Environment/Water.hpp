@@ -26,7 +26,7 @@ public:
     void HandleKey(unsigned char key, int state, int x, int y);
     
 private:
-    GLuint _texWater, _texBrick;
+    GLuint _texWater, _texBrick, _texCat;
     
     int xGridDims, zGridDims;
     float* texCoords;
