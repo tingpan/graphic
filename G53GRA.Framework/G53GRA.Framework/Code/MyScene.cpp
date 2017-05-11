@@ -8,6 +8,7 @@
 #include "TowerD.hpp"
 #include "Tree.hpp"
 #include "Cat.hpp"
+#include "Chick.hpp"
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
 #include "Water.hpp"
@@ -58,6 +59,12 @@ void MyScene::Initialise()
     cat->size(16);
     AddObjectToScene(cat);
     
+    Chick *chick = new Chick();
+    chick->position(100, 0, -1000);
+    chick->size(8);
+    AddObjectToScene(chick);
+    
+
     Water *water = new Water();
     water->position(0,-50,-1000);
     water->size(32);
