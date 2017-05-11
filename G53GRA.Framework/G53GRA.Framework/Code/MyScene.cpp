@@ -10,6 +10,8 @@
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
 #include "Water.hpp"
+#include "lamp.hpp"
+#include "Spotlight.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -28,8 +30,11 @@ void MyScene::Initialise()
     floor->position(-1600, -50, 200);
     AddObjectToScene(floor);
     
-    MySunlight *sl = new MySunlight();
-    sl->direction(1.0f, 1.0f, 1.0f);
+    MySunlight *ml = new MySunlight();
+    ml->direction(-1.0f, 2.0f, -1.0f);
+    AddObjectToScene(ml);
+    
+    Spotlight *sl = new Spotlight();
     AddObjectToScene(sl);
     
     GLuint tf = Scene::GetTexture("./Textures/Skybox/up.bmp");
@@ -49,11 +54,11 @@ void MyScene::Initialise()
     DisplayEnvorinment();
     
     Water *water = new Water();
-    water->position(0,0,-1000);
+    water->position(0,-50,-1000);
     water->size(32);
     AddObjectToScene(water);
-
 }
+
 
 void MyScene::DisplayEnvorinment()
 {
@@ -61,10 +66,6 @@ void MyScene::DisplayEnvorinment()
     GLuint flower = Scene::GetTexture("./Textures/Environment/flower.bmp");
     GLuint grass = Scene::GetTexture("./Textures/Environment/grass.bmp");
     
-//    float paterres[9][6] = {
-//        {1,1,-1500, 10, 2, 10},
-//    };
-//    
     for (int i = 0; i < 5; i++) {
         GLuint tex = grass;
         float height = 1;
@@ -90,7 +91,7 @@ void MyScene::DisplayEnvorinment()
             for (int j = 0; j < 5; j++) {
                 Tree *tree = new Tree();
                 tree->size(10 + i / 2);
-                tree->position(-500 - j * 150 -  50 * i, -50, -1500 + 320 * i);
+                tree->position(-500 - j * 150 - 50 * i, -50, -1500 + 320 * i);
                 AddObjectToScene(tree);
             }
             
@@ -101,7 +102,27 @@ void MyScene::DisplayEnvorinment()
                 AddObjectToScene(tree);
             }
         }
+        
+        Lamp *lamp1 = new Lamp(20);
+        lamp1 -> position(-500, -50, -1320 + 320 * i);
+        lamp1 -> size(10);
+        AddObjectToScene(lamp1);
+        
+        Lamp *lamp2 = new Lamp(20);
+        lamp2 -> position(500, -50, -1320 + 320 * i);
+        lamp2 -> size(10);
+        AddObjectToScene(lamp2);
     }
+    
+    Lamp *lamp = new Lamp(20);
+    lamp -> position(-300, -50, -1800);
+    lamp -> size(10);
+    AddObjectToScene(lamp);
+    
+    Lamp *lamp2 = new Lamp(20);
+    lamp2 -> position(300, -50, -1800);
+    lamp2 -> size(10);
+    AddObjectToScene(lamp2);
 }
 
 void MyScene::DisplayCastle(float s, float x, float y, float z)

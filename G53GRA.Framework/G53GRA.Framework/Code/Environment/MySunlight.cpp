@@ -10,20 +10,20 @@
 
 MySunlight::MySunlight()
 {
-    ambient[0] = 0.35f;    // Set the ambient colour of the light
-    ambient[1] = 0.35f;
-    ambient[2] = 0.35f;
+    ambient[0] = 0.2f;    // Set the ambient colour of the light
+    ambient[1] = 0.2f;
+    ambient[2] = 0.2f;
     ambient[3] = 1.0f;
     
-    diffuse[0] = 0.9f;    // Set the diffuse colour of the light
-    diffuse[1] = 0.8f;
-    diffuse[2] = 0.7f;
+    diffuse[0] = 0.3f;    // Set the diffuse colour of the light
+    diffuse[1] = 0.4;
+    diffuse[2] = 0.5f;
     diffuse[3] = 1.0f;;
     
-    specular[0] = 1.0f;   // Set the specular colour of the light
-    specular[1] = 1.0f;
-    specular[2] = 1.0f;
-    specular[3] = 1.0f;
+    specular[0] = .8f;   // Set the specular colour of the light
+    specular[1] = .8f;
+    specular[2] = .8f;
+    specular[3] = .8f;
 }
 
 
@@ -47,4 +47,6 @@ void MySunlight::Update(const double& deltaTime)
     
     // enable light 0
     glEnable(GL_LIGHT0);
+    
+//    glDisable(GL_LIGHT0);
 }

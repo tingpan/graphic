@@ -37,8 +37,8 @@ private:
     float matDiffuse[4];
     int   matShininess;
     float matSpecular[4];
-    
-    void DrawContainer();
-    void DrawWater();
-    void DrawSmallCircle(float r);
+
+    void DrawWater(float r);
+    void DrawBrickCircle(float r, float h);
+    void DrawWaterQuad(int i, int j);
 };

@@ -10,7 +10,7 @@
 #include <cmath>
 
 Water::Water()
-: xGridDims(20), zGridDims(20), frozen(false), time(0.0)
+: xGridDims(21), zGridDims(21), frozen(false), time(0.0)
 {
 //    texID = Scene::GetTexture(filename);
     _texWater = Scene::GetTexture("./Textures/Environment/water.bmp");
@@ -48,57 +48,23 @@ Water::~Water()
 
 void Water::Display()
 {
-    float x, y, z;
-    glPushAttrib(GL_ALL_ATTRIB_BITS);              // Set the material properties of the waters surface
-    glMaterialfv(GL_FRONT, GL_AMBIENT, matAmbient);
-    glMaterialfv(GL_FRONT, GL_DIFFUSE, matDiffuse);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, matSpecular);
-    glMateriali(GL_FRONT, GL_SHININESS, matShininess);
-    
-//    glEnable(GL_TEXTURE_2D);
-    
-//    glBindTexture(GL_TEXTURE_2D, texID);    // Tell OpenGL which texture buffer to apply as texture
-//    glColor4f(1.0f, 1.0f, 1.0f, 0.8f);          // Set the base colour of the quad
     
     glPushMatrix();
     glTranslatef(pos[0], pos[1], pos[2]);   // position the water
     glScalef(scale[0], scale[1], scale[2]); // scale the unit water
-    DrawContainer();
-    
-//    y = 0.0f; z = -0.5f; // initialise the start position as the top left coorner of the unit water mesh
-//    glBegin(GL_QUADS);                                      // draw the unit water surface as quads
-//    for (int j = 0; j < zGridDims; j++)
-//    {
-//        x = -0.5f;
-//        for (int i = 0; i < xGridDims; i++)
-//        {
-//            glNormal3f(0.0f, 1.0f, 0.0f);  // specify the quads normal
-//            
-//            // specify the first texture coordinate and position relative to the start postion x,y,z
-//            glTexCoord2fv(&texCoords[(i + j*(xGridDims + 1)) * 2]);
-//            glVertex3f(x, y, z);
-//            
-//            // specify the second texture coordinate and position relative to the start postion x,y,z
-//            glTexCoord2fv(&texCoords[(i + (j + 1)*(xGridDims + 1)) * 2]);
-//            glVertex3f(x, y, z + 1.0f / (float)zGridDims);
-//            
-//            // specify the third texture coordinate and position relative to the start postion x,y,z
-//            glTexCoord2fv(&texCoords[(i + 1 + (j + 1)*(xGridDims + 1)) * 2]);
-//            glVertex3f(x + 1.0f / (float)xGridDims, y, z + 1.0f / (float)zGridDims);
-//            
-//            // specify the fourth texture coordinate and position relative to the start postion x,y,z
-//            glTexCoord2fv(&texCoords[((i + 1) + j*(xGridDims + 1)) * 2]);
-//            glVertex3f(x + 1.0f / (float)xGridDims, y, z);
-//            
-//            x += 1.0f / (float)xGridDims; // move the position of the quad on by one xgriddim step in the x axis
-//        }
-//        z += 1.0f / (float)zGridDims; // move the position of the quad on by one zgriddim step in the z axis
-//    }
-//    glEnd();
-    
+    DrawBrickCircle(10, 2);
+    glTranslatef(0, 1.5 , 0);
+    DrawWater(10);
+    glTranslatef(0, -1.5 , 0);
+    glScaled(0.5, 0.5, 0.5);
+    DrawBrickCircle(1, 5);
+    glTranslatef(0, 5 , 0);
+    DrawBrickCircle(3, 1);
+    DrawBrickCircle(2, 1);
+    glTranslatef(0, 0.8, 0);
+    DrawWater(2);
     glPopMatrix();
-    
-    glPopAttrib();
+   
     
     glBindTexture(GL_TEXTURE_2D, NULL); // Bind to the blank (null) buffer to stop accidentaly using the wrong texture in the next draw call
     
@@ -143,45 +109,119 @@ void Water::Update(const double& deltaTime)
     }
 }
 
-void Water::DrawContainer()
-{
+
+void Water::DrawWater(float r){
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT, matAmbient);
+    glMaterialfv(GL_FRONT, GL_DIFFUSE, matDiffuse);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, matSpecular);
+    glMateriali(GL_FRONT, GL_SHININESS, matShininess);
+    glEnable(GL_TEXTURE_2D);
     
-    glPushMatrix();
     
-    DrawSmallCircle(10);
-    DrawSmallCircle(9);
+    glBindTexture(GL_TEXTURE_2D, _texWater);    // Tell OpenGL which texture buffer to apply as texture
+    glColor4f(1.0f, 1.0f, 1.0f, 0.8f);
     
-    glPopMatrix();
+    
+    int i = 0, j = r;
+    
+    float d = 3 - 2 * r;
+    
+    glBegin(GL_QUADS);
+    
+    do
+    {
+        for (int k = -j; k <= j; k++) {
+            DrawWaterQuad(i, k);
+        }
+        
+        if (i != 0) {
+            for (int k = -j; k <= j; k++) {
+                DrawWaterQuad(-i, k);
+            }
+        }
+        
+        if (i != j) {
+            for (int k = -i; k <= i; k++) {
+                DrawWaterQuad(j, k);
+            }
+            
+            if (j != 0) {
+                for (int k = -i; k <= i; k++) {
+                    DrawWaterQuad(-j, k);
+                }
+            }
+        }
+        
+        if (d < 0)
+        {
+            d += 4 * i + 6;
+            i++;
+            
+        } else {
+            d += 4 * (i - j) + 10;
+            j--;
+            i++;
+        }
+        
+    } while (i <= j);
+    glEnd();
+    glPopAttrib();
+}
+
+void Water::DrawWaterQuad(int i, int j) {
+    glNormal3f(0.0f, 1.0f, 0.0f);  // specify the quads normal
+    float y = 0;
+    
+    int i_i = i + 10;
+    int i_j = j + 10;
+    
+    // specify the fourth texture coordinate and position relative to the start postion x,y,z
+    glTexCoord2fv(&texCoords[((i_i + 1) + i_j * (xGridDims + 1)) * 2]);
+    glVertex3f(i + 1.0f, y, j);
+    
+    // specify the third texture coordinate and position relative to the start postion x,y,z
+    glTexCoord2fv(&texCoords[(i_i + 1 + (i_j + 1)*(xGridDims + 1)) * 2]);
+    glVertex3f(i + 1.0f, y, j - 1.0f);
+    
+    // specify the second texture coordinate and position relative to the start postion x,y,z
+    glTexCoord2fv(&texCoords[(i_i + (i_j + 1) * (xGridDims + 1)) * 2]);
+    glVertex3f(i, y, j - 1.0f);
+    
+    // specify the first texture coordinate and position relative to the start postion x,y,z
+    glTexCoord2fv(&texCoords[(i_i + i_j * (xGridDims + 1)) * 2]);
+    glVertex3f(i, y, j);
     
 }
 
-void Water::DrawSmallCircle(float r)
+void Water::DrawBrickCircle(float r, float h)
 {
     float x = 0.0f, z = r;
-    float d = 3 - 2 * 10;
+    float d = 3 - 2 * r;
     
     do
     {
         glPushMatrix();
         glTranslatef(x, 0, z);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(0, 0, -2 * z);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(-2 * x, 0, 0);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(0, 0, 2 * z);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glPopMatrix();
         
         glPushMatrix();
         glTranslatef(z, 0, x);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(0, 0, -2 * x);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(-2 * z, 0, 0);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glTranslatef(0, 0, 2 * x);
-        drawBrickT(1, 1, 1, _texBrick, 1);
+        drawBrickT(1, 1, h, _texBrick, 1);
         glPopMatrix();
         
         if (d < 0)

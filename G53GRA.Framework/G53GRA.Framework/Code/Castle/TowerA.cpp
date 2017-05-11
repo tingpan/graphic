@@ -7,8 +7,12 @@
 //
 
 #include "TowerA.hpp"
+#include "VectorMath.h"
 
-TowerA::TowerA(){
+TowerA::TowerA()
+: _time(0)
+{
+    _texClock = Scene::GetTexture("./Textures/Castle/clock.bmp");
 }
 
 TowerA::~TowerA()
@@ -45,6 +49,10 @@ void TowerA::Display() {
     glTranslatef(12, 12, -6.5);
     DrawTop();
     glPopMatrix();
+    
+    glTranslatef(16, 32, 4);
+    glScalef(2.5, 2.5, 1.5);
+    DrawClock();
 
     glPopAttrib();
     glPopMatrix();
@@ -294,6 +302,108 @@ void TowerA::DrawTop(){
     glPopMatrix();
 }
 
+void TowerA::Update(const double& deltaTime)
+{
+    _time += deltaTime;
+    if (_time > 60) _time -= 60;
+}
+
+void TowerA::DrawClock()
+{
+   
+    glPushMatrix();
+    glPushAttrib(GL_ALL_ATTRIB_BITS);
+    
+    glEnable(GL_COLOR_MATERIAL);
+    glColor3f(0.86f, 0.86f, 0.54f);
+    
+    float th = 0.0f;
+    float res = 2.0f * M_PI / 15.0f;
+    float y = 1.0f, x = 0.0f;
+    
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, _textB4);
+    do
+    {
+        glBegin(GL_QUADS);
+        {
+            glNormal3f(x, y, 0.0f);
+            
+            glTexCoord2d(0, 1);
+            glVertex3f(x, y, -0.5f);
+            
+            glTexCoord2d(0, 0);
+            glVertex3f(x, y, 0.5f);
+            
+            th += res;
+            y = cos(th); x = sin(th);
+            
+            glNormal3f(x, y, 0.0f);
+            
+            glTexCoord2d(1, 0);
+            glVertex3f(x, y, 0.5f);
+            
+            glTexCoord2d(1, 1);
+            glVertex3f(x, y, -0.5f);
+        }
+        glEnd();
+        
+    } while (th <= 2.0f * M_PI);
+    
+    y = 1.0f, x = 0.0f; th = 0.0f;
+    
+    glBindTexture(GL_TEXTURE_2D, _texClock);
+    glColor3f(1.0f, 1.0f, 1.0f);
+    
+    glBegin(GL_TRIANGLE_FAN);
+    {
+        glNormal3f(1.0f, 0.0f, 0.0f);
+        
+        glTexCoord2d(0.5, 0.5);
+        glVertex3f(0.0f, 0.0f, 0.5f);
+        
+        do
+        {
+            glTexCoord2d((x + 1)/2, (y + 1)/2);
+            glVertex3f(x, y, 0.5f);
+            
+            th += res;
+            y = cos(th); x = -sin(th);
+            
+            glTexCoord2d((x + 1)/2, (y + 1)/2);
+            glVertex3f(x, y, 0.5f);
+            
+        } while (th <= 2.0f * M_PI);
+    }
+    glEnd();
+    
+    y = 1.0f, x = 0.0f; th = 0.0f;
+    glBegin(GL_TRIANGLE_FAN);
+    glColor3f(0.86f, 0.86f, 0.54f);
+    
+    {
+        glNormal3f(1.0f, 0.0f, 0.0f);
+        glVertex3f(0.0f, 0.0f, -0.5f);
+        do
+        {
+            glVertex3f(x, y, -0.5f);
+            th += res;
+            y = cos(th); x = sin(th);
+            glVertex3f(x, y, -0.5f);
+        } while (th <= 2.0f * M_PI);
+    }
+    glEnd();
+    glDisable(GL_COLOR_MATERIAL);
+    
+    glTranslatef(0, 0, 0.6);
+    setWallColor(0, 0, 0, 20);
+    drawBrickR(0.2, 0.1, 0.6);
+    glRotated(_time / 60 * -360, 0, 0, 1);
+    drawBrickR(0.2, 0.1, 0.8);
+    
+    glPopAttrib();
+    glPopMatrix();
+}
 
 void TowerA::DrawRoof()
 {
