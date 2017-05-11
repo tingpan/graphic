@@ -25,7 +25,7 @@ void Spotlight::Update(const double& deltaTime)
 {
     
     time += deltaTime;
-    if (time > 60) time -= 60;
+    if (time > 20 * M_PI) time -= 20 * M_PI;
     
     float position[7][4] = {
         { -500.f, 500.f, -1000.f, 1.f },

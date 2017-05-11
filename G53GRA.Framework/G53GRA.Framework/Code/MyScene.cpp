@@ -54,11 +54,9 @@ void MyScene::Initialise()
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
     Cat *cat = new Cat();
-    cat->position(0, 0, 0);
-    cat->size(8);
+    cat->position(370, -50, -1600);
+    cat->size(16);
     AddObjectToScene(cat);
-    
-
     
     Water *water = new Water();
     water->position(0,-50,-1000);
