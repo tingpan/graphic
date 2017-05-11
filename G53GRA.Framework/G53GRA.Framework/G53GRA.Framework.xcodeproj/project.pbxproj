@@ -27,6 +27,16 @@
 		303CBF431EC49BBD00AF7038 /* Hand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF421EC49B5700AF7038 /* Hand.bmp */; };
 		303CBF451EC4B48400AF7038 /* Back.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF441EC4B47E00AF7038 /* Back.bmp */; };
 		303CBF491EC4C54B00AF7038 /* Chick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 303CBF471EC4C54B00AF7038 /* Chick.cpp */; };
+		303CBF561EC4D54700AF7038 /* Back.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF4B1EC4D50C00AF7038 /* Back.bmp */; };
+		303CBF571EC4D54700AF7038 /* Body.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF4C1EC4D50C00AF7038 /* Body.bmp */; };
+		303CBF581EC4D54700AF7038 /* Face.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF4D1EC4D50C00AF7038 /* Face.bmp */; };
+		303CBF591EC4D54700AF7038 /* Hand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF4E1EC4D50C00AF7038 /* Hand.bmp */; };
+		303CBF5A1EC4D54700AF7038 /* Head.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF4F1EC4D50C00AF7038 /* Head.bmp */; };
+		303CBF5B1EC4D54700AF7038 /* LeftHand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF501EC4D50C00AF7038 /* LeftHand.bmp */; };
+		303CBF5C1EC4D54700AF7038 /* LeftLeg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF511EC4D50C00AF7038 /* LeftLeg.bmp */; };
+		303CBF5D1EC4D54700AF7038 /* Leg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF521EC4D50C00AF7038 /* Leg.bmp */; };
+		303CBF5E1EC4D54700AF7038 /* RightHand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF531EC4D50C00AF7038 /* RightHand.bmp */; };
+		303CBF5F1EC4D54700AF7038 /* RightLeg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF541EC4D50C00AF7038 /* RightLeg.bmp */; };
 		852A4BA91EC46EAD00E967E3 /* clock.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BA81EC46EA000E967E3 /* clock.bmp */; };
 		852A4BAC1EC479DE00E967E3 /* lamp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4BAA1EC479DE00E967E3 /* lamp.cpp */; };
 		852A4BB01EC47D9C00E967E3 /* lam_stone.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BAD1EC47D8D00E967E3 /* lam_stone.bmp */; };
@@ -106,6 +116,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		303CBF551EC4D53300AF7038 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ./Textures/Cats/cat2;
+			dstSubfolderSpec = 16;
+			files = (
+				303CBF561EC4D54700AF7038 /* Back.bmp in CopyFiles */,
+				303CBF571EC4D54700AF7038 /* Body.bmp in CopyFiles */,
+				303CBF581EC4D54700AF7038 /* Face.bmp in CopyFiles */,
+				303CBF591EC4D54700AF7038 /* Hand.bmp in CopyFiles */,
+				303CBF5A1EC4D54700AF7038 /* Head.bmp in CopyFiles */,
+				303CBF5B1EC4D54700AF7038 /* LeftHand.bmp in CopyFiles */,
+				303CBF5C1EC4D54700AF7038 /* LeftLeg.bmp in CopyFiles */,
+				303CBF5D1EC4D54700AF7038 /* Leg.bmp in CopyFiles */,
+				303CBF5E1EC4D54700AF7038 /* RightHand.bmp in CopyFiles */,
+				303CBF5F1EC4D54700AF7038 /* RightLeg.bmp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85EEACFC1EC2596C000B37B3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -181,6 +210,16 @@
 		303CBF441EC4B47E00AF7038 /* Back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Back.bmp; sourceTree = "<group>"; };
 		303CBF471EC4C54B00AF7038 /* Chick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Chick.cpp; path = Code/Chick/Chick.cpp; sourceTree = SOURCE_ROOT; };
 		303CBF481EC4C54B00AF7038 /* Chick.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Chick.hpp; path = Code/Chick/Chick.hpp; sourceTree = SOURCE_ROOT; };
+		303CBF4B1EC4D50C00AF7038 /* Back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Back.bmp; sourceTree = "<group>"; };
+		303CBF4C1EC4D50C00AF7038 /* Body.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Body.bmp; sourceTree = "<group>"; };
+		303CBF4D1EC4D50C00AF7038 /* Face.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Face.bmp; sourceTree = "<group>"; };
+		303CBF4E1EC4D50C00AF7038 /* Hand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Hand.bmp; sourceTree = "<group>"; };
+		303CBF4F1EC4D50C00AF7038 /* Head.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Head.bmp; sourceTree = "<group>"; };
+		303CBF501EC4D50C00AF7038 /* LeftHand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = LeftHand.bmp; sourceTree = "<group>"; };
+		303CBF511EC4D50C00AF7038 /* LeftLeg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = LeftLeg.bmp; sourceTree = "<group>"; };
+		303CBF521EC4D50C00AF7038 /* Leg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Leg.bmp; sourceTree = "<group>"; };
+		303CBF531EC4D50C00AF7038 /* RightHand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = RightHand.bmp; sourceTree = "<group>"; };
+		303CBF541EC4D50C00AF7038 /* RightLeg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = RightLeg.bmp; sourceTree = "<group>"; };
 		852A4BA81EC46EA000E967E3 /* clock.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = clock.bmp; path = Textures/Castle/clock.bmp; sourceTree = SOURCE_ROOT; };
 		852A4BAA1EC479DE00E967E3 /* lamp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lamp.cpp; path = Code/Environment/lamp.cpp; sourceTree = SOURCE_ROOT; };
 		852A4BAB1EC479DE00E967E3 /* lamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = lamp.hpp; path = Code/Environment/lamp.hpp; sourceTree = SOURCE_ROOT; };
@@ -364,9 +403,36 @@
 			path = cat1;
 			sourceTree = "<group>";
 		};
+		303CBF461EC4C52F00AF7038 /* Chick */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF471EC4C54B00AF7038 /* Chick.cpp */,
+				303CBF481EC4C54B00AF7038 /* Chick.hpp */,
+			);
+			name = Chick;
+			sourceTree = "<group>";
+		};
+		303CBF4A1EC4D50C00AF7038 /* cat2 */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF4B1EC4D50C00AF7038 /* Back.bmp */,
+				303CBF4C1EC4D50C00AF7038 /* Body.bmp */,
+				303CBF4D1EC4D50C00AF7038 /* Face.bmp */,
+				303CBF4E1EC4D50C00AF7038 /* Hand.bmp */,
+				303CBF4F1EC4D50C00AF7038 /* Head.bmp */,
+				303CBF501EC4D50C00AF7038 /* LeftHand.bmp */,
+				303CBF511EC4D50C00AF7038 /* LeftLeg.bmp */,
+				303CBF521EC4D50C00AF7038 /* Leg.bmp */,
+				303CBF531EC4D50C00AF7038 /* RightHand.bmp */,
+				303CBF541EC4D50C00AF7038 /* RightLeg.bmp */,
+			);
+			path = cat2;
+			sourceTree = "<group>";
+		};
 		306191ED1EC482BC00C87817 /* Cats */ = {
 			isa = PBXGroup;
 			children = (
+				303CBF4A1EC4D50C00AF7038 /* cat2 */,
 				303CBF301EC495EF00AF7038 /* cat1 */,
 			);
 			name = Cats;
@@ -502,6 +568,7 @@
 				85EEACFC1EC2596C000B37B3 /* CopyFiles */,
 				85EEAD141EC2DC87000B37B3 /* CopyFiles */,
 				303CBF391EC4978E00AF7038 /* CopyFiles */,
+				303CBF551EC4D53300AF7038 /* CopyFiles */,
 			);
 			buildRules = (
 			);
