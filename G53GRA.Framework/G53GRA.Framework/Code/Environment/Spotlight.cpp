@@ -93,9 +93,9 @@ void Spotlight::SetupLight3()
     // Attach properties to single light source (GL_LIGHT1)
     glLightfv(GL_LIGHT5, GL_AMBIENT, ambient);      // set ambient parameter of light source
     glLightfv(GL_LIGHT5, GL_DIFFUSE, diffuse);      // set diffuse parameter of light source
-    glLightfv(10, GL_SPECULAR, specular);    // set specular parameter of light source
+    glLightfv(GL_LIGHT5, GL_SPECULAR, specular);    // set specular parameter of light source
     
-    glLightf(10, GL_SPOT_EXPONENT, 5.f);         //set spotlight exponent
+    glLightf(GL_LIGHT5, GL_SPOT_EXPONENT, 5.f);         //set spotlight exponent
     glLightf(GL_LIGHT5, GL_SPOT_CUTOFF, 20.f);          //set spotlight cutoff
     
     glEnable(GL_LIGHT5);
