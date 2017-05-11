@@ -18,7 +18,7 @@ Spotlight::Spotlight()
 
 Spotlight::~Spotlight()
 {
-
+    
 }
 
 void Spotlight::Update(const double& deltaTime)
@@ -47,8 +47,8 @@ void Spotlight::Update(const double& deltaTime)
     {
         glLightfv(group1[i], GL_POSITION, position[i]);
         glLightfv(group1[i], GL_SPOT_DIRECTION, direction[0]); //set direction
-     }
-
+    }
+    
     for ( int i = 0; i < 2; i ++)
     {
         glLightfv(group2[i], GL_POSITION, position[i + 4]);
@@ -69,7 +69,7 @@ void Spotlight::SetupLight1()
     float ambient[]  = { .3f, .3f, .3f, 1.f };      // ambient light (blue)
     float diffuse[]  = { .6f, .6f, .9f, 1.f };      // diffuse light (blue)
     float specular[] = { 1.f, 1.f, 1.f, 1.f };      // specular light (100% white)
-  
+    
     for (int i = 0; i < 4; i ++) {
         glLightfv(group1[i], GL_AMBIENT, ambient);      // set ambient parameter of light source
         glLightfv(group1[i], GL_DIFFUSE, diffuse);      // set diffuse parameter of light source
@@ -157,7 +157,7 @@ void Spotlight::HandleKey(unsigned char key, int state, int mx, int my)
             }
             
             glDisable(GL_LIGHT5);
-
+            
             break;
     }
 }

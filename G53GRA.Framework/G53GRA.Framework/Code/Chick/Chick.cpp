@@ -28,9 +28,9 @@ void Chick::Display() {
     glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
     
     glTranslatef(15, 0, 0);
-
+    
     glDisable(GL_COLOR_MATERIAL);
-
+    
     glPushMatrix();
     {
         
@@ -63,10 +63,10 @@ void Chick::Display() {
         setWallColor(255, 255, 255, 20);
         glTranslatef(-1.5, -3, -2);
         drawBrickR(4, 1, 3);
-
+        
         glTranslatef(5, 0, 0);
         drawBrickR(4, 1, 3);
-
+        
     }
     glPopMatrix();
     

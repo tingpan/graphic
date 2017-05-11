@@ -48,7 +48,7 @@ int** Tree::createRandomMap(int w, int h, int max) {
     std::seed_seq seed{r(), r(), r(), r(), r(), r(), r(), r()};
     std::mt19937 eng{seed};
     std::uniform_int_distribution<> tSize(0, max);
-
+    
     int** map = 0;
     map = new int*[h];
     
@@ -120,7 +120,7 @@ void Tree::Display() {
                     int t_size = side_map[i][j];
                     glPushMatrix();
                     glTranslatef(-t_size, 0, 0);
-                        drawBrickT(1, t_size, 1, _tex_leave, 1);
+                    drawBrickT(1, t_size, 1, _tex_leave, 1);
                     glPopMatrix();
                     glTranslatef(0, 0, 1);
                 }

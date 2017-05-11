@@ -66,13 +66,13 @@ void TowerB::DrawTop(){
         for(int i = 0; i < 8; i++){
             drawBrickT(1, w, 4, _textB4, f);
             
-          
-                glPushMatrix();
-                glTranslatef(1.0, 0.5, 0.05);
-                glScalef(0.8, 0.8, 1);
-                DrawWindow1();
-                glPopMatrix();
-           
+            
+            glPushMatrix();
+            glTranslatef(1.0, 0.5, 0.05);
+            glScalef(0.8, 0.8, 1);
+            DrawWindow1();
+            glPopMatrix();
+            
             
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
@@ -110,7 +110,7 @@ void TowerB::DrawTop(){
             }
             
             glPopMatrix();
-        
+            
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
@@ -178,7 +178,7 @@ void TowerB::DrawWall(float w)
             }
         }
         glPopMatrix();
-       
+        
         glTranslatef(0, floor[0]._height + 1, 0);
         
         for(int i = 1; i < 4; i++)
@@ -214,7 +214,7 @@ void TowerB::DrawRoof()
         glRotatef(-45, 0, 1, 0);
         
         for (int j = 0; j < 8; j++) {
-
+            
             float w = 8;
             float factor = 1;
             float m = -1;
@@ -227,7 +227,7 @@ void TowerB::DrawRoof()
             if ((j + 1) % 4 == 0 ) {
                 w = 16;
             }
-
+            
             glPushMatrix();
             
             for (int i = 0; i < n; i++) {
@@ -241,11 +241,11 @@ void TowerB::DrawRoof()
                 glTranslatef(factor/2, h, m);
             };
             glPopMatrix();
-
+            
             glTranslatef(w, 0, 0);
             glRotatef(45, 0, 1, 0);
         }
-    
+        
     }
     glPopMatrix();
 }

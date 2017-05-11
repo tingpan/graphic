@@ -17,7 +17,7 @@ Lamp::Lamp(float h) : _height(h)
 
 Lamp::~Lamp()
 {
-
+    
 }
 
 void Lamp::Display()

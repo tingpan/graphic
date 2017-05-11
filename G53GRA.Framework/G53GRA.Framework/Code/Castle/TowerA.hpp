@@ -14,8 +14,8 @@
 #include "Animation.h"
 
 class TowerA :
-    public Building,
-    public Animation
+public Building,
+public Animation
 
 {
 public:
@@ -37,7 +37,7 @@ protected:
     void DrawClock();
     
     float _time;
-
+    
 };
 
 

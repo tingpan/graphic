@@ -17,7 +17,7 @@ Parterre::Parterre(int w, int h, GLuint tex)
 }
 Parterre::~Parterre()
 {
-
+    
 }
 
 void Parterre::Display()

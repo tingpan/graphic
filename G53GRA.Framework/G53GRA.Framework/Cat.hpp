@@ -21,7 +21,7 @@ public:
     Cat();
     void Display();
     void Update(const double& deltaTime);
-
+    
     
 protected:
     GLuint _texBody, _texFace, _texFaceSide, _texHandSide, _texLeftHand, _texLeftLeg, _texLegSide, _texRightHand, _texRightLeg, _texBack;

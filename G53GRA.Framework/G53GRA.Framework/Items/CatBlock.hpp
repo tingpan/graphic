@@ -15,8 +15,8 @@
 #include "BrickUtil.hpp"
 
 class CatBlock:
-    public DisplayableObject,
-    public Animation
+public DisplayableObject,
+public Animation
 
 {
 public:

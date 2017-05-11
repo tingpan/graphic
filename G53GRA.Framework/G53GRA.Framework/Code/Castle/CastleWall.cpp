@@ -92,6 +92,6 @@ void CastleWall::DrawTooth(float w)
         glTranslatef(1, offset, 0);
     }
     glPopMatrix();
-
+    
 }
 
