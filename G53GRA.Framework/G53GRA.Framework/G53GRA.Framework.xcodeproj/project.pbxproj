@@ -22,6 +22,18 @@
 		852A4BB31EC47DEE00E967E3 /* lamp.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BB21EC47DE300E967E3 /* lamp.bmp */; };
 		852A4BBD1EC48DFF00E967E3 /* Spotlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4BBB1EC48DFF00E967E3 /* Spotlight.cpp */; };
 		852A4BBF1EC4B66500E967E3 /* flag.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BBE1EC4B61400E967E3 /* flag.bmp */; };
+		303CBF2F1EC48B9600AF7038 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 303CBF2D1EC48B9600AF7038 /* Cat.cpp */; };
+		303CBF3A1EC4979E00AF7038 /* Body.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF311EC495EF00AF7038 /* Body.bmp */; };
+		303CBF3B1EC4979E00AF7038 /* Face.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF321EC495EF00AF7038 /* Face.bmp */; };
+		303CBF3C1EC4979E00AF7038 /* Head.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF331EC495EF00AF7038 /* Head.bmp */; };
+		303CBF3D1EC4979E00AF7038 /* LeftHand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF341EC495EF00AF7038 /* LeftHand.bmp */; };
+		303CBF3E1EC4979E00AF7038 /* LeftLeg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF351EC495EF00AF7038 /* LeftLeg.bmp */; };
+		303CBF3F1EC4979E00AF7038 /* Leg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF361EC495EF00AF7038 /* Leg.bmp */; };
+		303CBF401EC4979E00AF7038 /* RightHand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF371EC495EF00AF7038 /* RightHand.bmp */; };
+		303CBF411EC4979E00AF7038 /* RightLeg.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF381EC495EF00AF7038 /* RightLeg.bmp */; };
+		303CBF431EC49BBD00AF7038 /* Hand.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF421EC49B5700AF7038 /* Hand.bmp */; };
+		303CBF451EC4B48400AF7038 /* Back.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 303CBF441EC4B47E00AF7038 /* Back.bmp */; };
+		306191EC1EC43CFA00C87817 /* flag.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 306191EB1EC43C9E00C87817 /* flag.bmp */; };
 		854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* MySunlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
 		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
@@ -69,6 +81,25 @@
 				85EEACE71EC18B16000B37B3 /* front.bmp in CopyFiles */,
 				85EEACE81EC18B16000B37B3 /* down.bmp in CopyFiles */,
 				85EEACE91EC18B16000B37B3 /* back.bmp in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		303CBF391EC4978E00AF7038 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ./Textures/Cats/cat1;
+			dstSubfolderSpec = 16;
+			files = (
+				303CBF451EC4B48400AF7038 /* Back.bmp in CopyFiles */,
+				303CBF431EC49BBD00AF7038 /* Hand.bmp in CopyFiles */,
+				303CBF3A1EC4979E00AF7038 /* Body.bmp in CopyFiles */,
+				303CBF3B1EC4979E00AF7038 /* Face.bmp in CopyFiles */,
+				303CBF3C1EC4979E00AF7038 /* Head.bmp in CopyFiles */,
+				303CBF3D1EC4979E00AF7038 /* LeftHand.bmp in CopyFiles */,
+				303CBF3E1EC4979E00AF7038 /* LeftLeg.bmp in CopyFiles */,
+				303CBF3F1EC4979E00AF7038 /* Leg.bmp in CopyFiles */,
+				303CBF401EC4979E00AF7038 /* RightHand.bmp in CopyFiles */,
+				303CBF411EC4979E00AF7038 /* RightLeg.bmp in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +171,19 @@
 		852A4BBB1EC48DFF00E967E3 /* Spotlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Spotlight.cpp; path = Code/Environment/Spotlight.cpp; sourceTree = SOURCE_ROOT; };
 		852A4BBC1EC48DFF00E967E3 /* Spotlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Spotlight.hpp; path = Code/Environment/Spotlight.hpp; sourceTree = SOURCE_ROOT; };
 		852A4BBE1EC4B61400E967E3 /* flag.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = flag.bmp; path = Textures/Castle/flag.bmp; sourceTree = SOURCE_ROOT; };
+		303CBF2D1EC48B9600AF7038 /* Cat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cat.cpp; sourceTree = SOURCE_ROOT; };
+		303CBF2E1EC48B9600AF7038 /* Cat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cat.hpp; sourceTree = SOURCE_ROOT; };
+		303CBF311EC495EF00AF7038 /* Body.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Body.bmp; sourceTree = "<group>"; };
+		303CBF321EC495EF00AF7038 /* Face.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Face.bmp; sourceTree = "<group>"; };
+		303CBF331EC495EF00AF7038 /* Head.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Head.bmp; sourceTree = "<group>"; };
+		303CBF341EC495EF00AF7038 /* LeftHand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = LeftHand.bmp; sourceTree = "<group>"; };
+		303CBF351EC495EF00AF7038 /* LeftLeg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = LeftLeg.bmp; sourceTree = "<group>"; };
+		303CBF361EC495EF00AF7038 /* Leg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Leg.bmp; sourceTree = "<group>"; };
+		303CBF371EC495EF00AF7038 /* RightHand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = RightHand.bmp; sourceTree = "<group>"; };
+		303CBF381EC495EF00AF7038 /* RightLeg.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = RightLeg.bmp; sourceTree = "<group>"; };
+		303CBF421EC49B5700AF7038 /* Hand.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Hand.bmp; sourceTree = "<group>"; };
+		303CBF441EC4B47E00AF7038 /* Back.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = Back.bmp; sourceTree = "<group>"; };
+		306191EB1EC43C9E00C87817 /* flag.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = flag.bmp; path = Textures/Castle/flag.bmp; sourceTree = SOURCE_ROOT; };
 		854689DD1EC16C4100F37BDF /* MySunlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySunlight.hpp; path = Code/Environment/MySunlight.hpp; sourceTree = SOURCE_ROOT; };
 		854689DE1EC16C4100F37BDF /* MySunlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySunlight.cpp; path = Code/Environment/MySunlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
@@ -239,6 +283,7 @@
 		192BE3B21E4CBD290040131F /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				303CBF2C1EC48AE900AF7038 /* Cat */,
 				8503A26C1EC01A5E0064954B /* Castle */,
 				192BE3C71E4CBD960040131F /* main.cpp */,
 				192BE3C81E4CBD960040131F /* MyScene.cpp */,
@@ -292,6 +337,41 @@
 			name = Engine;
 			sourceTree = "<group>";
 		};
+		303CBF2C1EC48AE900AF7038 /* Cat */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF2D1EC48B9600AF7038 /* Cat.cpp */,
+				303CBF2E1EC48B9600AF7038 /* Cat.hpp */,
+			);
+			name = Cat;
+			sourceTree = "<group>";
+		};
+		303CBF301EC495EF00AF7038 /* cat1 */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF441EC4B47E00AF7038 /* Back.bmp */,
+				303CBF421EC49B5700AF7038 /* Hand.bmp */,
+				303CBF311EC495EF00AF7038 /* Body.bmp */,
+				303CBF321EC495EF00AF7038 /* Face.bmp */,
+				303CBF331EC495EF00AF7038 /* Head.bmp */,
+				303CBF341EC495EF00AF7038 /* LeftHand.bmp */,
+				303CBF351EC495EF00AF7038 /* LeftLeg.bmp */,
+				303CBF361EC495EF00AF7038 /* Leg.bmp */,
+				303CBF371EC495EF00AF7038 /* RightHand.bmp */,
+				303CBF381EC495EF00AF7038 /* RightLeg.bmp */,
+			);
+			path = cat1;
+			sourceTree = "<group>";
+		};
+		306191ED1EC482BC00C87817 /* Cats */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF301EC495EF00AF7038 /* cat1 */,
+			);
+			name = Cats;
+			path = Textures/Cats;
+			sourceTree = SOURCE_ROOT;
+		};
 		8503A26C1EC01A5E0064954B /* Castle */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +418,7 @@
 		85EEACC41EC18578000B37B3 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				306191ED1EC482BC00C87817 /* Cats */,
 				85EEAD111EC2DC6F000B37B3 /* Environment */,
 				85EEACF71EC2544F000B37B3 /* Castle */,
 				85EEACC51EC1858E000B37B3 /* Skybox */,
@@ -404,6 +485,7 @@
 				1908B83A1E4CB814006C895B /* CopyFiles */,
 				85EEACFC1EC2596C000B37B3 /* CopyFiles */,
 				85EEAD141EC2DC87000B37B3 /* CopyFiles */,
+				303CBF391EC4978E00AF7038 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -464,6 +546,7 @@
 				85EEAD221EC3127E000B37B3 /* TowerC.cpp in Sources */,
 				852A4BAC1EC479DE00E967E3 /* lamp.cpp in Sources */,
 				192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */,
+				303CBF2F1EC48B9600AF7038 /* Cat.cpp in Sources */,
 				85EEAD101EC2DC14000B37B3 /* Tree.cpp in Sources */,
 				85EEAD421EC4093A000B37B3 /* Water.cpp in Sources */,
 				85EEAD551EC41792000B37B3 /* Parterre.cpp in Sources */,
