@@ -13,43 +13,43 @@ MyFloor::MyFloor()
 {
     _texBrick = Scene::GetTexture("./Textures/Environment/brick.bmp");
     
-//    for (int i = 0; i < 6; i++)
-//    {
-//        div(diffuse[i], 255);
-//    }
-//    
-//    for (int i = 0; i < 100; i++) {
-//        for (int j = 0; j < 100; j++) {
-//            
-//            int d = rand() % 48;
-//            
-//            if (d < 32)
-//            {
-//                diffusemax[i][j] = 0;
-//            }
-//            else if (d < 40)
-//            {
-//                diffusemax[i][j] = 1;
-//            }
-//            else if (d < 42)
-//            {
-//                diffusemax[i][j] = 2;
-//            }
-//            else if (d < 44)
-//            {
-//                diffusemax[i][j] = 3;
-//
-//            }
-//            else if (d < 46)
-//            {
-//                diffusemax[i][j] = 4;
-//            }
-//            else
-//            {
-//                diffusemax[i][j] = 5;
-//            }
-//        }
-//    }
+    //    for (int i = 0; i < 6; i++)
+    //    {
+    //        div(diffuse[i], 255);
+    //    }
+    //
+    //    for (int i = 0; i < 100; i++) {
+    //        for (int j = 0; j < 100; j++) {
+    //
+    //            int d = rand() % 48;
+    //
+    //            if (d < 32)
+    //            {
+    //                diffusemax[i][j] = 0;
+    //            }
+    //            else if (d < 40)
+    //            {
+    //                diffusemax[i][j] = 1;
+    //            }
+    //            else if (d < 42)
+    //            {
+    //                diffusemax[i][j] = 2;
+    //            }
+    //            else if (d < 44)
+    //            {
+    //                diffusemax[i][j] = 3;
+    //
+    //            }
+    //            else if (d < 46)
+    //            {
+    //                diffusemax[i][j] = 4;
+    //            }
+    //            else
+    //            {
+    //                diffusemax[i][j] = 5;
+    //            }
+    //        }
+    //    }
 }
 
 void MyFloor::Display()
@@ -71,12 +71,12 @@ void MyFloor::Display()
     {
         for (int j = 0; j < 100; j++)
         {
-//            cout << rand() <<endl;
+            //            cout << rand() <<endl;
             
-//            int d = diffusemax[i][j];
+            //            int d = diffusemax[i][j];
             
             glNormal3f(0.0f, 1.0f, 0.0f);
-
+            
             glTexCoord2d(1, 0);
             glVertex3f(pos[0] + scale[0] * static_cast<float>(i) + scale[0], pos[1], pos[2] - (scale[2] * static_cast<float>(j)));
             

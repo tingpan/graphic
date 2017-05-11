@@ -16,13 +16,13 @@
 class MyFloor :
 public DisplayableObject
 {
-    public:
+public:
     MyFloor();
     ~MyFloor(){};
     
     void Display();
     
-    private:
+private:
     GLuint _texBrick;
     
     float diffuse[6][4] = {

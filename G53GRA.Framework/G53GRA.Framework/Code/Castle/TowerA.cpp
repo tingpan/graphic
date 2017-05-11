@@ -17,7 +17,7 @@ TowerA::TowerA()
 
 TowerA::~TowerA()
 {
-
+    
 }
 
 void TowerA::Display() {
@@ -53,7 +53,7 @@ void TowerA::Display() {
     glTranslatef(16, 32, 4);
     glScalef(2.5, 2.5, 1.5);
     DrawClock();
-
+    
     glPopAttrib();
     glPopMatrix();
     
@@ -71,39 +71,39 @@ void TowerA::DrawSubTower3() {
         _Floor{_textB2, 8},
     };
     
+    glPushMatrix();
+    {
+        
+        glTranslatef(0, 0, 1);
+        drawBrickT(l + 2, 1, 32, _textB1, f);
+        
+        glTranslatef(1, 0, -1);
         glPushMatrix();
+        
         {
-            
-            glTranslatef(0, 0, 1);
-            drawBrickT(l + 2, 1, 32, _textB1, f);
-            
-            glTranslatef(1, 0, -1);
-            glPushMatrix();
-    
-            {
-                for (int i = 0; i < 4; i++) {
-                    drawBrickT(l, w, floor[i]._height, floor[i]._tex, f);
-                    
-                    if (i < 3)
-                    {
-                        glTranslatef(0, floor[i]._height, 1);
-                        drawBrickT(l + 2, w, 1, _textB1, f);
-                        glTranslatef(0, 1, -1);
-                    }
-                    
-                    else
-                    {
-                        glTranslatef(0, 8, 1);
-                        drawBrickT(l + 2, w, 3, _textB1, f);
-                    }
-                   
+            for (int i = 0; i < 4; i++) {
+                drawBrickT(l, w, floor[i]._height, floor[i]._tex, f);
+                
+                if (i < 3)
+                {
+                    glTranslatef(0, floor[i]._height, 1);
+                    drawBrickT(l + 2, w, 1, _textB1, f);
+                    glTranslatef(0, 1, -1);
                 }
+                
+                else
+                {
+                    glTranslatef(0, 8, 1);
+                    drawBrickT(l + 2, w, 3, _textB1, f);
+                }
+                
             }
-            glPopMatrix();
-            glTranslatef(8, 0, 1);
-            drawBrickT(l + 2, 1, 32, _textB1, f);
         }
         glPopMatrix();
+        glTranslatef(8, 0, 1);
+        drawBrickT(l + 2, 1, 32, _textB1, f);
+    }
+    glPopMatrix();
     
     
     glPushMatrix();
@@ -312,7 +312,7 @@ void TowerA::Update(const double& deltaTime)
 
 void TowerA::DrawClock()
 {
-   
+    
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
     

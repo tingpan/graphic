@@ -17,16 +17,16 @@
 #include "CatBlock.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
-	: Scene(argc, argv, title, windowWidth, windowHeight)
+: Scene(argc, argv, title, windowWidth, windowHeight)
 {
-
+    
 }
 
 void MyScene::Initialise()
 {
-	glClearColor(0.0f, 0.44f, 0.72f, 1.0f);
+    glClearColor(0.0f, 0.44f, 0.72f, 1.0f);
     
-   
+    
     
     MyFloor *floor = new MyFloor();
     floor->size(32);
@@ -51,8 +51,8 @@ void MyScene::Initialise()
     skybox->position(0.f, 0.f, -1400.f);
     skybox->size(1600.0f, 1600.0f,1600.0f);
     AddObjectToScene(skybox);
-
-
+    
+    
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
     Cat *cat = new Cat();
@@ -65,7 +65,7 @@ void MyScene::Initialise()
     chick->size(8);
     AddObjectToScene(chick);
     
-
+    
     Water *water = new Water();
     water->position(0,-50,-1000);
     water->size(32);
@@ -196,6 +196,6 @@ void MyScene::DisplayCastle(float s, float x, float y, float z)
 
 void MyScene::Projection()
 {
-	GLdouble aspect = static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight);
-	gluPerspective(40.0, aspect, 1.0, 20000.0);
+    GLdouble aspect = static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight);
+    gluPerspective(40.0, aspect, 1.0, 20000.0);
 }

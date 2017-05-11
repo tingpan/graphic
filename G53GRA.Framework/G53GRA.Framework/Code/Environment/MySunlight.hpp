@@ -19,7 +19,7 @@ class MySunlight :
 public DisplayableObject,
 public Animation
 {
-    public:
+public:
     MySunlight();
     ~MySunlight();
     
@@ -29,7 +29,7 @@ public Animation
     
     //	inline void direction(float dx, float dy, float dz) { position(dx, dy, dz); }
     
-    private:
+private:
     float ambient[4], diffuse[4], specular[4]; // member variables for the reflectance model parameters
 };
 

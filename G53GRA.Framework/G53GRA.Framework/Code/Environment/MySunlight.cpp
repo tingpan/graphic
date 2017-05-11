@@ -35,7 +35,7 @@ void MySunlight::Update(const double& deltaTime)
 {
     // turn lighting on
     glEnable(GL_LIGHTING);
-
+    
     // pass openGL the lighting model parameters for the Phong reflection model
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
@@ -48,5 +48,5 @@ void MySunlight::Update(const double& deltaTime)
     // enable light 0
     glEnable(GL_LIGHT0);
     
-//    glDisable(GL_LIGHT0);
+    //    glDisable(GL_LIGHT0);
 }

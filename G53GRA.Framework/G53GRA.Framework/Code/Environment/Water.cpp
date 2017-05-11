@@ -12,7 +12,7 @@
 Water::Water()
 : xGridDims(21), zGridDims(21), frozen(false), time(0.0)
 {
-//    texID = Scene::GetTexture(filename);
+    //    texID = Scene::GetTexture(filename);
     _texWater = Scene::GetTexture("./Textures/Environment/water.bmp");
     _texBrick = Scene::GetTexture("./Textures/Environment/brick2.bmp");
     _texCat = Scene::GetTexture("./Textures/Castle/flag.bmp");
@@ -66,7 +66,7 @@ void Water::Display()
     glTranslatef(0, 0.8, 0);
     DrawWater(2);
     glPopMatrix();
-
+    
     glBindTexture(GL_TEXTURE_2D, NULL); // Bind to the blank (null) buffer to stop accidentaly using the wrong texture in the next draw call
     
     glDisable(GL_TEXTURE_2D); // stop using texture coordinates
@@ -113,7 +113,7 @@ void Water::Update(const double& deltaTime)
 
 void Water::DrawWater(float r){
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-
+    
     glMaterialfv(GL_FRONT, GL_AMBIENT, matAmbient);
     glMaterialfv(GL_FRONT, GL_DIFFUSE, matDiffuse);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matSpecular);

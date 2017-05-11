@@ -18,7 +18,7 @@ public Animation
 {
 public:
     Water();
-//    Water(const int& gridX, const int& gridZ, const std::string& filename);
+    //    Water(const int& gridX, const int& gridZ, const std::string& filename);
     ~Water();
     
     void Display();
@@ -37,7 +37,7 @@ private:
     float matDiffuse[4];
     int   matShininess;
     float matSpecular[4];
-
+    
     void DrawWater(float r);
     void DrawBrickCircle(float r, float h);
     void DrawWaterQuad(int i, int j);

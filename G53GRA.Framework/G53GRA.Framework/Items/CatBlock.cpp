@@ -31,14 +31,14 @@ void CatBlock::Display()
     glScalef(scale[0], scale[1], scale[2]);
     glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
     
-//    glEnable(GL_COLOR_MATERIAL);
-//    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    //    glEnable(GL_COLOR_MATERIAL);
+    //    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     drawBrickT(10, 10, 10, _blockTex,1);
     
     glTranslatef(0, 0, 0.001);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _catTex);
-//    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    //    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     glPushMatrix();
     {
         glScalef(10, 10, 10);
