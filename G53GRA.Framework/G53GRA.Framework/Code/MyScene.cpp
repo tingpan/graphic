@@ -7,6 +7,7 @@
 #include "TowerC.hpp"
 #include "TowerD.hpp"
 #include "Tree.hpp"
+#include "Parterre.hpp"
 #include "CastleWall.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
@@ -38,27 +39,63 @@ void MyScene::Initialise()
     GLuint ff = Scene::GetTexture("./Textures/Skybox/front.bmp");
     
     MySkybox *skybox = new MySkybox(tf, bf, lf, rf, nf, ff);
-    skybox->position(0.f, 0.f, 0.f);
-    skybox->size(10000.0f, 10000.0f,10000.0f);
+    skybox->position(0.f, 0.f, -1400.f);
+    skybox->size(1600.0f, 1600.0f,1600.0f);
     AddObjectToScene(skybox);
 
 
     DisplayCastle(8, -1070, -50, -2000);
+    DisplayEnvorinment();
+
+}
+
+void MyScene::DisplayEnvorinment()
+{
     
+    GLuint flower = Scene::GetTexture("./Textures/Environment/flower.bmp");
+    GLuint grass = Scene::GetTexture("./Textures/Environment/grass.bmp");
+    
+//    float paterres[9][6] = {
+//        {1,1,-1500, 10, 2, 10},
+//    };
+//    
     for (int i = 0; i < 5; i++) {
-        Tree *tree = new Tree();
-        tree->size(10);
-        tree->position(-500 - i * 150, -50, -1500);
-        AddObjectToScene(tree);
+        GLuint tex = grass;
+        float height = 1;
+        
+        if (i % 2 == 1)
+        {
+            tex = flower;
+            height = 2;
+        }
+        
+        Parterre *parterre = new Parterre(20, height, tex);
+        parterre -> size(32);
+        parterre -> position(500 + 50 * i, -50, -1390 + 320 * i);
+        AddObjectToScene(parterre);
+        
+        Parterre *parterre2 = new Parterre(20, height, tex);
+        parterre2 -> size(32);
+        parterre2 -> position(-1140 - 50 * i, -50, -1390 + 320 * i);
+        AddObjectToScene(parterre2);
+        
+        if (i % 2 == 0)
+        {
+            for (int j = 0; j < 5; j++) {
+                Tree *tree = new Tree();
+                tree->size(10 + i / 2);
+                tree->position(-500 - j * 150 -  50 * i, -50, -1500 + 320 * i);
+                AddObjectToScene(tree);
+            }
+            
+            for (int j = 0; j < 5; j++) {
+                Tree *tree = new Tree();
+                tree->size(10 + i / 2);
+                tree->position(500 + j * 150 + 50 * i, -50, -1500 + 320 * i);
+                AddObjectToScene(tree);
+            }
+        }
     }
-    
-    for (int i = 0; i < 5; i++) {
-        Tree *tree = new Tree();
-        tree->size(10);
-        tree->position(500 + i * 150, -50, -1500);
-        AddObjectToScene(tree);
-    }
-    
 }
 
 void MyScene::DisplayCastle(float s, float x, float y, float z)

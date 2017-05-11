@@ -13,5 +13,6 @@ private:
 	void Initialise();
 	void Projection();
     void DisplayCastle(float s, float x, float y, float z);
+    void DisplayEnvorinment();
 
 };

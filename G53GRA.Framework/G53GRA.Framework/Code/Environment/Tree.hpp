@@ -2,7 +2,7 @@
 //  Tree.hpp
 //  G53GRA.Framework
 //
-//  Created by Hang on 9/5/2017.
+//  Created by Ting Miao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 

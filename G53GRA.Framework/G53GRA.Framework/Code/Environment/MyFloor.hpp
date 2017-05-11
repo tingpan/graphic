@@ -23,7 +23,7 @@ public DisplayableObject
     void Display();
     
     private:
-    int texId;
+    GLuint _texBrick;
     
     float diffuse[6][4] = {
         {101.f, 163.f, 53.f, 1.0f},
