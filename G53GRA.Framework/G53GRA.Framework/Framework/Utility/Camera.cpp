@@ -2,7 +2,7 @@
 #include "VectorMath.h"
 #include "Scene.h"
 
-Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(0), mouseY(0)
+Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), upKey(0), downKey(0), currentButton(0), mouseX(0), mouseY(0)
 {
 	Reset();
 }
@@ -10,7 +10,7 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(
 void Camera::Reset(){
 	// set the camera position to start at (0,0,0)
 	eyePosition[0] = 0.0f;
-	eyePosition[1] = 300.0f;
+	eyePosition[1] = 200.0f;
     eyePosition[2] = 0.0f;
 
 	// set the view direction vector of the camera to be (0,0,-1)
@@ -64,6 +64,12 @@ void Camera::Update(const double& deltaTime)
 
 	if (sKey)
 		sub(eyePosition, forward, speed);
+    
+    if (upKey)
+        eyePosition[1] += speed;
+    
+    if (downKey)
+        eyePosition[1] -= speed;
 
 	SetupCamera();
 }
@@ -125,6 +131,16 @@ void Camera::HandleKey(unsigned char key, int state, int x, int y)
 			break;
 		case ' ':
 			Reset();
+            break;
+            
+        case 'f':
+            upKey = state;
+            break;
+            
+        case 'g':
+            downKey = state;
+            break;
+            
 		default:
 			break;
 	}

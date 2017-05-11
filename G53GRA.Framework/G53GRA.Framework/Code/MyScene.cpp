@@ -25,9 +25,7 @@ MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidt
 void MyScene::Initialise()
 {
 	glClearColor(0.0f, 0.44f, 0.72f, 1.0f);
-    
-   
-    
+
     MyFloor *floor = new MyFloor();
     floor->size(32);
     floor->position(-1600, -50, 200);
@@ -72,8 +70,9 @@ void MyScene::Initialise()
     AddObjectToScene(water);
     
     CatBlock *block = new CatBlock();
-    block->position(0,-50,-500);
-    block->size(32);
+    block->position(-400, -50, -1600);
+    block->orientation(0, 30, 0);
+    block->size(16);
     AddObjectToScene(block);
 }
 
@@ -141,6 +140,32 @@ void MyScene::DisplayEnvorinment()
     lamp2 -> position(300, -50, -1800);
     lamp2 -> size(10);
     AddObjectToScene(lamp2);
+    
+    Parterre *parterre = new Parterre(90, 2, grass);
+    parterre -> size(32);
+    parterre -> position(-1430, -50, -2500);
+    AddObjectToScene(parterre);
+    
+    Parterre *parterre2 = new Parterre(4, 2, grass);
+    parterre2 -> size(32);
+    parterre2 -> position(-320, -50, -400);
+    AddObjectToScene(parterre2);
+    
+    Tree *tree = new Tree();
+    tree->size(8);
+    tree->position(-240, -50, -500);
+    AddObjectToScene(tree);
+    
+    Parterre *parterre3 = new Parterre(4, 2, grass);
+    parterre3 -> size(32);
+    parterre3 -> position(220, -50, -400);
+    AddObjectToScene(parterre3);
+    
+    Tree *tree2 = new Tree();
+    tree2->size(8);
+    tree2->position(260, -50, -500);
+    AddObjectToScene(tree2);
+    
 }
 
 void MyScene::DisplayCastle(float s, float x, float y, float z)
