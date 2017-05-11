@@ -14,6 +14,7 @@
 #include "Water.hpp"
 #include "lamp.hpp"
 #include "Spotlight.hpp"
+#include "CatBlock.hpp"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -60,7 +61,7 @@ void MyScene::Initialise()
     AddObjectToScene(cat);
     
     Chick *chick = new Chick();
-    chick->position(100, 0, -1000);
+    chick->position(0, 0, -1000);
     chick->size(8);
     AddObjectToScene(chick);
     
@@ -69,6 +70,11 @@ void MyScene::Initialise()
     water->position(0,-50,-1000);
     water->size(32);
     AddObjectToScene(water);
+    
+    CatBlock *block = new CatBlock();
+    block->position(0,-50,-500);
+    block->size(32);
+    AddObjectToScene(block);
 }
 
 

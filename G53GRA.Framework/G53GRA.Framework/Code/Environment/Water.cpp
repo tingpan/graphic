@@ -53,6 +53,7 @@ void Water::Display()
     glPushMatrix();
     glTranslatef(pos[0], pos[1], pos[2]);   // position the water
     glScalef(scale[0], scale[1], scale[2]); // scale the unit water
+    
     DrawBrickCircle(10, 2);
     glTranslatef(0, 1.5 , 0);
     DrawWater(10);
@@ -62,10 +63,8 @@ void Water::Display()
     glTranslatef(0, 5 , 0);
     DrawBrickCircle(3, 1);
     DrawBrickCircle(2, 1);
-    glTranslatef(0, 1, 0);
-    glTranslatef(-4, 0, 2);
-    drawBrickT(4, 9, 7, _texCat, 7.3);
-    
+    glTranslatef(0, 0.8, 0);
+    DrawWater(2);
     glPopMatrix();
 
     glBindTexture(GL_TEXTURE_2D, NULL); // Bind to the blank (null) buffer to stop accidentaly using the wrong texture in the next draw call
@@ -119,9 +118,8 @@ void Water::DrawWater(float r){
     glMaterialfv(GL_FRONT, GL_DIFFUSE, matDiffuse);
     glMaterialfv(GL_FRONT, GL_SPECULAR, matSpecular);
     glMateriali(GL_FRONT, GL_SHININESS, matShininess);
+    
     glEnable(GL_TEXTURE_2D);
-    
-    
     glBindTexture(GL_TEXTURE_2D, _texWater);    // Tell OpenGL which texture buffer to apply as texture
     glColor4f(1.0f, 1.0f, 1.0f, 0.8f);
     

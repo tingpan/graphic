@@ -34,6 +34,9 @@
 		852A4BB31EC47DEE00E967E3 /* lamp.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BB21EC47DE300E967E3 /* lamp.bmp */; };
 		852A4BBD1EC48DFF00E967E3 /* Spotlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4BBB1EC48DFF00E967E3 /* Spotlight.cpp */; };
 		852A4BBF1EC4B66500E967E3 /* flag.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BBE1EC4B61400E967E3 /* flag.bmp */; };
+		852A4BC31EC4E39200E967E3 /* CatBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4BC11EC4E39200E967E3 /* CatBlock.cpp */; };
+		852A4BC51EC4E98700E967E3 /* glass.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BC41EC4E95C00E967E3 /* glass.bmp */; };
+		852A4BC71EC4EAE700E967E3 /* cats.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4BC61EC4EAAC00E967E3 /* cats.bmp */; };
 		854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* MySunlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
 		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
@@ -127,6 +130,8 @@
 			dstPath = ./Textures/Environment;
 			dstSubfolderSpec = 16;
 			files = (
+				852A4BC71EC4EAE700E967E3 /* cats.bmp in CopyFiles */,
+				852A4BC51EC4E98700E967E3 /* glass.bmp in CopyFiles */,
 				852A4BB31EC47DEE00E967E3 /* lamp.bmp in CopyFiles */,
 				852A4BB01EC47D9C00E967E3 /* lam_stone.bmp in CopyFiles */,
 				852A4BB11EC47D9C00E967E3 /* lam_stone2.bmp in CopyFiles */,
@@ -185,6 +190,10 @@
 		852A4BBB1EC48DFF00E967E3 /* Spotlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Spotlight.cpp; path = Code/Environment/Spotlight.cpp; sourceTree = SOURCE_ROOT; };
 		852A4BBC1EC48DFF00E967E3 /* Spotlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Spotlight.hpp; path = Code/Environment/Spotlight.hpp; sourceTree = SOURCE_ROOT; };
 		852A4BBE1EC4B61400E967E3 /* flag.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = flag.bmp; path = Textures/Castle/flag.bmp; sourceTree = SOURCE_ROOT; };
+		852A4BC11EC4E39200E967E3 /* CatBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CatBlock.cpp; path = Items/CatBlock.cpp; sourceTree = SOURCE_ROOT; };
+		852A4BC21EC4E39200E967E3 /* CatBlock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CatBlock.hpp; path = Items/CatBlock.hpp; sourceTree = SOURCE_ROOT; };
+		852A4BC41EC4E95C00E967E3 /* glass.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = glass.bmp; path = Textures/Environment/glass.bmp; sourceTree = SOURCE_ROOT; };
+		852A4BC61EC4EAAC00E967E3 /* cats.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = cats.bmp; path = Textures/Environment/cats.bmp; sourceTree = SOURCE_ROOT; };
 		854689DD1EC16C4100F37BDF /* MySunlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySunlight.hpp; path = Code/Environment/MySunlight.hpp; sourceTree = SOURCE_ROOT; };
 		854689DE1EC16C4100F37BDF /* MySunlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySunlight.cpp; path = Code/Environment/MySunlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
@@ -284,8 +293,7 @@
 		192BE3B21E4CBD290040131F /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				303CBF461EC4C52F00AF7038 /* Chick */,
-				303CBF2C1EC48AE900AF7038 /* Cat */,
+				852A4BC01EC4E30100E967E3 /* Items */,
 				8503A26C1EC01A5E0064954B /* Castle */,
 				192BE3C71E4CBD960040131F /* main.cpp */,
 				192BE3C81E4CBD960040131F /* MyScene.cpp */,
@@ -339,15 +347,6 @@
 			name = Engine;
 			sourceTree = "<group>";
 		};
-		303CBF2C1EC48AE900AF7038 /* Cat */ = {
-			isa = PBXGroup;
-			children = (
-				303CBF2D1EC48B9600AF7038 /* Cat.cpp */,
-				303CBF2E1EC48B9600AF7038 /* Cat.hpp */,
-			);
-			name = Cat;
-			sourceTree = "<group>";
-		};
 		303CBF301EC495EF00AF7038 /* cat1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,15 +362,6 @@
 				303CBF381EC495EF00AF7038 /* RightLeg.bmp */,
 			);
 			path = cat1;
-			sourceTree = "<group>";
-		};
-		303CBF461EC4C52F00AF7038 /* Chick */ = {
-			isa = PBXGroup;
-			children = (
-				303CBF471EC4C54B00AF7038 /* Chick.cpp */,
-				303CBF481EC4C54B00AF7038 /* Chick.hpp */,
-			);
-			name = Chick;
 			sourceTree = "<group>";
 		};
 		306191ED1EC482BC00C87817 /* Cats */ = {
@@ -400,6 +390,19 @@
 			);
 			name = Castle;
 			path = Code/Castle;
+			sourceTree = "<group>";
+		};
+		852A4BC01EC4E30100E967E3 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				303CBF471EC4C54B00AF7038 /* Chick.cpp */,
+				303CBF481EC4C54B00AF7038 /* Chick.hpp */,
+				303CBF2D1EC48B9600AF7038 /* Cat.cpp */,
+				303CBF2E1EC48B9600AF7038 /* Cat.hpp */,
+				852A4BC11EC4E39200E967E3 /* CatBlock.cpp */,
+				852A4BC21EC4E39200E967E3 /* CatBlock.hpp */,
+			);
+			name = Items;
 			sourceTree = "<group>";
 		};
 		854689DC1EC16B9400F37BDF /* Environment */ = {
@@ -469,6 +472,8 @@
 		85EEAD111EC2DC6F000B37B3 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				852A4BC61EC4EAAC00E967E3 /* cats.bmp */,
+				852A4BC41EC4E95C00E967E3 /* glass.bmp */,
 				852A4BB21EC47DE300E967E3 /* lamp.bmp */,
 				852A4BAD1EC47D8D00E967E3 /* lam_stone.bmp */,
 				852A4BAE1EC47D8D00E967E3 /* lam_stone2.bmp */,
@@ -560,6 +565,7 @@
 				192BE3CB1E4CBD960040131F /* MyScene.cpp in Sources */,
 				303CBF2F1EC48B9600AF7038 /* Cat.cpp in Sources */,
 				85EEAD101EC2DC14000B37B3 /* Tree.cpp in Sources */,
+				852A4BC31EC4E39200E967E3 /* CatBlock.cpp in Sources */,
 				85EEAD421EC4093A000B37B3 /* Water.cpp in Sources */,
 				85EEAD551EC41792000B37B3 /* Parterre.cpp in Sources */,
 				85EEACF61EC20761000B37B3 /* TowerB.cpp in Sources */,

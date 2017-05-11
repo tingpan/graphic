@@ -11,13 +11,16 @@
 
 #include "DisplayableObject.h"
 #include "BrickUtil.hpp"
+#include "Animation.h"
 
 class Chick:
-public DisplayableObject
+public DisplayableObject,
+public Animation
 {
 public:
     Chick();
     void Display();
+    void Update(const double& deltaTime);
     
 };
 #endif /* Chick_hpp */
