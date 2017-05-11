@@ -24,6 +24,7 @@ public:
         _textB4 = Scene::GetTexture("./Textures/Castle/brick4.bmp");
         _textB5 = Scene::GetTexture("./Textures/Castle/brick5.bmp");
         _textB6 = Scene::GetTexture("./Textures/Castle/brick6.bmp");
+        _textFlag = Scene::GetTexture("./Textures/Castle/flag.bmp");
         
         _text_f = 1;
     }
@@ -42,7 +43,7 @@ protected:
         int _height;
     };
     
-    GLuint _textB1, _textB2, _textB3, _textB4, _textB5, _textB6, _textWD;
+    GLuint _textB1, _textB2, _textB3, _textB4, _textB5, _textB6, _textWD, _textFlag;
     int _text_f;
     int _winColor[4] = {192, 212, 238, 30};
     
@@ -104,6 +105,18 @@ protected:
         }
         glPopMatrix();
         
+    }
+    
+    void DrawFlag()
+    {
+        glPushMatrix();
+        {
+            setWallColor(230, 230, 230, 20);
+            drawBrickR(0.5, 0.5, 15);
+            glTranslatef(0, 5, -0.5);
+            drawBrickT(12, 1, 10, _textFlag, 10);
+        }
+        glPopMatrix();
     }
     
 };
