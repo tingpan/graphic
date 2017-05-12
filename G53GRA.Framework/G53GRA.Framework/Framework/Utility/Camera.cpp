@@ -34,6 +34,88 @@ void Camera::Reset(){
 	up[2] = 0.0f;
 }
 
+void Camera::LeftView(){
+    // set the camera position to start at (0,0,0)
+    eyePosition[0] = -1050.0f;
+    eyePosition[1] = 200.0f;
+    eyePosition[2] = -950.0f;
+    
+    // set the view direction vector of the camera to be (0,0,-1)
+    vd[0] = 0.7f;
+    vd[1] = 0.0f;
+    vd[2] = -0.7f;
+    
+    // set the planar forward direction vector of the camera to be (0,0,-1)
+    forward[0] = 0.0f;
+    forward[1] = 0.0f;
+    forward[2] = -1.0f;
+    
+    // set the right vector to point along the x axis
+    right[0] = 1.0f;
+    right[1] = 0.0f;
+    right[2] = 0.0f;
+    
+    // set the up vector of the camera to be up the y axis
+    up[0] = 0.0f;
+    up[1] = 1.0f;
+    up[2] = 0.0f;
+}
+
+void Camera::RightView(){
+    // set the camera position to start at (0,0,0)
+    eyePosition[0] = 1050.0f;
+    eyePosition[1] = 200.0f;
+    eyePosition[2] = -950.0f;
+    
+    // set the view direction vector of the camera to be (0,0,-1)
+    vd[0] = -0.7f;
+    vd[1] = 0.0f;
+    vd[2] = -0.7f;
+    
+    // set the planar forward direction vector of the camera to be (0,0,-1)
+    forward[0] = 0.0f;
+    forward[1] = 0.0f;
+    forward[2] = -1.0f;
+    
+    // set the right vector to point along the x axis
+    right[0] = 1.0f;
+    right[1] = 0.0f;
+    right[2] = 0.0f;
+    
+    // set the up vector of the camera to be up the y axis
+    up[0] = 0.0f;
+    up[1] = 1.0f;
+    up[2] = 0.0f;
+}
+
+void Camera::TopView(){
+    
+    // set the camera position to start at (0,0,0)
+    eyePosition[0] = 0.0f;
+    eyePosition[1] = 1300.0f;
+    eyePosition[2] = 0.0f;
+    
+    // set the view direction vector of the camera to be (0,0,-1)
+    vd[0] = 0.0f;
+    vd[1] = -0.6f;
+    vd[2] = -0.8f;
+    
+    // set the planar forward direction vector of the camera to be (0,0,-1)
+    forward[0] = 0.0f;
+    forward[1] = 0.0f;
+    forward[2] = -1.0f;
+    
+    // set the right vector to point along the x axis
+    right[0] = 1.0f;
+    right[1] = 0.0f;
+    right[2] = 0.0f;
+    
+    // set the up vector of the camera to be up the y axis
+    up[0] = 0.0f;
+    up[1] = 1.0f;
+    up[2] = 0.0f;
+}
+
 void Camera::SetViewport()
 {
 	glViewport(static_cast<GLint>(0), static_cast<GLint>(0), static_cast<GLsizei>(Scene::GetWindowWidth()), static_cast<GLsizei>(Scene::GetWindowHeight()));
@@ -129,18 +211,26 @@ void Camera::HandleKey(unsigned char key, int state, int x, int y)
 		case 's':
 			sKey = state;
 			break;
-		case ' ':
-			Reset();
-            break;
-            
+        case 'F':
         case 'f':
             upKey = state;
             break;
-            
+        case 'G':
         case 'g':
             downKey = state;
             break;
-            
+		case ' ':
+			Reset();
+            break;
+        case '1':
+            LeftView();
+            break;
+        case '2':
+            RightView();
+            break;
+        case '3':
+            TopView();
+            break;
 		default:
 			break;
 	}

@@ -79,8 +79,6 @@ int Texture::GetTexture(string fileName)
 		printf("Error: Failed to open the file at path %s\n", fileName.c_str());
 		delete[] bitmapFile;
 		return -1;	// error
-    } else {
-        printf("Reading... %s\n", fileName.c_str());
     }
     
 	fread(&fileHeader, 14, 1, bitmapFile);

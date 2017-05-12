@@ -50,6 +50,10 @@ public:
 	virtual void Reset();
 	/** Sets the window viewport of the scene */
 	virtual void SetViewport();
+    
+    void LeftView();
+    void RightView();
+    void TopView();
 
 	/**
 	* Captures input from {@code wasd}-keys used for camera movement.

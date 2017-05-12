@@ -24,6 +24,7 @@ public:
     
     
 protected:
+    
     GLuint _texBody, _texFace, _texFaceSide, _texHandSide, _texLeftHand, _texLeftLeg, _texLegSide, _texRightHand, _texRightLeg, _texBack;
     
     GLuint _headTex[6];

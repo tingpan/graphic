@@ -13,10 +13,12 @@
 #include "DisplayableObject.h"
 #include "Animation.h"
 #include "BrickUtil.hpp"
+#include "Input.h"
 
 class CatBlock:
 public DisplayableObject,
-public Animation
+public Animation,
+public Input
 
 {
 public:
@@ -25,11 +27,12 @@ public:
     
     void Display();
     void Update(const double& deltaTime);
+    void HandleKey(unsigned char key, int state, int x, int y);
+    void HandleMouse(int button, int state, int x, int y);
+
     
 private:
     GLuint _blockTex, _catTex;
-    
-    float width, height;
     
     float texCoords[8];
     int spriteWidth;
@@ -37,7 +40,6 @@ private:
     bool runAnimate;
     double time;
     
-    float dx;
 };
 
 #endif /* CatBlock_hpp */

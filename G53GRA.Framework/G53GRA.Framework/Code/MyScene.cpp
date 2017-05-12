@@ -77,25 +77,43 @@ void MyScene::DisplayRoles()
         AddObjectToScene(chick2);
     }
     
-    GLuint catTexture[11];
+    GLuint catTexture1[11];
     
-    catTexture[0] = Scene::GetTexture("./Textures/Cats/cat1/Face.bmp");
-    catTexture[1] = Scene::GetTexture("./Textures/Cats/cat1/Head.bmp");
-    catTexture[2] = Scene::GetTexture("./Textures/Cats/cat1/Body.bmp");
-    catTexture[3] = Scene::GetTexture("./Textures/Cats/cat1/Hand.bmp");
-    catTexture[4] = Scene::GetTexture("./Textures/Cats/cat1/Back.bmp");
-    catTexture[5] = Scene::GetTexture("./Textures/Cats/cat1/LeftHand.bmp");
-    catTexture[6] = Scene::GetTexture("./Textures/Cats/cat1/RightHand.bmp");
-    catTexture[7] = Scene::GetTexture("./Textures/Cats/cat1/Hand.bmp");
-    catTexture[8] = Scene::GetTexture("./Textures/Cats/cat1/LeftLeg.bmp");
-    catTexture[9] = Scene::GetTexture("./Textures/Cats/cat1/RightLeg.bmp");
-    catTexture[10] = Scene::GetTexture("./Textures/Cats/cat1/Leg.bmp");
+    catTexture1[0] = Scene::GetTexture("./Textures/Roles/cat1/Face.bmp");
+    catTexture1[1] = Scene::GetTexture("./Textures/Roles/cat1/Head.bmp");
+    catTexture1[2] = Scene::GetTexture("./Textures/Roles/cat1/Body.bmp");
+    catTexture1[3] = Scene::GetTexture("./Textures/Roles/cat1/Hand.bmp");
+    catTexture1[4] = Scene::GetTexture("./Textures/Roles/cat1/Back.bmp");
+    catTexture1[5] = Scene::GetTexture("./Textures/Roles/cat1/LeftHand.bmp");
+    catTexture1[6] = Scene::GetTexture("./Textures/Roles/cat1/RightHand.bmp");
+    catTexture1[7] = Scene::GetTexture("./Textures/Roles/cat1/Hand.bmp");
+    catTexture1[8] = Scene::GetTexture("./Textures/Roles/cat1/LeftLeg.bmp");
+    catTexture1[9] = Scene::GetTexture("./Textures/Roles/cat1/RightLeg.bmp");
+    catTexture1[10] = Scene::GetTexture("./Textures/Roles/cat1/Leg.bmp");
     
-    Cat *cat = new Cat(100, 900, catTexture);
+    Cat *cat = new Cat(150, 900, catTexture1);
     cat->position(370, -50, -1600);
     cat->size(16);
     AddObjectToScene(cat);
     
+    GLuint catTexture2[11];
+    catTexture2[0] = Scene::GetTexture("./Textures/Roles/cat2/Face.bmp");
+    catTexture2[1] = Scene::GetTexture("./Textures/Roles/cat2/Head.bmp");
+    catTexture2[2] = Scene::GetTexture("./Textures/Roles/cat2/Body.bmp");
+    catTexture2[3] = Scene::GetTexture("./Textures/Roles/cat2/Hand.bmp");
+    catTexture2[4] = Scene::GetTexture("./Textures/Roles/cat2/Back.bmp");
+    catTexture2[5] = Scene::GetTexture("./Textures/Roles/cat2/LeftHand.bmp");
+    catTexture2[6] = Scene::GetTexture("./Textures/Roles/cat2/RightHand.bmp");
+    catTexture2[7] = Scene::GetTexture("./Textures/Roles/cat2/Hand.bmp");
+    catTexture2[8] = Scene::GetTexture("./Textures/Roles/cat2/LeftLeg.bmp");
+    catTexture2[9] = Scene::GetTexture("./Textures/Roles/cat2/RightLeg.bmp");
+    catTexture2[10] = Scene::GetTexture("./Textures/Roles/cat2/Leg.bmp");
+    
+    Cat *cat2 = new Cat(100, 900, catTexture2);
+    cat2->position(800, -50, -1700);
+    cat2->size(16);
+    cat2->orientation(0, -90, 0);
+    AddObjectToScene(cat2);
 }
 
 void MyScene::DisplayEnvorinment()

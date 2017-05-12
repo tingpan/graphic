@@ -8,12 +8,12 @@
 
 #include "CatBlock.hpp"
 
-CatBlock::CatBlock(): width(10), height(10), time(0.0), runAnimate(true), dx(4.0f)
+CatBlock::CatBlock(): time(0.0), runAnimate(true)
 {
     _blockTex = Scene::GetTexture("./Textures/Environment/glass.bmp");
-    _catTex = Scene::GetTexture("./Textures/Environment/linkSpriteSheet.bmp");
+    _catTex = Scene::GetTexture("./Textures/Roles/cats.bmp");
     spriteFrame = 0;
-    spriteWidth = 16;
+    spriteWidth = 8;
 }
 
 CatBlock::~CatBlock()
@@ -31,14 +31,14 @@ void CatBlock::Display()
     glScalef(scale[0], scale[1], scale[2]);
     glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
     
-    //    glEnable(GL_COLOR_MATERIAL);
-    //    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    glEnable(GL_COLOR_MATERIAL);
+    glColor4f(1.0f, 1.0f, 1.0f, 0.8f);
     drawBrickT(10, 10, 10, _blockTex,1);
     
-    glTranslatef(0, 0, 0.001);
+    glTranslatef(0, 0, 0.002);
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, _catTex);
-    //    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    
     glPushMatrix();
     {
         glScalef(10, 10, 10);
@@ -61,11 +61,8 @@ void CatBlock::Display()
     }
     
     glPopMatrix();
-    
     glBindTexture(GL_TEXTURE_2D, NULL); // Bind to the blank (null) buffer to stop ourselves accidentaly using the wrong texture in the next draw call
-    
     glDisable(GL_TEXTURE_2D);
-    
     glDisable(GL_COLOR_MATERIAL);
     
     glPopAttrib();
@@ -87,10 +84,8 @@ void CatBlock::Update(const double& deltaTime)
         }
     }
     
-    if (dx > 0.0f) // if he is running right, from spriteFrame to spriteFrame+1
-        sCoord = (float)spriteFrame / (float)spriteWidth;
-    else // if he is running left FLIP the coords to avoid needing more sprite sheets
-        sCoord = (float)(spriteFrame + 1) / (float)spriteWidth;
+
+    sCoord = (float)spriteFrame / (float)spriteWidth;
     
     texCoords[0] = sCoord; // (s,t) texture coord at [0, 1]
     texCoords[1] = 1.0f;
@@ -98,15 +93,37 @@ void CatBlock::Update(const double& deltaTime)
     texCoords[2] = sCoord; // (s,t) texture coord at [0, 0]
     texCoords[3] = 0.0f;
     
-    if (dx > 0.0) // if he is running right, from spriteFrame to spriteFrame+1
-        sCoord = (float)(spriteFrame + 1) / (float)spriteWidth;
-    else // if he is running left FLIP the coords to avoid needing more sprite sheets
-        sCoord = (float)spriteFrame / (float)spriteWidth;
+    sCoord = (float)(spriteFrame + 1) / (float)spriteWidth;
     
     texCoords[4] = sCoord; // (s,t) texture coord at [1, 0]
     texCoords[5] = 0.0f;
     
     texCoords[6] = sCoord; // (s,t) texture coord at [1, 1]
     texCoords[7] = 1.0f;
-    
+}
+
+void CatBlock::HandleKey(unsigned char key, int state, int x, int y)
+{
+    if (key == 'r' && state) // 'r' key pressed: pause/unpause animation
+    {
+        runAnimate = !runAnimate;
+        if (!runAnimate) spriteFrame = 0;
+    }
+}
+
+void CatBlock::HandleMouse(int button, int state, int x, int y)
+{
+    if (button == GLUT_RIGHT_BUTTON || button == GLUT_MIDDLE_BUTTON) // right or middle button press
+    {
+        if (state) // release: unpause animation
+        {
+            runAnimate  = true;
+            spriteFrame = 0;
+        }
+        else // click: special sprite (pause animation while holding mouse button)
+        {
+            spriteFrame = 6;
+            runAnimate  = false;
+        }
+    }
 }

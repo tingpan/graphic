@@ -12,17 +12,17 @@
 Cat::Cat(float speed, float limit, GLuint* _textures): _speed(speed), _limit(limit), _offset(0), _time(0), _flag(1)
 {
     
-//    _texFace = Scene::GetTexture("./Textures/Cats/cat1/Face.bmp");
-//    _texFaceSide = Scene::GetTexture("./Textures/Cats/cat1/Head.bmp");
-//    _texBody = Scene::GetTexture("./Textures/Cats/cat1/Body.bmp");
+//    _texFace
+//    _texFaceSide
+//    _texBody
 //    _texBodySide;
-//    _texBack = Scene::GetTexture("./Textures/Cats/cat1/Back.bmp");
-//    _texLeftHand = Scene::GetTexture("./Textures/Cats/cat1/LeftHand.bmp");
-//    _texRightHand = Scene::GetTexture("./Textures/Cats/cat1/RightHand.bmp");
-//    _texHandSide = Scene::GetTexture("./Textures/Cats/cat1/Hand.bmp");
-//    _texLeftLeg = Scene::GetTexture("./Textures/Cats/cat1/LeftLeg.bmp");
-//    _texRightLeg = Scene::GetTexture("./Textures/Cats/cat1/RightLeg.bmp");
-//    _texLegSide = Scene::GetTexture("./Textures/Cats/cat1/Leg.bmp");
+//    _texBack
+//    _texLeftHand
+//    _texRightHand
+//    _texHandSide
+//    _texLeftLeg
+//    _texRightLeg
+//    _texLegSide
     
     _headTex[0] = _textures[0];
     for (int i = 1; i < 6; i++) {
@@ -63,10 +63,15 @@ void Cat::Update(const double& deltaTime) {
     
     _offset += _flag * _speed * deltaTime;
     
-    if (_offset >= _limit || _offset <= 0) {
+    if (_offset >= _limit) {
         _flag *= -1;
+        _offset = _limit - _speed * deltaTime;
     }
     
+    if (_offset <= 0) {
+        _flag *= -1;
+        _offset = 0 + _speed * deltaTime;
+    }
 }
 
 void Cat::Display() {
@@ -74,9 +79,9 @@ void Cat::Display() {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
     
-    glTranslatef(pos[0], pos[1], pos[2] + _offset);
-    glScalef(scale[0], scale[1], scale[2]);
+    glTranslatef(pos[0], pos[1], pos[2]);
     glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
+    glScalef(scale[0], scale[1], scale[2]);
     
     if (_flag == -1)
     {
@@ -84,6 +89,10 @@ void Cat::Display() {
         glRotatef(180, 0.0f, 1.0f, 0.0f);
         glTranslated(-1, 0, 0.5);
     }
+    
+    glTranslatef(0, 0,  _offset * _flag / scale[0]);
+    
+    
     
     glDisable(GL_COLOR_MATERIAL);
     {
