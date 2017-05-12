@@ -17,7 +17,7 @@ class MySkybox :
 public DisplayableObject
 {
 public:
-    MySkybox(GLuint texTop, GLuint texBottom, GLuint texLeft, GLuint texRight, GLuint texNear, GLuint texFar);
+    MySkybox();
     ~MySkybox();
     
     void Display();

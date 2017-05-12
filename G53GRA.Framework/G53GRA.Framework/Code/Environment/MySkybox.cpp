@@ -8,10 +8,14 @@
 
 #include "MySkybox.hpp"
 
-MySkybox::MySkybox(GLuint texTop, GLuint texBottom, GLuint texLeft, GLuint texRight, GLuint texNear, GLuint texFar) :
-_texTop(texTop), _texBottom(texBottom), _texLeft(texLeft), _texRight(texRight), _texNear(texNear), _texFar(texFar)
+MySkybox::MySkybox()
 {
-    
+    _texTop = Scene::GetTexture("./Textures/Skybox/up.bmp");
+    _texBottom = Scene::GetTexture("./Textures/Skybox/down.bmp");
+    _texLeft = Scene::GetTexture("./Textures/Skybox/left.bmp");
+    _texRight = Scene::GetTexture("./Textures/Skybox/right.bmp");
+    _texNear = Scene::GetTexture("./Textures/Skybox/back.bmp");
+    _texFar = Scene::GetTexture("./Textures/Skybox/front.bmp");
 }
 
 MySkybox::~MySkybox(){}

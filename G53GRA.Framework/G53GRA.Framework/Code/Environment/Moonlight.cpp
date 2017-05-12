@@ -1,14 +1,14 @@
 //
-//  MySunlight.cpp
+//  Moonlight.cpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 8/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "MySunlight.hpp"
+#include "Moonlight.hpp"
 
-MySunlight::MySunlight()
+Moonlight::Moonlight()
 {
     ambient[0] = 0.2f;    // Set the ambient colour of the light
     ambient[1] = 0.2f;
@@ -27,11 +27,11 @@ MySunlight::MySunlight()
 }
 
 
-MySunlight::~MySunlight()
+Moonlight::~Moonlight()
 {
 }
 
-void MySunlight::Update(const double& deltaTime)
+void Moonlight::Update(const double& deltaTime)
 {
     // turn lighting on
     glEnable(GL_LIGHTING);

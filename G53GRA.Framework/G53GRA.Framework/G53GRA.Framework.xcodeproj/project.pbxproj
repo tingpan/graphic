@@ -48,7 +48,7 @@
 		852A4C0D1EC543AC00E967E3 /* Cat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4C071EC543AC00E967E3 /* Cat.cpp */; };
 		852A4C0E1EC543AC00E967E3 /* Chick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4C091EC543AC00E967E3 /* Chick.cpp */; };
 		852A4C0F1EC543AC00E967E3 /* CatBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4C0B1EC543AC00E967E3 /* CatBlock.cpp */; };
-		854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* MySunlight.cpp */; };
+		854689E11EC16C4100F37BDF /* Moonlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* Moonlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
 		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
 		85EEACE41EC18B16000B37B3 /* up.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACDE1EC18AFE000B37B3 /* up.bmp */; };
@@ -237,8 +237,8 @@
 		852A4C0B1EC543AC00E967E3 /* CatBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CatBlock.cpp; path = Code/Roles/CatBlock.cpp; sourceTree = SOURCE_ROOT; };
 		852A4C0C1EC543AC00E967E3 /* CatBlock.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CatBlock.hpp; path = Code/Roles/CatBlock.hpp; sourceTree = SOURCE_ROOT; };
 		852A4C101EC543F500E967E3 /* BrickUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BrickUtil.hpp; path = Framework/Utility/BrickUtil.hpp; sourceTree = SOURCE_ROOT; };
-		854689DD1EC16C4100F37BDF /* MySunlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySunlight.hpp; path = Code/Environment/MySunlight.hpp; sourceTree = SOURCE_ROOT; };
-		854689DE1EC16C4100F37BDF /* MySunlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySunlight.cpp; path = Code/Environment/MySunlight.cpp; sourceTree = SOURCE_ROOT; };
+		854689DD1EC16C4100F37BDF /* Moonlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Moonlight.hpp; path = Code/Environment/Moonlight.hpp; sourceTree = SOURCE_ROOT; };
+		854689DE1EC16C4100F37BDF /* Moonlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Moonlight.cpp; path = Code/Environment/Moonlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
 		854689E01EC16C4100F37BDF /* MyFloor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyFloor.cpp; path = Code/Environment/MyFloor.cpp; sourceTree = SOURCE_ROOT; };
 		854689E81EC16E6300F37BDF /* MySkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySkybox.cpp; path = Code/Environment/MySkybox.cpp; sourceTree = SOURCE_ROOT; };
@@ -472,8 +472,8 @@
 				85EEAD411EC4093A000B37B3 /* Water.hpp */,
 				85EEAD0E1EC2DC14000B37B3 /* Tree.hpp */,
 				85EEAD0F1EC2DC14000B37B3 /* Tree.cpp */,
-				854689DD1EC16C4100F37BDF /* MySunlight.hpp */,
-				854689DE1EC16C4100F37BDF /* MySunlight.cpp */,
+				854689DD1EC16C4100F37BDF /* Moonlight.hpp */,
+				854689DE1EC16C4100F37BDF /* Moonlight.cpp */,
 				854689DF1EC16C4100F37BDF /* MyFloor.hpp */,
 				854689E01EC16C4100F37BDF /* MyFloor.cpp */,
 				854689E81EC16E6300F37BDF /* MySkybox.cpp */,
@@ -617,7 +617,7 @@
 				192BE3C51E4CBD8B0040131F /* Camera.cpp in Sources */,
 				85EEACEF1EC19CD7000B37B3 /* TowerA.cpp in Sources */,
 				85EEAD281EC328A8000B37B3 /* CastleWall.cpp in Sources */,
-				854689E11EC16C4100F37BDF /* MySunlight.cpp in Sources */,
+				854689E11EC16C4100F37BDF /* Moonlight.cpp in Sources */,
 				854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */,
 				192BE3CA1E4CBD960040131F /* main.cpp in Sources */,
 				854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */,

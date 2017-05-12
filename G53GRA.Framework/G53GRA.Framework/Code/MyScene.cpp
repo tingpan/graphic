@@ -1,6 +1,6 @@
 #include "MyScene.h"
 #include "MyFloor.hpp"
-#include "MySunlight.hpp"
+#include "Moonlight.hpp"
 #include "MySkybox.hpp"
 #include "TowerA.hpp"
 #include "TowerB.hpp"
@@ -32,21 +32,14 @@ void MyScene::Initialise()
     floor->position(-1600, -50, 200);
     AddObjectToScene(floor);
     
-    MySunlight *ml = new MySunlight();
+    Moonlight *ml = new Moonlight();
     ml->direction(-1.0f, 2.0f, -1.0f);
     AddObjectToScene(ml);
     
     Spotlight *sl = new Spotlight();
     AddObjectToScene(sl);
     
-    GLuint tf = Scene::GetTexture("./Textures/Skybox/up.bmp");
-    GLuint bf = Scene::GetTexture("./Textures/Skybox/down.bmp");
-    GLuint lf = Scene::GetTexture("./Textures/Skybox/left.bmp");
-    GLuint rf = Scene::GetTexture("./Textures/Skybox/right.bmp");
-    GLuint nf = Scene::GetTexture("./Textures/Skybox/back.bmp");
-    GLuint ff = Scene::GetTexture("./Textures/Skybox/front.bmp");
-    
-    MySkybox *skybox = new MySkybox(tf, bf, lf, rf, nf, ff);
+    MySkybox *skybox = new MySkybox();
     skybox->position(0.f, 0.f, -1400.f);
     skybox->size(1600.0f, 1600.0f,1600.0f);
     AddObjectToScene(skybox);
@@ -54,8 +47,6 @@ void MyScene::Initialise()
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
     DisplayRoles();
-    
-
     
     Water *water = new Water();
     water->position(0,-50,-1000);
