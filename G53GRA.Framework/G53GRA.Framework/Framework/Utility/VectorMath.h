@@ -38,13 +38,13 @@
 inline void scale(float* a, const float& scale)
 {
 	for (int i = 0; i < 3; i++, a++)
-		*a = *a*scale;
+		*a = *a * scale;
 }
 
 inline void div(float* a, const float& div)
 {
     for (int i = 0; i < 3; i++, a++)
-        *a = *a/div;
+        *a = *a / div;
 }
 
 // Adds vector b * scale to vector a
@@ -97,4 +97,11 @@ inline void cross(const float* a, const float* b, float* c)
 inline void dot(const float* a, const float* b, float& dot)
 {
 	dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+}
+
+inline float cap(float i, float min, float max)
+{
+    if (i < min) return min;
+    if (i > max) return max;
+    return i;
 }

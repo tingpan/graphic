@@ -51,10 +51,6 @@ public:
 	/** Sets the window viewport of the scene */
 	virtual void SetViewport();
     
-    void LeftView();
-    void RightView();
-    void TopView();
-
 	/**
 	* Captures input from {@code wasd}-keys used for camera movement.
 	* <p>
@@ -89,6 +85,11 @@ public:
 	*/
 	virtual void SetupCamera();
 
+    void LeftView();
+    void RightView();
+    void TopView();
+    void Limit(float xmin, float xmax, float ymin, float ymax, float zmin, float zmax);
+    
 private:
 	/**
 	* Vectors containing eye coordinates, i.e. the position of the camera.
@@ -108,12 +109,15 @@ private:
 	float right[3];
 	/** Vector representing upward orthogonal axes of your {@link Camera} space. */
 	float up[3];
+    
+    float limit[3][2];
 
 	/**
 	 * Member variable used to track when a key is pressed between frames
 	 * so that we can do an update in the Update() function rather than HandleKey
 	 * function to obtain smooth motion */
-	int wKey, sKey, aKey, dKey, upKey, downKey;
+	int wKey, sKey, aKey, dKey, upKey, downKey, minKey, plusKey;
+    float speed;
 
 	/** Current rendering window dimensions */
 	int windowWidth, windowHeight;

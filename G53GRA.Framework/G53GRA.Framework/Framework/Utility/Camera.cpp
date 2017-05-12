@@ -2,9 +2,10 @@
 #include "VectorMath.h"
 #include "Scene.h"
 
-Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), upKey(0), downKey(0), currentButton(0), mouseX(0), mouseY(0)
+Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), upKey(0), downKey(0), minKey(0), plusKey(0), speed(5.0f), currentButton(0), mouseX(0), mouseY(0)
 {
-	Reset();
+    Limit(-1600.f, 1600.f, -45.f, 1650.f, -3000.f, 200.f);
+    Reset();
 }
 
 void Camera::Reset(){
@@ -116,6 +117,16 @@ void Camera::TopView(){
     up[2] = 0.0f;
 }
 
+void Camera::Limit(float xmin, float xmax, float ymin, float ymax, float zmin, float zmax)
+{
+    limit[0][0] = xmin;
+    limit[0][1] = xmax;
+    limit[1][0] = ymin;
+    limit[1][1] = ymax;
+    limit[2][0] = zmin;
+    limit[2][1] = zmax;
+}
+
 void Camera::SetViewport()
 {
 	glViewport(static_cast<GLint>(0), static_cast<GLint>(0), static_cast<GLsizei>(Scene::GetWindowWidth()), static_cast<GLsizei>(Scene::GetWindowHeight()));
@@ -133,7 +144,12 @@ void Camera::SetupCamera()
 
 void Camera::Update(const double& deltaTime)
 {
-	float speed = 5.f;
+	
+    if (minKey)
+        speed = speed == 0.0f ? 0.0f : speed - 1.0f;
+    
+    if (plusKey)
+        speed = speed >= 20.0f ? 20.0f: speed + 1.0f;
 
 	if (aKey)
 		sub(eyePosition, right, speed);
@@ -152,7 +168,11 @@ void Camera::Update(const double& deltaTime)
     
     if (downKey)
         eyePosition[1] -= speed;
-
+    
+    for (int i = 0; i < 3; i ++) {
+        eyePosition[i] = cap(eyePosition[i], limit[i][0], limit[i][1]);
+    }
+    
 	SetupCamera();
 }
 
@@ -218,6 +238,14 @@ void Camera::HandleKey(unsigned char key, int state, int x, int y)
         case 'G':
         case 'g':
             downKey = state;
+            break;
+        case '-':
+        case '_':
+            minKey = state;
+            break;
+        case '+':
+        case '=':
+            plusKey = state;
             break;
 		case ' ':
 			Reset();

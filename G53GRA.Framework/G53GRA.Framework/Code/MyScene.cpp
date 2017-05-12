@@ -25,8 +25,8 @@ MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidt
 void MyScene::Initialise()
 {
 
-	glClearColor(0.0f, 0.44f, 0.72f, 1.0f);
-
+	glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    
     MyFloor *floor = new MyFloor();
     floor->size(32);
     floor->position(-1600, -50, 200);
@@ -41,7 +41,7 @@ void MyScene::Initialise()
     
     SkyBox *skybox = new SkyBox();
     skybox->position(0.f, 0.f, -1400.f);
-    skybox->size(1600.0f, 1600.0f,1600.0f);
+    skybox->size(3200.0f, 3200.0f, 3200.0f);
     AddObjectToScene(skybox);
     
     DisplayCastle(8, -1070, -50, -2000);
