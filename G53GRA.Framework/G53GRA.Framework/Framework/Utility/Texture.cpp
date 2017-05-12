@@ -108,7 +108,7 @@ int Texture::GetTexture(string fileName)
 	// Read in the pixel data
 	pixelBuffer = new unsigned char[infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount / 8)];
 	fread(pixelBuffer, sizeof(unsigned char), infoHeader.biWidth * infoHeader.biHeight * (infoHeader.biBitCount / 8), bitmapFile);
-
+    
 	// If texture is in ABGR format swizzle it into RGBA for openGL upload
 	if (infoHeader.biBitCount == 32)
 	{
