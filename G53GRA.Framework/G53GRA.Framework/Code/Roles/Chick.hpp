@@ -2,7 +2,7 @@
 //  Chick.hpp
 //  G53GRA.Framework
 //
-//  Created by Ting Pan on 2017/5/9.
+//  Created by TingMiao on 2017/5/9.
 //  Copyright © 2017年 w.o.c.ward. All rights reserved.
 //
 
