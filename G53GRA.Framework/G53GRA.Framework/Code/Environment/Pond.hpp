@@ -1,5 +1,5 @@
 //
-//  Water.hpp
+//  Pond.hpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 10/5/2017.
@@ -12,15 +12,15 @@
 
 #include <string>
 
-class Water :
+class Pond :
         public DisplayableObject,
         public Animation
 {
 public:
-    Water();
+    Pond();
 
-    //    Water(const int& gridX, const int& gridZ, const std::string& filename);
-    ~Water();
+    //    Pond(const int& gridX, const int& gridZ, const std::string& filename);
+    ~Pond();
 
     void Display();
 
@@ -29,7 +29,7 @@ public:
     void HandleKey(unsigned char key, int state, int x, int y);
 
 private:
-    GLuint _texWater, _texBrick, _texCat;
+    GLuint _texPond, _texBrick, _texCat;
 
     int xGridDims, zGridDims;
     float *texCoords;
@@ -41,9 +41,9 @@ private:
     int matShininess;
     float matSpecular[4];
 
-    void DrawWater(float r);
+    void DrawPond(float r);
 
     void DrawBrickCircle(float r, float h);
 
-    void DrawWaterQuad(int i, int j);
+    void DrawPondQuad(int i, int j);
 };

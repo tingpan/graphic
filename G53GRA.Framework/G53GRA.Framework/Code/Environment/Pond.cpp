@@ -1,19 +1,19 @@
 //
-//  Water.cpp
+//  Pond.cpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 10/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "Water.hpp"
+#include "Pond.hpp"
 #include <cmath>
 
-Water::Water()
+Pond::Pond()
         : xGridDims(21), zGridDims(21), frozen(false), time(0.0)
 {
     //    texID = Scene::GetTexture(filename);
-    _texWater = Scene::GetTexture("./Textures/Environment/water.bmp");
+    _texPond = Scene::GetTexture("./Textures/Environment/water.bmp");
     _texBrick = Scene::GetTexture("./Textures/Environment/brick2.bmp");
     _texCat = Scene::GetTexture("./Textures/Castle/flag.bmp");
     // initialise the grids texture coordinate memory we will need enough memory for both the s and t coordinate at each mesh vertex
@@ -38,7 +38,7 @@ Water::Water()
 }
 
 
-Water::~Water()
+Pond::~Pond()
 {
     if (texCoords != NULL)
     {
@@ -47,7 +47,7 @@ Water::~Water()
     }
 }
 
-void Water::Display()
+void Pond::Display()
 {
 
     glPushMatrix();
@@ -56,7 +56,7 @@ void Water::Display()
 
     DrawBrickCircle(10, 2);
     glTranslatef(0, 1.5, 0);
-    DrawWater(10);
+    DrawPond(10);
     glTranslatef(0, -1.5, 0);
     glScaled(0.5, 0.5, 0.5);
     DrawBrickCircle(1, 5);
@@ -64,7 +64,7 @@ void Water::Display()
     DrawBrickCircle(3, 1);
     DrawBrickCircle(2, 1);
     glTranslatef(0, 0.8, 0);
-    DrawWater(2);
+    DrawPond(2);
     glPopMatrix();
 
     glBindTexture(GL_TEXTURE_2D,
@@ -73,7 +73,7 @@ void Water::Display()
     glDisable(GL_TEXTURE_2D); // stop using texture coordinates
 }
 
-void Water::Update(const double &deltaTime)
+void Pond::Update(const double &deltaTime)
 {
     float radius;
     time += deltaTime; // overall run time
@@ -113,7 +113,7 @@ void Water::Update(const double &deltaTime)
 }
 
 
-void Water::DrawWater(float r)
+void Pond::DrawPond(float r)
 {
     glPushAttrib(GL_ALL_ATTRIB_BITS);
 
@@ -123,7 +123,7 @@ void Water::DrawWater(float r)
     glMateriali(GL_FRONT, GL_SHININESS, matShininess);
 
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, _texWater);    // Tell OpenGL which texture buffer to apply as texture
+    glBindTexture(GL_TEXTURE_2D, _texPond);    // Tell OpenGL which texture buffer to apply as texture
     glColor4f(1.0f, 1.0f, 1.0f, 0.8f);
 
 
@@ -137,14 +137,14 @@ void Water::DrawWater(float r)
     {
         for (int k = -j; k <= j; k++)
         {
-            DrawWaterQuad(i, k);
+            DrawPondQuad(i, k);
         }
 
         if (i != 0)
         {
             for (int k = -j; k <= j; k++)
             {
-                DrawWaterQuad(-i, k);
+                DrawPondQuad(-i, k);
             }
         }
 
@@ -152,14 +152,14 @@ void Water::DrawWater(float r)
         {
             for (int k = -i; k <= i; k++)
             {
-                DrawWaterQuad(j, k);
+                DrawPondQuad(j, k);
             }
 
             if (j != 0)
             {
                 for (int k = -i; k <= i; k++)
                 {
-                    DrawWaterQuad(-j, k);
+                    DrawPondQuad(-j, k);
                 }
             }
         }
@@ -181,7 +181,7 @@ void Water::DrawWater(float r)
     glPopAttrib();
 }
 
-void Water::DrawWaterQuad(int i, int j)
+void Pond::DrawPondQuad(int i, int j)
 {
     glNormal3f(0.0f, 1.0f, 0.0f);  // specify the quads normal
     float y = 0;
@@ -207,7 +207,7 @@ void Water::DrawWaterQuad(int i, int j)
 
 }
 
-void Water::DrawBrickCircle(float r, float h)
+void Pond::DrawBrickCircle(float r, float h)
 {
     float x = 0.0f, z = r;
     float d = 3 - 2 * r;

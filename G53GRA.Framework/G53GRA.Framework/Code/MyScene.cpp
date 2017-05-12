@@ -11,7 +11,7 @@
 #include "Chick.hpp"
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
-#include "Water.hpp"
+#include "Pond.hpp"
 #include "lamp.hpp"
 #include "Spotlight.hpp"
 #include "CatBlock.hpp"
@@ -49,10 +49,10 @@ void MyScene::Initialise()
     DisplayEnvorinment();
     DisplayRoles();
 
-    Water *water = new Water();
-    water->position(0, -50, -1000);
-    water->size(32);
-    AddObjectToScene(water);
+    Pond *pond = new Pond();
+    pond->position(0, -50, -1000);
+    pond->size(32);
+    AddObjectToScene(pond);
 
     CatBlock *block = new CatBlock();
     block->position(-400, -50, -1600);
