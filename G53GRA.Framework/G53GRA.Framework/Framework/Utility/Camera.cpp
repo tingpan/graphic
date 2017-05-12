@@ -149,7 +149,7 @@ void Camera::Update(const double& deltaTime)
         speed = speed == 0.0f ? 0.0f : speed - 1.0f;
     
     if (plusKey)
-        speed = speed >= 20.0f ? 20.0f: speed + 1.0f;
+        speed = speed >= 30.0f ? 30.0f: speed + 1.0f;
 
 	if (aKey)
 		sub(eyePosition, right, speed);

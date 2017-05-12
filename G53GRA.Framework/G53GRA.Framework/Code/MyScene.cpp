@@ -34,7 +34,7 @@ void MyScene::Initialise()
     AddObjectToScene(floor);
 
     Moonlight *ml = new Moonlight();
-    ml->direction(-1.0f, 2.0f, -1.0f);
+    ml->direction(-1.0f, 3.0f, -1.0f);
     AddObjectToScene(ml);
 
     Spotlight *sl = new Spotlight();

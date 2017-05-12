@@ -16,14 +16,14 @@ Moonlight::Moonlight()
     ambient[3] = 1.0f;
 
     diffuse[0] = 0.3f;    // Set the diffuse colour of the light
-    diffuse[1] = 0.4;
-    diffuse[2] = 0.5f;
-    diffuse[3] = 1.0f;;
+    diffuse[1] = 0.4f;
+    diffuse[2] = 0.6f;
+    diffuse[3] = 1.0f;
 
-    specular[0] = .8f;   // Set the specular colour of the light
-    specular[1] = .8f;
-    specular[2] = .8f;
-    specular[3] = .8f;
+    specular[0] = 0.8f;   // Set the specular colour of the light
+    specular[1] = 0.8f;
+    specular[2] = 0.8f;
+    specular[3] = 1.0f;
 }
 
 
