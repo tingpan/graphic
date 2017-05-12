@@ -1,5 +1,5 @@
 #include "MyScene.h"
-#include "MyFloor.hpp"
+#include "Floor.hpp"
 #include "Moonlight.hpp"
 #include "SkyBox.hpp"
 #include "TowerA.hpp"
@@ -22,12 +22,13 @@ MyScene::MyScene(int argc, char **argv, const char *title, const int &windowWidt
 
 }
 
+
 void MyScene::Initialise()
 {
 
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 
-    MyFloor *floor = new MyFloor();
+    Floor *floor = new Floor();
     floor->size(32);
     floor->position(-1600, -50, 200);
     AddObjectToScene(floor);

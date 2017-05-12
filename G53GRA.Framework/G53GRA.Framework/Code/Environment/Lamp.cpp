@@ -6,7 +6,7 @@
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "lamp.hpp"
+#include "Lamp.hpp"
 
 Lamp::Lamp(float h) : _height(h)
 {

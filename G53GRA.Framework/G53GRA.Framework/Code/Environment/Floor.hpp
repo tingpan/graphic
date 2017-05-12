@@ -1,25 +1,25 @@
 //
-//  MyFloor.hpp
+//  Floor.hpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 7/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 #pragma once
-#ifndef MyFloor_hpp
-#define MyFloor_hpp
+#ifndef Floor_hpp
+#define Floor_hpp
 
 #include "DisplayableObject.h"
 #include <stdio.h>
 
 
-class MyFloor :
+class Floor :
         public DisplayableObject
 {
 public:
-    MyFloor();
+    Floor();
 
-    ~MyFloor() {};
+    ~Floor() {};
 
     void Display();
 
@@ -28,4 +28,4 @@ private:
 };
 
 
-#endif /* MyFloor_hpp */
+#endif /* Floor_hpp */

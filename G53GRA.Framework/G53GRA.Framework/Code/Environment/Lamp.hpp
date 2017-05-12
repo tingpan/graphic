@@ -6,8 +6,8 @@
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#ifndef lamp_hpp
-#define lamp_hpp
+#ifndef Lamp_hpp
+#define Lamp_hpp
 
 #include "DisplayableObject.h"
 #include "BrickUtil.hpp"
@@ -33,6 +33,6 @@ private:
 
 };
 
-#endif /* lamp_hpp */
+#endif /* Lamp_hpp */
 
 

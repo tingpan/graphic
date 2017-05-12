@@ -1,15 +1,15 @@
 //
-//  MyFloor.cpp
+//  Floor.cpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 7/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "MyFloor.hpp"
+#include "Floor.hpp"
 #include "VectorMath.h"
 
-MyFloor::MyFloor()
+Floor::Floor()
 {
     _texBrick1 = Scene::GetTexture("./Textures/Environment/brick.bmp");
     _texBrick2 = Scene::GetTexture("./Textures/Environment/brick2.bmp");
@@ -17,7 +17,7 @@ MyFloor::MyFloor()
     _texBrick4 = Scene::GetTexture("./Textures/Environment/brick4.bmp");
 }
 
-void MyFloor::Display()
+void Floor::Display()
 {
     // Draws an exciting chequered floor
     glPushMatrix();
