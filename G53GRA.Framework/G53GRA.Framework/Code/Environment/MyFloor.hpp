@@ -14,14 +14,15 @@
 
 
 class MyFloor :
-public DisplayableObject
+        public DisplayableObject
 {
 public:
     MyFloor();
-    ~MyFloor(){};
-    
+
+    ~MyFloor() {};
+
     void Display();
-    
+
 private:
     GLuint _texBrick1, _texBrick2, _texBrick3, _texBrick4;
 };

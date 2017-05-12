@@ -13,23 +13,24 @@
 #include "BrickUtil.hpp"
 
 class TowerD :
-public Building
-
+        public Building
 {
 public:
     TowerD();
+
     ~TowerD();
-    
+
     void Display();
-    
+
 protected:
     void DrawWall(float w);
+
     void DrawRoof();
+
     void DrawTop();
-    
+
     void Decorate();
 };
-
 
 
 #endif /* TowerD_hpp */

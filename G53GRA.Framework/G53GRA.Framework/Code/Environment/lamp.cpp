@@ -17,23 +17,23 @@ Lamp::Lamp(float h) : _height(h)
 
 Lamp::~Lamp()
 {
-    
+
 }
 
 void Lamp::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-    
+
     glTranslatef(pos[0], pos[1], pos[2]);
     glScalef(scale[0], scale[1], scale[2]);
     glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
     glDisable(GL_COLOR_MATERIAL);
-    
+
     drawBrickT(3, 3, 1, _texS1, 1);
     glTranslatef(1, 1, -1);
     drawBrickT(1, 1, _height, _texS1, 1);
-    glTranslatef(-0.5,_height, 0.5);
+    glTranslatef(-0.5, _height, 0.5);
     drawBrickT(2, 2, 0.8, _texS2, 1);
     glTranslatef(0.25, 0.8, -0.25);
     drawBrickT(1.5, 1.5, 0.3, _texS2, 1);
@@ -41,15 +41,15 @@ void Lamp::Display()
     drawBrickT(1, 0.8, 1, _texS2, 1);
     glTranslatef(-1, 0.8, 0);
     drawBrickT(1, 3, 1, _texS2, 1);
-    
+
     glTranslatef(-3, 0, 1);
     DrawLamp();
     glTranslatef(6, 0, 0);
     DrawLamp();
-    
+
     SetupLight();
-    
-    
+
+
     glPopAttrib();
     glPopMatrix();
 }
@@ -74,5 +74,5 @@ void Lamp::DrawLamp()
 
 void Lamp::SetupLight()
 {
-    
+
 }

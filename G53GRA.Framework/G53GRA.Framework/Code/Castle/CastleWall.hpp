@@ -13,18 +13,20 @@
 #include "BrickUtil.hpp"
 
 class CastleWall :
-public Building
-
+        public Building
 {
 public:
     CastleWall(float w);
+
     ~CastleWall();
-    
+
     void Display();
-    
+
 protected:
     float _width;
+
     void DrawWall(float w);
+
     void DrawTooth(float w);
 };
 

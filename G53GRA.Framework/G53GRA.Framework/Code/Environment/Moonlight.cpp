@@ -14,12 +14,12 @@ Moonlight::Moonlight()
     ambient[1] = 0.2f;
     ambient[2] = 0.2f;
     ambient[3] = 1.0f;
-    
+
     diffuse[0] = 0.3f;    // Set the diffuse colour of the light
     diffuse[1] = 0.4;
     diffuse[2] = 0.5f;
     diffuse[3] = 1.0f;;
-    
+
     specular[0] = .8f;   // Set the specular colour of the light
     specular[1] = .8f;
     specular[2] = .8f;
@@ -31,22 +31,22 @@ Moonlight::~Moonlight()
 {
 }
 
-void Moonlight::Update(const double& deltaTime)
+void Moonlight::Update(const double &deltaTime)
 {
     // turn lighting on
     glEnable(GL_LIGHTING);
-    
+
     // pass openGL the lighting model parameters for the Phong reflection model
     glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
     glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
     glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.05f);
-    
-    float ldirection[] = { pos[0], pos[1], pos[2], 0.0f};
+
+    float ldirection[] = {pos[0], pos[1], pos[2], 0.0f};
     glLightfv(GL_LIGHT0, GL_POSITION, ldirection);
-    
+
     // enable light 0
     glEnable(GL_LIGHT0);
-    
+
     //    glDisable(GL_LIGHT0);
 }

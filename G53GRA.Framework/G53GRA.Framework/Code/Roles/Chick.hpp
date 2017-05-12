@@ -13,18 +13,22 @@
 #include "BrickUtil.hpp"
 #include "Animation.h"
 
-class Chick:
-public DisplayableObject,
-public Animation
+class Chick :
+        public DisplayableObject,
+        public Animation
 {
 public:
     Chick(float speed, float radius);
+
     ~Chick();
-    
+
     void Display();
-    void Update(const double& deltaTime);
+
+    void Update(const double &deltaTime);
+
 private:
     float _speed, _radius;
-    
+
 };
+
 #endif /* Chick_hpp */

@@ -13,21 +13,24 @@
 #include "BrickUtil.hpp"
 
 class Lamp :
-public DisplayableObject
+        public DisplayableObject
 {
 public:
     Lamp(float h);
+
     ~Lamp();
+
     void Display();
 
-    
-    
+
 private:
     GLuint _texS1, _texLamp, _texS2;
     float _height;
+
     void DrawLamp();
+
     void SetupLight();
-    
+
 };
 
 #endif /* lamp_hpp */

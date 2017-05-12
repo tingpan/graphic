@@ -13,18 +13,19 @@
 #include "BrickUtil.hpp"
 
 class TowerC :
-public Building
-
+        public Building
 {
 public:
     TowerC();
+
     ~TowerC();
-    
+
     void Display();
-    
+
 protected:
-    
+
     void DrawSubTower1();
+
     void DrawRoof();
 };
 

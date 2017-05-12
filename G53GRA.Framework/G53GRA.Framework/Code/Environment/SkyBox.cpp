@@ -18,20 +18,20 @@ SkyBox::SkyBox()
     _texFar = Scene::GetTexture("./Textures/Skybox/front.bmp");
 }
 
-SkyBox::~SkyBox(){}
+SkyBox::~SkyBox() {}
 
 void SkyBox::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-    
+
     glTranslatef(pos[0], pos[1], pos[2]);
     glScalef(scale[0], scale[1], scale[2]);
-    
+
     glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
     glEnable(GL_TEXTURE_2D);
     glDisable(GL_LIGHTING);
-    
+
     // LEFT SIDE
     glBindTexture(GL_TEXTURE_2D, _texLeft);
     glBegin(GL_QUADS);
@@ -46,7 +46,7 @@ void SkyBox::Display()
         glVertex3f(-1.f, -1.f, -1.f);
     }
     glEnd();
-    
+
     // RIGHT SIDE
     glBindTexture(GL_TEXTURE_2D, _texRight);
     glBegin(GL_QUADS);
@@ -61,7 +61,7 @@ void SkyBox::Display()
         glVertex3f(1.f, -1.f, 1.f);
     }
     glEnd();
-    
+
     //  FAR SIDE
     glBindTexture(GL_TEXTURE_2D, _texFar);
     glBegin(GL_QUADS);
@@ -76,7 +76,7 @@ void SkyBox::Display()
         glVertex3f(1.f, -1.f, -1.f);
     }
     glEnd();
-    
+
     // NEAR SIDE
     glBindTexture(GL_TEXTURE_2D, _texNear);
     glBegin(GL_QUADS);
@@ -89,8 +89,8 @@ void SkyBox::Display()
     glTexCoord2f(1.f, 0.f);  // (s,t) = (1,0)
     glVertex3f(-1.f, -1.f, 1.f);
     glEnd();
-    
-    
+
+
     // TOP SIDE
     glBindTexture(GL_TEXTURE_2D, _texTop);
     glBegin(GL_QUADS);
@@ -105,9 +105,9 @@ void SkyBox::Display()
         glVertex3f(1.f, 1.f, -1.f);
     }
     glEnd();
-    
+
     // BOTTOM SIDE
-    
+
     glBindTexture(GL_TEXTURE_2D, _texBottom);
     glBegin(GL_QUADS);
     {
@@ -121,12 +121,12 @@ void SkyBox::Display()
         glVertex3f(1.f, -1.f, 1.f);
     }
     glEnd();
-    
-    glBindTexture(GL_TEXTURE_2D,NULL);
-    
+
+    glBindTexture(GL_TEXTURE_2D, NULL);
+
     glDisable(GL_TEXTURE_2D);
-    
+
     glPopAttrib();
     glPopMatrix();
-    
+
 }

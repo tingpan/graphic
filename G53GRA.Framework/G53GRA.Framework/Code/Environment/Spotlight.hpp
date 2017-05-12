@@ -15,24 +15,30 @@
 #include "Input.h"
 
 class Spotlight :
-public DisplayableObject,
-public Animation,
-public Input
+        public DisplayableObject,
+        public Animation,
+        public Input
 {
 public:
     Spotlight();
+
     ~Spotlight();
+
     void Display();
-    void Update(const double& deltaTime);
+
+    void Update(const double &deltaTime);
+
     void HandleKey(unsigned char key, int state, int mx, int my);
-    
+
 private:
     float time;
-    
+
     void SetupLight1();
+
     void SetupLight2();
+
     void SetupLight3();
-    
+
     int group1[4] = {GL_LIGHT1, GL_LIGHT2, GL_LIGHT3, GL_LIGHT4};
     int group2[2] = {GL_LIGHT6, GL_LIGHT7};
 };

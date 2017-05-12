@@ -13,19 +13,22 @@
 #include "BrickUtil.hpp"
 
 #endif /* Parterre_hpp */
+
 class Parterre :
-public DisplayableObject
+        public DisplayableObject
 {
 public:
     Parterre(int w, int h, GLuint tex);
+
     ~Parterre();
+
     void Display();
-    
+
     void width(int w)
     {
         _width = w;
     }
-    
+
 private:
     GLuint _texBrick, _texFlower;
     int _width;

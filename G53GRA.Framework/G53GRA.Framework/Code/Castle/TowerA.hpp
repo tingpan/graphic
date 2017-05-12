@@ -14,30 +14,36 @@
 #include "Animation.h"
 
 class TowerA :
-public Building,
-public Animation
-
+        public Building,
+        public Animation
 {
 public:
     TowerA();
+
     ~TowerA();
-    
+
     void Display();
-    void Update(const double& deltaTime);
-    
+
+    void Update(const double &deltaTime);
+
 protected:
-    
+
     GLuint _texClock;
-    
+
     void DrawSubTower1();
+
     void DrawSubTower2();
+
     void DrawSubTower3();
+
     void DrawRoof();
+
     void DrawTop();
+
     void DrawClock();
-    
+
     float _time;
-    
+
 };
 
 
