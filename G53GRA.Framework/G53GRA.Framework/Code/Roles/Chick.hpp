@@ -18,9 +18,13 @@ public DisplayableObject,
 public Animation
 {
 public:
-    Chick();
+    Chick(float speed, float radius);
+    ~Chick();
+    
     void Display();
     void Update(const double& deltaTime);
+private:
+    float _speed, _radius;
     
 };
 #endif /* Chick_hpp */

@@ -18,7 +18,7 @@ public DisplayableObject,
 public Animation
 {
 public:
-    Cat();
+    Cat(float _speed, float _limit,  GLuint* _textures);
     void Display();
     void Update(const double& deltaTime);
     
@@ -33,9 +33,8 @@ protected:
     GLuint _leftLegTex[6];
     GLuint _rightLegTex[6];
     
-    float _time;
     float _loop = 0.3;
-    int step = 30;
+    float _speed, _limit, _offset, _flag, _time;
     
 };
 #endif /* Cat_hpp */

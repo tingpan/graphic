@@ -11,9 +11,9 @@
 CatBlock::CatBlock(): width(10), height(10), time(0.0), runAnimate(true), dx(4.0f)
 {
     _blockTex = Scene::GetTexture("./Textures/Environment/glass.bmp");
-    _catTex = Scene::GetTexture("./Textures/Environment/cats.bmp");
+    _catTex = Scene::GetTexture("./Textures/Environment/linkSpriteSheet.bmp");
     spriteFrame = 0;
-    spriteWidth = 8;
+    spriteWidth = 16;
 }
 
 CatBlock::~CatBlock()

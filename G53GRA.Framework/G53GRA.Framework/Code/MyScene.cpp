@@ -51,19 +51,11 @@ void MyScene::Initialise()
     skybox->size(1600.0f, 1600.0f,1600.0f);
     AddObjectToScene(skybox);
     
-    
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
-    Cat *cat = new Cat();
-    cat->position(370, -50, -1600);
-    cat->size(16);
-    AddObjectToScene(cat);
+    DisplayRoles();
     
-    Chick *chick = new Chick();
-    chick->position(0, 0, -1000);
-    chick->size(8);
-    AddObjectToScene(chick);
-    
+
     
     Water *water = new Water();
     water->position(0,-50,-1000);
@@ -75,8 +67,45 @@ void MyScene::Initialise()
     block->orientation(0, 30, 0);
     block->size(16);
     AddObjectToScene(block);
+    
 }
 
+void MyScene::DisplayRoles()
+{
+    Chick *chick = new Chick(20, 20);
+    chick->position(0, 0, -1000);
+    chick->size(8);
+    AddObjectToScene(chick);
+    
+    for (int i = 0; i < 2; i ++)
+    {
+        Chick *chick2 = new Chick(20, 40);
+        chick2->position(0, 0, -1000);
+        chick2->size(4);
+        chick2->orientation(0, 30 + 20 * i, 0);
+        AddObjectToScene(chick2);
+    }
+    
+    GLuint catTexture[11];
+    
+    catTexture[0] = Scene::GetTexture("./Textures/Cats/cat1/Face.bmp");
+    catTexture[1] = Scene::GetTexture("./Textures/Cats/cat1/Head.bmp");
+    catTexture[2] = Scene::GetTexture("./Textures/Cats/cat1/Body.bmp");
+    catTexture[3] = Scene::GetTexture("./Textures/Cats/cat1/Hand.bmp");
+    catTexture[4] = Scene::GetTexture("./Textures/Cats/cat1/Back.bmp");
+    catTexture[5] = Scene::GetTexture("./Textures/Cats/cat1/LeftHand.bmp");
+    catTexture[6] = Scene::GetTexture("./Textures/Cats/cat1/RightHand.bmp");
+    catTexture[7] = Scene::GetTexture("./Textures/Cats/cat1/Hand.bmp");
+    catTexture[8] = Scene::GetTexture("./Textures/Cats/cat1/LeftLeg.bmp");
+    catTexture[9] = Scene::GetTexture("./Textures/Cats/cat1/RightLeg.bmp");
+    catTexture[10] = Scene::GetTexture("./Textures/Cats/cat1/Leg.bmp");
+    
+    Cat *cat = new Cat(100, 900, catTexture);
+    cat->position(370, -50, -1600);
+    cat->size(16);
+    AddObjectToScene(cat);
+    
+}
 
 void MyScene::DisplayEnvorinment()
 {
