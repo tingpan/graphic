@@ -23,7 +23,7 @@ public:
     void Display();
     
 private:
-    GLuint _texBrick1, _texBrick2, _texBrick3;
+    GLuint _texBrick1, _texBrick2, _texBrick3, _texBrick4;
 };
 
 

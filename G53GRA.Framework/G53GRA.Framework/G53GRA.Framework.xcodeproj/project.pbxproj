@@ -49,6 +49,7 @@
 		852A4C141EC5515100E967E3 /* cats.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4C111EC5513800E967E3 /* cats.bmp */; };
 		852A4C151EC5515100E967E3 /* linkSpriteSheet.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4C121EC5513800E967E3 /* linkSpriteSheet.bmp */; };
 		852A4C171EC5525000E967E3 /* brick3.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4C161EC5523500E967E3 /* brick3.bmp */; };
+		852A4C191EC55FFC00E967E3 /* brick4.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 852A4C181EC55FE000E967E3 /* brick4.bmp */; };
 		854689E11EC16C4100F37BDF /* Moonlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* Moonlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
 		854689EA1EC16E6300F37BDF /* SkyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* SkyBox.cpp */; };
@@ -171,6 +172,7 @@
 			dstPath = ./Textures/Environment;
 			dstSubfolderSpec = 16;
 			files = (
+				852A4C191EC55FFC00E967E3 /* brick4.bmp in CopyFiles */,
 				852A4C171EC5525000E967E3 /* brick3.bmp in CopyFiles */,
 				852A4BC51EC4E98700E967E3 /* glass.bmp in CopyFiles */,
 				852A4BB31EC47DEE00E967E3 /* lamp.bmp in CopyFiles */,
@@ -247,6 +249,7 @@
 		852A4C111EC5513800E967E3 /* cats.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = cats.bmp; path = Textures/Roles/cats.bmp; sourceTree = SOURCE_ROOT; };
 		852A4C121EC5513800E967E3 /* linkSpriteSheet.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = linkSpriteSheet.bmp; path = Textures/Roles/linkSpriteSheet.bmp; sourceTree = SOURCE_ROOT; };
 		852A4C161EC5523500E967E3 /* brick3.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = brick3.bmp; path = Textures/Environment/brick3.bmp; sourceTree = SOURCE_ROOT; };
+		852A4C181EC55FE000E967E3 /* brick4.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = brick4.bmp; path = Textures/Environment/brick4.bmp; sourceTree = SOURCE_ROOT; };
 		854689DD1EC16C4100F37BDF /* Moonlight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Moonlight.hpp; path = Code/Environment/Moonlight.hpp; sourceTree = SOURCE_ROOT; };
 		854689DE1EC16C4100F37BDF /* Moonlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Moonlight.cpp; path = Code/Environment/Moonlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
@@ -543,6 +546,7 @@
 		85EEAD111EC2DC6F000B37B3 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				852A4C181EC55FE000E967E3 /* brick4.bmp */,
 				852A4C161EC5523500E967E3 /* brick3.bmp */,
 				852A4BC41EC4E95C00E967E3 /* glass.bmp */,
 				852A4BB21EC47DE300E967E3 /* lamp.bmp */,

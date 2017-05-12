@@ -14,6 +14,7 @@ MyFloor::MyFloor()
     _texBrick1 = Scene::GetTexture("./Textures/Environment/brick.bmp");
     _texBrick2 = Scene::GetTexture("./Textures/Environment/brick2.bmp");
     _texBrick3 = Scene::GetTexture("./Textures/Environment/brick3.bmp");
+    _texBrick4 = Scene::GetTexture("./Textures/Environment/brick4.bmp");
 }
 
 void MyFloor::Display()
@@ -36,7 +37,13 @@ void MyFloor::Display()
             glBindTexture(GL_TEXTURE_2D, _texBrick1);
             
             if (i > 45 && i < 54) glBindTexture(GL_TEXTURE_2D, _texBrick3);
-            if (i < 25 || i >75) glBindTexture(GL_TEXTURE_2D, _texBrick2);
+            if (j > 33 && j < 42) glBindTexture(GL_TEXTURE_2D, _texBrick3);
+            
+            if (i > j + 7 && i < j + 18) glBindTexture(GL_TEXTURE_2D, _texBrick4);
+            if (i < 100 - (j + 7) && i > 100 - (j + 18)) glBindTexture(GL_TEXTURE_2D, _texBrick4);
+            if ((50 - i) * (50 - i) + (38 - j) * (38 - j) < 200) glBindTexture(GL_TEXTURE_2D, _texBrick2);
+            
+            
             
             glBegin(GL_QUADS);
             {
