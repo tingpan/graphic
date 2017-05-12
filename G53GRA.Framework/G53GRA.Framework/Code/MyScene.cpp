@@ -261,5 +261,5 @@ void MyScene::DisplayCastle(float s, float x, float y, float z)
 void MyScene::Projection()
 {
     GLdouble aspect = static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight);
-    gluPerspective(40.0, aspect, 1.0, 20000.0);
+    gluPerspective(40.0, aspect, 1.0, 10000.0);
 }
