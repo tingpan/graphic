@@ -50,7 +50,7 @@
 		852A4C0F1EC543AC00E967E3 /* CatBlock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 852A4C0B1EC543AC00E967E3 /* CatBlock.cpp */; };
 		854689E11EC16C4100F37BDF /* Moonlight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689DE1EC16C4100F37BDF /* Moonlight.cpp */; };
 		854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E01EC16C4100F37BDF /* MyFloor.cpp */; };
-		854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* MySkybox.cpp */; };
+		854689EA1EC16E6300F37BDF /* SkyBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 854689E81EC16E6300F37BDF /* SkyBox.cpp */; };
 		85EEACE41EC18B16000B37B3 /* up.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACDE1EC18AFE000B37B3 /* up.bmp */; };
 		85EEACE51EC18B16000B37B3 /* right.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACDF1EC18AFE000B37B3 /* right.bmp */; };
 		85EEACE61EC18B16000B37B3 /* left.bmp in CopyFiles */ = {isa = PBXBuildFile; fileRef = 85EEACE01EC18AFE000B37B3 /* left.bmp */; };
@@ -241,8 +241,8 @@
 		854689DE1EC16C4100F37BDF /* Moonlight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Moonlight.cpp; path = Code/Environment/Moonlight.cpp; sourceTree = SOURCE_ROOT; };
 		854689DF1EC16C4100F37BDF /* MyFloor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyFloor.hpp; path = Code/Environment/MyFloor.hpp; sourceTree = SOURCE_ROOT; };
 		854689E01EC16C4100F37BDF /* MyFloor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyFloor.cpp; path = Code/Environment/MyFloor.cpp; sourceTree = SOURCE_ROOT; };
-		854689E81EC16E6300F37BDF /* MySkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MySkybox.cpp; path = Code/Environment/MySkybox.cpp; sourceTree = SOURCE_ROOT; };
-		854689E91EC16E6300F37BDF /* MySkybox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MySkybox.hpp; path = Code/Environment/MySkybox.hpp; sourceTree = SOURCE_ROOT; };
+		854689E81EC16E6300F37BDF /* SkyBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SkyBox.cpp; path = Code/Environment/SkyBox.cpp; sourceTree = SOURCE_ROOT; };
+		854689E91EC16E6300F37BDF /* SkyBox.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SkyBox.hpp; path = Code/Environment/SkyBox.hpp; sourceTree = SOURCE_ROOT; };
 		85EEACDE1EC18AFE000B37B3 /* up.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = up.bmp; path = Textures/Skybox/up.bmp; sourceTree = SOURCE_ROOT; };
 		85EEACDF1EC18AFE000B37B3 /* right.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = right.bmp; path = Textures/Skybox/right.bmp; sourceTree = SOURCE_ROOT; };
 		85EEACE01EC18AFE000B37B3 /* left.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = left.bmp; path = Textures/Skybox/left.bmp; sourceTree = SOURCE_ROOT; };
@@ -476,8 +476,8 @@
 				854689DE1EC16C4100F37BDF /* Moonlight.cpp */,
 				854689DF1EC16C4100F37BDF /* MyFloor.hpp */,
 				854689E01EC16C4100F37BDF /* MyFloor.cpp */,
-				854689E81EC16E6300F37BDF /* MySkybox.cpp */,
-				854689E91EC16E6300F37BDF /* MySkybox.hpp */,
+				854689E81EC16E6300F37BDF /* SkyBox.cpp */,
+				854689E91EC16E6300F37BDF /* SkyBox.hpp */,
 				85EEAD531EC41792000B37B3 /* Parterre.cpp */,
 				85EEAD541EC41792000B37B3 /* Parterre.hpp */,
 				852A4BAA1EC479DE00E967E3 /* lamp.cpp */,
@@ -620,7 +620,7 @@
 				854689E11EC16C4100F37BDF /* Moonlight.cpp in Sources */,
 				854689E21EC16C4100F37BDF /* MyFloor.cpp in Sources */,
 				192BE3CA1E4CBD960040131F /* main.cpp in Sources */,
-				854689EA1EC16E6300F37BDF /* MySkybox.cpp in Sources */,
+				854689EA1EC16E6300F37BDF /* SkyBox.cpp in Sources */,
 				85EEAD251EC31D2A000B37B3 /* TowerD.cpp in Sources */,
 				85EEAD221EC3127E000B37B3 /* TowerC.cpp in Sources */,
 				852A4BAC1EC479DE00E967E3 /* lamp.cpp in Sources */,

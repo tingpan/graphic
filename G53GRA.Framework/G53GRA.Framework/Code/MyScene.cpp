@@ -1,7 +1,7 @@
 #include "MyScene.h"
 #include "MyFloor.hpp"
 #include "Moonlight.hpp"
-#include "MySkybox.hpp"
+#include "SkyBox.hpp"
 #include "TowerA.hpp"
 #include "TowerB.hpp"
 #include "TowerC.hpp"
@@ -39,7 +39,7 @@ void MyScene::Initialise()
     Spotlight *sl = new Spotlight();
     AddObjectToScene(sl);
     
-    MySkybox *skybox = new MySkybox();
+    SkyBox *skybox = new SkyBox();
     skybox->position(0.f, 0.f, -1400.f);
     skybox->size(1600.0f, 1600.0f,1600.0f);
     AddObjectToScene(skybox);

@@ -11,7 +11,6 @@
 
 #define direction(x,y,z) position(x,y,z);
 
-#include <stdio.h>
 #include "DisplayableObject.h"
 #include "Animation.h"
 

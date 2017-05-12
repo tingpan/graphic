@@ -1,14 +1,14 @@
 //
-//  MySkybox.cpp
+//  SkyBox.cpp
 //  G53GRA.Framework
 //
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
 
-#include "MySkybox.hpp"
+#include "SkyBox.hpp"
 
-MySkybox::MySkybox()
+SkyBox::SkyBox()
 {
     _texTop = Scene::GetTexture("./Textures/Skybox/up.bmp");
     _texBottom = Scene::GetTexture("./Textures/Skybox/down.bmp");
@@ -18,9 +18,9 @@ MySkybox::MySkybox()
     _texFar = Scene::GetTexture("./Textures/Skybox/front.bmp");
 }
 
-MySkybox::~MySkybox(){}
+SkyBox::~SkyBox(){}
 
-void MySkybox::Display()
+void SkyBox::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
