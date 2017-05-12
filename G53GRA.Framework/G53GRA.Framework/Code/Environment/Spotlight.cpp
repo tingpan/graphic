@@ -130,8 +130,8 @@ void Spotlight::HandleKey(unsigned char key, int state, int mx, int my)
     
     switch (key)
     {
-        case '+':
-        case '=':
+        case 'o':
+        case 'O':
             for ( int i = 0; i < 4; i ++)
             {
                 glEnable(group1[i]);
@@ -144,8 +144,8 @@ void Spotlight::HandleKey(unsigned char key, int state, int mx, int my)
             
             glEnable(GL_LIGHT5);
             break;
-            
-        case '-':
+        case 'P':
+        case 'p':
             for ( int i = 0; i < 4; i ++)
             {
                 glDisable(group1[i]);
