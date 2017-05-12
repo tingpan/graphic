@@ -5,6 +5,7 @@
 //  Created by TingMiao on 8/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class sets up the environment moonlight.
 
 #include "Moonlight.hpp"
 
@@ -47,6 +48,4 @@ void Moonlight::Update(const double &deltaTime)
 
     // enable light 0
     glEnable(GL_LIGHT0);
-
-    //    glDisable(GL_LIGHT0);
 }

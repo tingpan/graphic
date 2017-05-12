@@ -2,15 +2,17 @@
 //  Tree.hpp
 //  G53GRA.Framework
 //
-//  Created by Ting Miao on 9/5/2017.
+//  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class generates a tree with random shape.
 
 #ifndef Tree_hpp
 #define Tree_hpp
 
 #include "DisplayableObject.h"
 #include "VectorMath.h"
+
 
 class Tree :
         public DisplayableObject
@@ -24,26 +26,10 @@ public:
 
 protected:
 
-    void DrawBrickR(float l, float w, float h);
+    int **createRandomMap(int l, int h, int max); // generate the height map
 
-    void DrawBrickT(float l, float w, float h);
-
-    void DrawTrunk();
-
-    void DrawMainBranches();
-
-    void DrawSubBranches();
-
-    void Decorate();
-
-    int **createRandomMap(int l, int h, int max);
-
-    void setWallColor1(int r, int g, int b);
-
-    float w, h, l, leaf_size, dist, min;
-    float leaf_front, leaf_back, leaf_left, leaf_right, leaf_top;
-    int **side_map;
-    int **top_map;
+    float w, h, l;
+    int **side_map,  **top_map; // member variable for store the height map of the tree
 
     GLuint _tex_branch, _tex_leave;
 };

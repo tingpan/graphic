@@ -5,6 +5,7 @@
 //  Created by TingMiao on 11/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class creates the parterre model.
 
 #ifndef Parterre_hpp
 #define Parterre_hpp

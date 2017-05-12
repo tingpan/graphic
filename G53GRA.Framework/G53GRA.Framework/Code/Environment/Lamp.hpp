@@ -5,6 +5,7 @@
 //  Created by TingMiao on 11/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class creates the lamp model.
 
 #ifndef Lamp_hpp
 #define Lamp_hpp
@@ -26,10 +27,9 @@ public:
 private:
     GLuint _texS1, _texLamp, _texS2;
     float _height;
-
+    
+    // Draw each lamp bulb
     void DrawLamp();
-
-    void SetupLight();
 
 };
 

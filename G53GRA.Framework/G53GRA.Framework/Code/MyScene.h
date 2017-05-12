@@ -1,4 +1,14 @@
-#pragma once
+//
+//  MyScene.hpp
+//  G53GRA.Framework
+//
+//  Created by TingMiao on 8/5/2017.
+//  Copyright © 2017 w.o.c.ward. All rights reserved.
+//
+// This class create the scene of the project.
+
+#ifndef MyScene_hpp
+#define MyScene_hpp
 
 #include "../Framework/Engine/Scene.h"
 
@@ -22,3 +32,5 @@ private:
     void DisplayRoles();
 
 };
+
+#endif /* MyScene_hpp */

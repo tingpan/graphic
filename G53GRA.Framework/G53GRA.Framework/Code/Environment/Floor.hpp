@@ -5,7 +5,8 @@
 //  Created by TingMiao on 7/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
-#pragma once
+// This class draw the floor of the scene.
+
 #ifndef Floor_hpp
 #define Floor_hpp
 

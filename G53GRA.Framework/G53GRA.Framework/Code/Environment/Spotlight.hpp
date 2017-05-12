@@ -5,6 +5,7 @@
 //  Created by TingMiao on 11/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class control the spotlight of the whole scene.
 
 #ifndef Spotlight_hpp
 #define Spotlight_hpp
@@ -24,7 +25,7 @@ public:
 
     ~Spotlight();
 
-    void Display();
+    void Display() {};
 
     void Update(const double &deltaTime);
 

@@ -5,6 +5,7 @@
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class contracts the skybox of the scene.
 
 #ifndef SkyBox_hpp
 #define SkyBox_hpp

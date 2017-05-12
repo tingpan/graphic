@@ -1,3 +1,12 @@
+//
+//  MyScene.cpp
+//  G53GRA.Framework
+//
+//  Created by TingMiao on 8/5/2017.
+//  Copyright © 2017 w.o.c.ward. All rights reserved.
+//
+// This class create the scene of the project.
+
 #include "MyScene.h"
 #include "Floor.hpp"
 #include "Moonlight.hpp"
@@ -28,23 +37,28 @@ void MyScene::Initialise()
 
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
 
+    // add floor to the scene
     Floor *floor = new Floor();
     floor->size(32);
     floor->position(-1600, -50, 200);
     AddObjectToScene(floor);
 
+    // add environment light to the scene
     Moonlight *ml = new Moonlight();
     ml->direction(-1.0f, 3.0f, -1.0f);
     AddObjectToScene(ml);
 
+    // add spotlight to the scene
     Spotlight *sl = new Spotlight();
     AddObjectToScene(sl);
 
+    // add skybox to the scene
     SkyBox *skybox = new SkyBox();
     skybox->position(0.f, 0.f, -1400.f);
     skybox->size(3200.0f, 3200.0f, 3200.0f);
     AddObjectToScene(skybox);
-
+    
+    // add three group object to the scene
     DisplayCastle(8, -1070, -50, -2000);
     DisplayEnvorinment();
     DisplayRoles();
@@ -62,6 +76,7 @@ void MyScene::Initialise()
 
 }
 
+// display three ducks and two cats
 void MyScene::DisplayRoles()
 {
     Chick *chick = new Chick(20, 20);
@@ -117,9 +132,9 @@ void MyScene::DisplayRoles()
     AddObjectToScene(cat2);
 }
 
+// display parterres and trees on the scene
 void MyScene::DisplayEnvorinment()
 {
-
     GLuint flower = Scene::GetTexture("./Textures/Environment/flower.bmp");
     GLuint grass = Scene::GetTexture("./Textures/Environment/grass.bmp");
 
@@ -211,6 +226,7 @@ void MyScene::DisplayEnvorinment()
 
 }
 
+// display castle on the scene
 void MyScene::DisplayCastle(float s, float x, float y, float z)
 {
 

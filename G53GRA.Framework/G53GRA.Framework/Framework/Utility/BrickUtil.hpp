@@ -2,9 +2,10 @@
 //  BrickUtil.hpp
 //  G53GRA.Framework
 //
-//  Created by TingMiao on 9/5/2017.
+//  Created by TingMiao on 8/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This file is the block util to draw the textured and color blocks
 
 #ifndef BrickUtil_hpp
 #define BrickUtil_hpp
