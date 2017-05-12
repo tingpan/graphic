@@ -5,6 +5,7 @@
 //  Created by TingMiao on 10/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class define the sub building model.
 
 #ifndef TowerC_hpp
 #define TowerC_hpp

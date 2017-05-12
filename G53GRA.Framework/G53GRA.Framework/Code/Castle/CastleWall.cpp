@@ -11,6 +11,7 @@
 
 CastleWall::CastleWall(float w):_width(w)
 {
+
 }
 
 CastleWall::~CastleWall()
@@ -97,7 +98,7 @@ void CastleWall::DrawTooth(float w)
             h = 4;
             offset = -1;
         }
-        drawBrickT(1, 1, h, _textB1, _text_f);
+        drawBrickT(1, 1, h, _textB1, 1);
         glTranslatef(1, offset, 0);
     }
     glPopMatrix();

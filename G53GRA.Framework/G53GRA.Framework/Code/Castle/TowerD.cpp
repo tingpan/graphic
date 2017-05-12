@@ -5,11 +5,13 @@
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class define the sub building model.
 
 #include "TowerD.hpp"
 
 TowerD::TowerD()
 {
+    // set the window color for this building
     SetWindowColor(179, 206, 236, 30);
 }
 
@@ -22,37 +24,41 @@ void TowerD::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-
-    glTranslatef(pos[0], pos[1], pos[2]);
-    glScalef(scale[0], scale[1], scale[2]);
-    glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
-    glDisable(GL_COLOR_MATERIAL);
-
-    glPushMatrix();
     {
-        glRotatef(-45, 0, 1, 0);
-
-        for (int i = 0; i < 8; i++)
+        glTranslatef(pos[0], pos[1], pos[2]);
+        glScalef(scale[0], scale[1], scale[2]);
+        glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
+        glDisable(GL_COLOR_MATERIAL);
+        
+        // draw eight walls of the building body
+        glPushMatrix();
         {
-            float w = 10;
-
-            if ((i + 1) % 4 == 0)
+            glRotatef(-45, 0, 1, 0);
+            
+            for (int i = 0; i < 8; i++)
             {
-                w = 16;
+                float w = 10;
+                
+                if ((i + 1) % 4 == 0)
+                {
+                    w = 16;
+                }
+                
+                DrawWall(w);
+                glTranslatef(w, 0, 0);
+                glRotatef(45, 0, 1, 0);
             }
-
-            DrawWall(w);
-            glTranslatef(w, 0, 0);
-            glRotatef(45, 0, 1, 0);
         }
+        glPopMatrix();
+        
+        // draw the roof
+        glTranslatef(0, 20, 0);
+        DrawRoof();
+        
+        // draw the top small building
+        glTranslatef(7.2, 12, -6);
+        DrawTop();
     }
-    glPopMatrix();
-
-    glTranslatef(0, 20, 0);
-    DrawRoof();
-    glTranslatef(7.2, 12, -6);
-    DrawTop();
-
     glPopAttrib();
     glPopMatrix();
 }
@@ -60,7 +66,7 @@ void TowerD::Display()
 void TowerD::DrawTop()
 {
 
-
+    // draw eight walls
     glPushMatrix();
     {
         float w = 4;
@@ -80,6 +86,7 @@ void TowerD::DrawTop()
     glTranslatef(-0.8, 2, 0.65);
     glScalef(1.3, 1.3, 1.3);
 
+    // draw the pointed roof
     glPushMatrix();
     {
         float w = 4;
@@ -87,8 +94,8 @@ void TowerD::DrawTop()
 
         for (int i = 0; i < 8; i++)
         {
-
             float factor = 0.9;
+            
             glPushMatrix();
 
             for (int j = 0; j < 4; j++)
@@ -120,12 +127,14 @@ void TowerD::DrawWall(float w)
     float l = 1;
     float f = 1;
 
+    // define the floor structure
     _Floor floor[4] = {
             _Floor{_textB4, 7},
             _Floor{_textB2, 6},
             _Floor{_textB2, 5},
     };
 
+    // draw the floors
     glPushMatrix();
     {
         for (int i = 0; i < 3; i++)
@@ -144,6 +153,7 @@ void TowerD::DrawWall(float w)
     }
     glPopMatrix();
 
+    // draw window for each floor
     glPushMatrix();
 
     {
@@ -182,6 +192,7 @@ void TowerD::DrawWall(float w)
     glPopMatrix();
 }
 
+// draw the pointed roof
 void TowerD::DrawRoof()
 {
     float h = 2;

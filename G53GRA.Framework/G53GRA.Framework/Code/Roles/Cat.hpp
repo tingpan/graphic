@@ -2,9 +2,10 @@
 //  Cat.hpp
 //  G53GRA.Framework
 //
-//  Created by TingMiao on 2017/5/9.
+//  Created by TingMiao on 2017/5/11.
 //  Copyright © 2017年 w.o.c.ward. All rights reserved.
 //
+// This class creates the animating cat model.
 
 #ifndef Cat_hpp
 #define Cat_hpp
@@ -30,8 +31,7 @@ public:
     
 protected:
 
-    GLuint _texBody, _texFace, _texFaceSide, _texHandSide, _texLeftHand, _texLeftLeg, _texLegSide, _texRightHand, _texRightLeg, _texBack;
-
+    // textures for each body part
     GLuint _headTex[6];
     GLuint _bodyTex[6];
     GLuint _leftHandTex[6];
@@ -39,6 +39,7 @@ protected:
     GLuint _leftLegTex[6];
     GLuint _rightLegTex[6];
 
+    // animation parameters
     float _loop = 0.3;
     float _speed, _limit, _offset, _flag, _time;
     bool runAnimate; 

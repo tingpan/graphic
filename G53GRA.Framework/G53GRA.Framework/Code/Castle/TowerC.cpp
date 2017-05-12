@@ -5,6 +5,7 @@
 //  Created by TingMiao on 10/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class define the sub building model.
 
 #include "TowerC.hpp"
 
@@ -21,25 +22,27 @@ void TowerC::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-
-    glTranslatef(pos[0], pos[1], pos[2]);
-    glScalef(scale[0], scale[1], scale[2]);
-    glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
-    glDisable(GL_COLOR_MATERIAL);
-
-    glPushMatrix();
     {
-        DrawSubTower1();
-        glTranslatef(8, 0, 0);
-        DrawSubTower1();
-        glTranslatef(8, 0, 0);
-        DrawSubTower1();
+        glTranslatef(pos[0], pos[1], pos[2]);
+        glScalef(scale[0], scale[1], scale[2]);
+        glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
+        glDisable(GL_COLOR_MATERIAL);
+        
+        glPushMatrix();
+        {
+            DrawSubTower1();
+            glTranslatef(8, 0, 0);
+            DrawSubTower1();
+            glTranslatef(8, 0, 0);
+            DrawSubTower1();
+        }
+        glPopMatrix();
     }
-    glPopMatrix();
     glPopAttrib();
     glPopMatrix();
 
 }
+
 
 void TowerC::DrawSubTower1()
 {
@@ -47,12 +50,14 @@ void TowerC::DrawSubTower1()
     float f = 1;
     float l = 16;
 
+    // define the floor structure
     _Floor floor[3] = {
             _Floor{_textB4, 7},
             _Floor{_textB2, 6},
             _Floor{_textB4, 5},
     };
 
+    // draw each floor looply
     glPushMatrix();
     {
         for (int i = 0; i < 3; i++)
@@ -67,6 +72,7 @@ void TowerC::DrawSubTower1()
 
     glPopMatrix();
 
+    // draw different window for each floor
     glPushMatrix();
     {
         SetWindowColor(192, 212, 238, 30);
@@ -88,6 +94,7 @@ void TowerC::DrawSubTower1()
 
 }
 
+// draw the pavilion roof
 void TowerC::DrawRoof()
 {
     glPushMatrix();

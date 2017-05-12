@@ -17,7 +17,7 @@
 #include "TowerD.hpp"
 #include "Tree.hpp"
 #include "Cat.hpp"
-#include "Chick.hpp"
+#include "Duck.hpp"
 #include "Parterre.hpp"
 #include "CastleWall.hpp"
 #include "Pond.hpp"
@@ -79,18 +79,18 @@ void MyScene::Initialise()
 // display three ducks and two cats
 void MyScene::DisplayRoles()
 {
-    Chick *chick = new Chick(20, 20);
-    chick->position(0, 0, -1000);
-    chick->size(8);
-    AddObjectToScene(chick);
+    Duck *duck = new Duck(20, 20);
+    duck->position(0, 0, -1000);
+    duck->size(8);
+    AddObjectToScene(duck);
 
     for (int i = 0; i < 2; i++)
     {
-        Chick *chick2 = new Chick(20, 40);
-        chick2->position(0, 0, -1000);
-        chick2->size(4);
-        chick2->orientation(0, 30 + 20 * i, 0);
-        AddObjectToScene(chick2);
+        Duck *duck2 = new Duck(20, 40);
+        duck2->position(0, 0, -1000);
+        duck2->size(4);
+        duck2->orientation(0, 30 + 20 * i, 0);
+        AddObjectToScene(duck2);
     }
 
     GLuint catTexture1[11];

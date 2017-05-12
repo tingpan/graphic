@@ -1,28 +1,29 @@
 //
-//  Chick.hpp
+//  Duck.hpp
 //  G53GRA.Framework
 //
-//  Created by TingMiao on 2017/5/9.
+//  Created by TingMiao on 2017/5/11.
 //  Copyright © 2017年 w.o.c.ward. All rights reserved.
 //
+// This class creates the animating duck model.
 
-#ifndef Chick_hpp
-#define Chick_hpp
+#ifndef Duck_hpp
+#define Duck_hpp
 
 #include "DisplayableObject.h"
 #include "BrickUtil.hpp"
 #include "Animation.h"
 #include "Input.h"
 
-class Chick :
+class Duck :
         public DisplayableObject,
         public Animation,
         public Input
 {
 public:
-    Chick(float speed, float radius);
+    Duck(float speed, float radius);
 
-    ~Chick();
+    ~Duck();
 
     void Display();
 
@@ -31,9 +32,9 @@ public:
     void HandleKey(unsigned char key, int state, int x, int y);
 
 private:
-    float _speed, _radius;
+    float _speed, _radius; //animation parameters
     bool runAnimate;
 
 };
 
-#endif /* Chick_hpp */
+#endif /* Duck_hpp */

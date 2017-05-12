@@ -5,6 +5,7 @@
 //  Created by TingMiao on 11/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class creates the animated cat cube.
 
 #ifndef CatBlock_hpp
 #define CatBlock_hpp

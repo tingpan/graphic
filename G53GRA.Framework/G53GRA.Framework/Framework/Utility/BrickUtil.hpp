@@ -10,6 +10,7 @@
 #ifndef BrickUtil_hpp
 #define BrickUtil_hpp
 
+// draw brick with pure color
 inline void drawBrickR(float l, float w, float h){
     
     // LEFT SIDE
@@ -81,6 +82,7 @@ inline void drawBrickR(float l, float w, float h){
     
 }
 
+// draw brick with a single texture
 inline void drawBrickT(float l, float w, float h, int textureID, float f){
     
     // LEFT SIDE
@@ -205,8 +207,8 @@ inline void drawBrickT(float l, float w, float h, int textureID, float f){
     glDisable(GL_TEXTURE_2D);
 }
 
-
-inline void drawBrickRT(float l, float w, float h, GLuint* textures){
+// draw brick with a list of texture
+inline void drawBrickT(float l, float w, float h, GLuint* textures){
     
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, textures[0]);
@@ -334,6 +336,7 @@ inline void drawBrickRT(float l, float w, float h, GLuint* textures){
     glDisable(GL_TEXTURE_2D);
 }
 
+// set the rgb color for drawing the pure color brick
 inline void setWallColor(int r, int g, int b, int s) {
     
     GLfloat mat_ambient[] = { (r-5)/255.f, (g-5)/255.f, (b-5)/255.f, 1.0f };

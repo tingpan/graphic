@@ -5,6 +5,7 @@
 //  Created by TingMiao on 9/5/2017.
 //  Copyright © 2017 w.o.c.ward. All rights reserved.
 //
+// This class define the sub building model.
 
 #include "TowerA.hpp"
 #include "VectorMath.h"
@@ -24,37 +25,43 @@ void TowerA::Display()
 {
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-
-    glTranslatef(pos[0], pos[1], pos[2]);
-    glScalef(scale[0], scale[1], scale[2]);
-    glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
-    glDisable(GL_COLOR_MATERIAL);
-
-    glPushMatrix();
     {
-        DrawSubTower1();
-        glTranslatef(8, 0, 2);
-        DrawSubTower2();
-        glTranslatef(3, 0, 1);
-        DrawSubTower3();
-        glTranslated(10, 0, -1);
-        DrawSubTower2();
-        glTranslatef(3, 0, -2);
-        DrawSubTower1();
+        glTranslatef(pos[0], pos[1], pos[2]);
+        glScalef(scale[0], scale[1], scale[2]);
+        glRotatef(rotation[1], 0.0f, 1.0f, 0.0f);
+        glDisable(GL_COLOR_MATERIAL);
+        
+        // draw fix sub towers
+        glPushMatrix();
+        {
+            DrawSubTower1();
+            glTranslatef(8, 0, 2);
+            DrawSubTower2();
+            glTranslatef(3, 0, 1);
+            DrawSubTower3();
+            glTranslated(10, 0, -1);
+            DrawSubTower2();
+            glTranslatef(3, 0, -2);
+            DrawSubTower1();
+        }
+        glPopMatrix();
+        
+        // draw roof and building
+        glPushMatrix();
+        {
+            glTranslatef(0, 26, 0);
+            DrawRoof();
+            
+            glTranslatef(12, 12, -6.5);
+            DrawTop();
+        }
+        glPopMatrix();
+        
+        // draw the working clock of the building
+        glTranslatef(16, 32, 4);
+        glScalef(2.5, 2.5, 1.5);
+        DrawClock();
     }
-    glPopMatrix();
-
-    glPushMatrix();
-    glTranslatef(0, 26, 0);
-    DrawRoof();
-    glTranslatef(12, 12, -6.5);
-    DrawTop();
-    glPopMatrix();
-
-    glTranslatef(16, 32, 4);
-    glScalef(2.5, 2.5, 1.5);
-    DrawClock();
-
     glPopAttrib();
     glPopMatrix();
 
@@ -67,6 +74,7 @@ void TowerA::DrawSubTower3()
     float f = 1;
     float l = 19;
 
+    // define the floor structure
     _Floor floor[4] = {
             _Floor{_textB4, 7},
             _Floor{_textB2, 6},
@@ -74,6 +82,7 @@ void TowerA::DrawSubTower3()
             _Floor{_textB2, 8},
     };
 
+    // draw each floor iteratively
     glPushMatrix();
     {
 
@@ -107,7 +116,7 @@ void TowerA::DrawSubTower3()
     }
     glPopMatrix();
 
-
+    // decorate the building with window
     glPushMatrix();
     {
         glPushMatrix();
@@ -151,6 +160,7 @@ void TowerA::DrawSubTower3()
     glPopMatrix();
 }
 
+// draw the sub building using the same way as the DrawSubTower3()
 void TowerA::DrawSubTower2()
 {
 
@@ -197,7 +207,7 @@ void TowerA::DrawSubTower2()
     glPopMatrix();
 
 }
-
+// draw the sub building using the same way as the DrawSubTower3()
 void TowerA::DrawSubTower1()
 {
     float w = 8;
@@ -222,7 +232,6 @@ void TowerA::DrawSubTower1()
 
         }
     }
-
     glPopMatrix();
 
     glPushMatrix();
@@ -242,15 +251,13 @@ void TowerA::DrawSubTower1()
             glTranslatef(0, floor[i]._height + 1, 0);
         }
     }
-
     glPopMatrix();
 
 }
 
+// draw the top small building
 void TowerA::DrawTop()
 {
-
-
     glPushMatrix();
     {
         float w = 3;
@@ -258,6 +265,7 @@ void TowerA::DrawTop()
 
         glRotatef(-45, 0, 1, 0);
 
+        // eight walls
         for (int i = 0; i < 8; i++)
         {
             drawBrickT(1, w, 6, _textB4, f);
@@ -278,6 +286,7 @@ void TowerA::DrawTop()
     glTranslatef(-1.8, 6, 0.6);
     glScalef(1.5, 1.5, 1.5);
 
+    // draw the pointed roof
     glPushMatrix();
     {
         float w = 3;
@@ -310,10 +319,10 @@ void TowerA::DrawTop()
             glRotatef(45, 0, 1, 0);
         }
     }
-
     glPopMatrix();
 }
 
+// accumulate the time to perform animation
 void TowerA::Update(const double &deltaTime)
 {
     _time += deltaTime;
@@ -322,106 +331,113 @@ void TowerA::Update(const double &deltaTime)
 
 void TowerA::DrawClock()
 {
-
     glPushMatrix();
     glPushAttrib(GL_ALL_ATTRIB_BITS);
-
-    glEnable(GL_COLOR_MATERIAL);
-    glColor3f(0.86f, 0.86f, 0.54f);
-
-    float th = 0.0f;
-    float res = 2.0f * M_PI / 15.0f;
-    float y = 1.0f, x = 0.0f;
-
-    glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, _textB4);
-    do
     {
-        glBegin(GL_QUADS);
+        // set the base color for the clock
+        glEnable(GL_COLOR_MATERIAL);
+        glColor3f(0.86f, 0.86f, 0.54f);
+        
+        // draw the side of the cylinder
+        float th = 0.0f;
+        float res = 2.0f * M_PI / 15.0f;
+        float y = 1.0f, x = 0.0f;
+        
+        glEnable(GL_TEXTURE_2D);
+        glBindTexture(GL_TEXTURE_2D, _textB4);
+        do
         {
-            glNormal3f(x, y, 0.0f);
-
-            glTexCoord2d(0, 1);
-            glVertex3f(x, y, -0.5f);
-
-            glTexCoord2d(0, 0);
-            glVertex3f(x, y, 0.5f);
-
-            th += res;
-            y = cos(th);
-            x = sin(th);
-
-            glNormal3f(x, y, 0.0f);
-
-            glTexCoord2d(1, 0);
-            glVertex3f(x, y, 0.5f);
-
-            glTexCoord2d(1, 1);
-            glVertex3f(x, y, -0.5f);
+            glBegin(GL_QUADS);
+            {
+                glNormal3f(x, y, 0.0f);
+                
+                glTexCoord2d(0, 1);
+                glVertex3f(x, y, -0.5f);
+                
+                glTexCoord2d(0, 0);
+                glVertex3f(x, y, 0.5f);
+                
+                th += res;
+                y = cos(th);
+                x = sin(th);
+                
+                glNormal3f(x, y, 0.0f);
+                
+                glTexCoord2d(1, 0);
+                glVertex3f(x, y, 0.5f);
+                
+                glTexCoord2d(1, 1);
+                glVertex3f(x, y, -0.5f);
+            }
+            glEnd();
+            
+        } while (th <= 2.0f * M_PI);
+        
+        // draw the front of the cylinder, the texutre is binded with sin and cos function
+        y = 1.0f, x = 0.0f;
+        th = 0.0f;
+        
+        glBindTexture(GL_TEXTURE_2D, _texClock);
+        glColor3f(1.0f, 1.0f, 1.0f);
+        
+        glBegin(GL_TRIANGLE_FAN);
+        {
+            glNormal3f(1.0f, 0.0f, 0.0f);
+            
+            glTexCoord2d(0.5, 0.5);
+            glVertex3f(0.0f, 0.0f, 0.5f);
+            
+            do
+            {
+                glTexCoord2d((x + 1) / 2, (y + 1) / 2);
+                glVertex3f(x, y, 0.5f);
+                
+                th += res;
+                y = cos(th);
+                x = -sin(th);
+                
+                glTexCoord2d((x + 1) / 2, (y + 1) / 2);
+                glVertex3f(x, y, 0.5f);
+                
+            } while (th <= 2.0f * M_PI);
         }
         glEnd();
-
-    } while (th <= 2.0f * M_PI);
-
-    y = 1.0f, x = 0.0f;
-    th = 0.0f;
-
-    glBindTexture(GL_TEXTURE_2D, _texClock);
-    glColor3f(1.0f, 1.0f, 1.0f);
-
-    glBegin(GL_TRIANGLE_FAN);
-    {
-        glNormal3f(1.0f, 0.0f, 0.0f);
-
-        glTexCoord2d(0.5, 0.5);
-        glVertex3f(0.0f, 0.0f, 0.5f);
-
-        do
+        
+        // draw the back of the cylinder
+        y = 1.0f, x = 0.0f;
+        th = 0.0f;
+        glBegin(GL_TRIANGLE_FAN);
+        glColor3f(0.86f, 0.86f, 0.54f);
+        
         {
-            glTexCoord2d((x + 1) / 2, (y + 1) / 2);
-            glVertex3f(x, y, 0.5f);
-
-            th += res;
-            y = cos(th);
-            x = -sin(th);
-
-            glTexCoord2d((x + 1) / 2, (y + 1) / 2);
-            glVertex3f(x, y, 0.5f);
-
-        } while (th <= 2.0f * M_PI);
+            glNormal3f(1.0f, 0.0f, 0.0f);
+            glVertex3f(0.0f, 0.0f, -0.5f);
+            do
+            {
+                glVertex3f(x, y, -0.5f);
+                th += res;
+                y = cos(th);
+                x = sin(th);
+                glVertex3f(x, y, -0.5f);
+            } while (th <= 2.0f * M_PI);
+        }
+        glEnd();
+        glDisable(GL_COLOR_MATERIAL);
+        
+        // draw the clock pointer
+        glTranslatef(0, 0, 0.6);
+        setWallColor(0, 0, 0, 20);
+        
+        // one pointer is animating based on the time
+        drawBrickR(0.2, 0.1, 0.6);
+        glRotated(_time / 60 * -360, 0, 0, 1);
+        drawBrickR(0.2, 0.1, 0.8);
     }
-    glEnd();
-
-    y = 1.0f, x = 0.0f;
-    th = 0.0f;
-    glBegin(GL_TRIANGLE_FAN);
-    glColor3f(0.86f, 0.86f, 0.54f);
-
-    {
-        glNormal3f(1.0f, 0.0f, 0.0f);
-        glVertex3f(0.0f, 0.0f, -0.5f);
-        do
-        {
-            glVertex3f(x, y, -0.5f);
-            th += res;
-            y = cos(th);
-            x = sin(th);
-            glVertex3f(x, y, -0.5f);
-        } while (th <= 2.0f * M_PI);
-    }
-    glEnd();
-    glDisable(GL_COLOR_MATERIAL);
-
-    glTranslatef(0, 0, 0.6);
-    setWallColor(0, 0, 0, 20);
-    drawBrickR(0.2, 0.1, 0.6);
-    glRotated(_time / 60 * -360, 0, 0, 1);
-    drawBrickR(0.2, 0.1, 0.8);
-
     glPopAttrib();
     glPopMatrix();
 }
 
+// draw the pavilion roof
 void TowerA::DrawRoof()
 {
     glPushMatrix();
