@@ -12,10 +12,12 @@
 #include "DisplayableObject.h"
 #include "BrickUtil.hpp"
 #include "Animation.h"
+#include "Input.h"
 
 class Cat :
         public DisplayableObject,
-        public Animation
+        public Animation,
+        public Input
 {
 public:
     Cat(float _speed, float _limit, GLuint *_textures);
@@ -23,8 +25,9 @@ public:
     void Display();
 
     void Update(const double &deltaTime);
-
-
+    
+    void HandleKey(unsigned char key, int state, int x, int y);
+    
 protected:
 
     GLuint _texBody, _texFace, _texFaceSide, _texHandSide, _texLeftHand, _texLeftLeg, _texLegSide, _texRightHand, _texRightLeg, _texBack;
@@ -38,6 +41,7 @@ protected:
 
     float _loop = 0.3;
     float _speed, _limit, _offset, _flag, _time;
+    bool runAnimate; 
 
 };
 

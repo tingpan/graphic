@@ -9,7 +9,7 @@
 #include "Cat.hpp"
 #include "VectorMath.h"
 
-Cat::Cat(float speed, float limit, GLuint *_textures) : _speed(speed), _limit(limit), _offset(0), _time(0), _flag(1)
+Cat::Cat(float speed, float limit, GLuint *_textures) : _speed(speed), _limit(limit), _offset(0), _time(0), _flag(1), runAnimate(true)
 {
 
 //    _texFace
@@ -62,9 +62,22 @@ Cat::Cat(float speed, float limit, GLuint *_textures) : _speed(speed), _limit(li
     }
 }
 
+void Cat::HandleKey(unsigned char key, int state, int x, int y)
+{
+    if (key == 'r' && state) // 'r' key pressed: pause/unpause animation
+    {
+        runAnimate = !runAnimate;
+        if (!runAnimate) _time = 0;
+    }
+}
+
 void Cat::Update(const double &deltaTime)
 {
 
+    if (!runAnimate) {
+        return;
+    }
+    
     _time += deltaTime;
     if (_time > _loop * M_PI * 2) _time -= _loop * M_PI * 2;
 

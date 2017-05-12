@@ -8,7 +8,7 @@
 
 #include "Chick.hpp"
 
-Chick::Chick(float speed, float radius) : _speed(speed), _radius(radius)
+Chick::Chick(float speed, float radius) : _speed(speed), _radius(radius), runAnimate(true)
 {
 
 }
@@ -20,7 +20,18 @@ Chick::~Chick()
 
 void Chick::Update(const double &deltaTime)
 {
-    rotation[1] -= static_cast<float>(deltaTime) * _speed;
+    if(runAnimate)
+    {
+        rotation[1] -= static_cast<float>(deltaTime) * _speed;
+    }
+}
+
+void Chick::HandleKey(unsigned char key, int state, int x, int y)
+{
+    if (key == 'r' && state) // 'r' key pressed: pause/unpause animation
+    {
+        runAnimate = !runAnimate;
+    }
 }
 
 void Chick::Display()

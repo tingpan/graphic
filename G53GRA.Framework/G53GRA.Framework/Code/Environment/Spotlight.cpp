@@ -9,7 +9,7 @@
 #include "Spotlight.hpp"
 #include "VectorMath.h"
 
-Spotlight::Spotlight()
+Spotlight::Spotlight():runAnimate(true)
 {
     SetupLight1();
     SetupLight2();
@@ -21,12 +21,14 @@ Spotlight::~Spotlight()
 
 }
 
-void Spotlight::Update(const double &deltaTime)
+void Spotlight::Update(const double &delta_time)
 {
-
-    time += deltaTime;
-    if (time > 20 * M_PI) time -= 20 * M_PI;
-
+    if(runAnimate)
+    {
+        _time += delta_time;
+        if (_time > 20 * M_PI) _time -= 20 * M_PI;
+    }
+    
     float position[7][4] = {
             {-500.f, 500.f, -1000.f, 1.f},
             {500.f,  500.f, -1000.f, 1.f},
@@ -40,7 +42,7 @@ void Spotlight::Update(const double &deltaTime)
 
     float direction[2][3] = {
             {0.f,            -1.f, 0.f},
-            {sin(time / 10), .5f,  -1.f}
+            {sin(_time / 10), .5f,  -1.f}
     };
 
     for (int i = 0; i < 4; i++)
@@ -159,6 +161,11 @@ void Spotlight::HandleKey(unsigned char key, int state, int mx, int my)
 
             glDisable(GL_LIGHT5);
 
+            break;
+        case 'r':
+            runAnimate = !runAnimate;
+            break;
+        default:
             break;
     }
 }

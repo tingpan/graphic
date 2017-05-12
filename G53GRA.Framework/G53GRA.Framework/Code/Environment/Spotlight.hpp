@@ -31,7 +31,8 @@ public:
     void HandleKey(unsigned char key, int state, int mx, int my);
 
 private:
-    float time;
+    bool runAnimate;
+    float _time;
 
     void SetupLight1();
 

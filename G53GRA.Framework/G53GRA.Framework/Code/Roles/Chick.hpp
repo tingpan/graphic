@@ -12,10 +12,12 @@
 #include "DisplayableObject.h"
 #include "BrickUtil.hpp"
 #include "Animation.h"
+#include "Input.h"
 
 class Chick :
         public DisplayableObject,
-        public Animation
+        public Animation,
+        public Input
 {
 public:
     Chick(float speed, float radius);
@@ -25,9 +27,12 @@ public:
     void Display();
 
     void Update(const double &deltaTime);
+    
+    void HandleKey(unsigned char key, int state, int x, int y);
 
 private:
     float _speed, _radius;
+    bool runAnimate;
 
 };
 
